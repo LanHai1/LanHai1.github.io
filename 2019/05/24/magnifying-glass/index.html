@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="LanHai bolg" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "Copied";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "Copy";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>magnifying-glass 放大镜 | LanHai bolg</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="default" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">LanHai bolg</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">文章</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/magnifying-glass/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="蓝海">
+       <meta itemprop="description" content>
+       <meta itemprop="image" content="/images/lanhai.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="LanHai bolg">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">magnifying-glass 放大镜</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-24T10:29:13+08:00">2019-05-24 10:29:13</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>本篇讲解页面中的一些api与用法和兼容</p>
+<p>🤪<br><img src="https://upload-images.jianshu.io/upload_images/12946880-d9fb00e800fbcc04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果图"><br><code>git demo =&gt;</code><a href="https://github.com/LanHai1/magnifying-glass" target="_blank" rel="noopener">https://github.com/LanHai1/magnifying-glass</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>1- 鼠标移入移出小图盒子 显示和隐藏 mask阴影层 和 大图盒子</li>
+<li>2- 为小图盒子添加鼠标移动事件<br>2-1- 为事件对象e做兼容处理<br>2-2- 获取鼠标相对于小盒子里面的x和y<br>2-2-1- offsetX和offsetY 有bug ，自己计算<br>2-2-2- x = e.clientX - 盒子自身到可视区域的left<br>2-2-3- y = e.clientY - 盒子自身到可视区域的top<br>2-2-4- 鼠标在阴影层的中间<br>所以最后计算出来的x和y还要减去 mask阴影层的宽高各一半<br>2-3- 获取阴影盒子的最大和最小移动范围<br>2-3-1- 小盒子宽度 - 阴影盒子的宽度<br>2-3-2- 小盒子高度 - 阴影盒子的高度<br>2-4- 判断最大值和最小值<br>2-4-1- 最小值<br><code>x = x &gt; 0 ? x : 0;</code><br>2-4-2- 最大值<br><code>y = y &lt; maxY ? y : maxY;</code><br>2-5- 将值给mask阴影层的left和top<br>2-6- 实现大图跟着鼠标移动<br>2-6-1- 算出计算比例<br>2-6-1-1- 大图片的宽度 / 小图片的宽度<br>2-6-2- 设置大图的top和left<br>2-6-2-1- 移动的x值乘计算出来的x比例<h4 id="xmind图释"><a href="#xmind图释" class="headerlink" title="xmind图释"></a>xmind图释</h4><img src="https://upload-images.jianshu.io/upload_images/12946880-a7901c9a10a6cd6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br><code>样式</code><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box &#123;</span><br><span class="line">    width: 350px;</span><br><span class="line">    height: 350px;</span><br><span class="line">    margin: 100px;</span><br><span class="line">    border: 1px solid #ccc;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.big &#123;</span><br><span class="line">    width: 400px;</span><br><span class="line">    height: 400px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 360px;</span><br><span class="line">    border: 1px solid #ccc;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.mask &#123;</span><br><span class="line">    width: 175px;</span><br><span class="line">    height: 175px;</span><br><span class="line">    background: rgba(255, 255, 0, 0.4);</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    cursor: move;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.small &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box img &#123;</span><br><span class="line">    vertical-align: top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#bigBox&gt;img &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>结构</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot; id=&quot;box&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;small&quot; id=&quot;smallBox&quot;&gt;</span><br><span class="line">        &lt;img id=&quot;smallImg&quot; src=&quot;images/001.jpg&quot; width=&quot;350&quot; alt=&quot;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div class=&quot;mask&quot; id=&quot;mask&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;big&quot; id=&quot;bigBox&quot;&gt;</span><br><span class="line">        &lt;img id=&quot;bigImg&quot; src=&quot;images/0001.jpg&quot; width=&quot;800&quot; alt=&quot;&quot; /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>行为</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 根据id获取元素</span><br><span class="line"> * @param &#123;*&#125; id </span><br><span class="line"> */</span><br><span class="line">let $ = id =&gt; document.getElementById(id);</span><br><span class="line"></span><br><span class="line">// 鼠标移入移出显示隐藏 mask阴影和大图</span><br><span class="line">$(&quot;smallBox&quot;).onmouseover = function() &#123;</span><br><span class="line">    $(&quot;mask&quot;).style.display = $(&quot;bigBox&quot;).style.display = &quot;block&quot;;</span><br><span class="line">&#125;;</span><br><span class="line">$(&quot;smallBox&quot;).onmouseout = function() &#123;</span><br><span class="line">    $(&quot;mask&quot;).style.display = $(&quot;bigBox&quot;).style.display = &quot;none&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 为小盒子添加鼠标移动事件</span><br><span class="line">$(&quot;smallBox&quot;).onmousemove = function(e) &#123;</span><br><span class="line">    // 事件对象e做兼容</span><br><span class="line">    e = e || window.event;</span><br><span class="line">    // 获取鼠标相对于小盒子里面的x和y</span><br><span class="line">    // offsetX和offsetY有bug 自己计算 </span><br><span class="line">    // x = e.clientX - 盒子自身到可视区域的left</span><br><span class="line">    // y = e.clientY - 盒子自身到可视区域的top </span><br><span class="line">    // 因为想要鼠标在阴影层的中间 所以减去阴影盒子宽高的一半</span><br><span class="line">    let x = e.clientX - $(&quot;smallBox&quot;).getBoundingClientRect()[&quot;left&quot;] - $(&quot;mask&quot;).offsetWidth / 2;</span><br><span class="line">    let y = e.clientY - $(&quot;smallBox&quot;).getBoundingClientRect()[&quot;top&quot;] - $(&quot;mask&quot;).offsetHeight / 2;</span><br><span class="line"></span><br><span class="line">    // 获取阴影盒子最大和最小区域范围</span><br><span class="line">    // 小盒子宽度 - 阴影盒子的宽度</span><br><span class="line">    let maxX = $(&quot;smallBox&quot;).offsetWidth - $(&quot;mask&quot;).offsetWidth;</span><br><span class="line">    let maxY = $(&quot;smallBox&quot;).offsetHeight - $(&quot;mask&quot;).offsetHeight;</span><br><span class="line"></span><br><span class="line">    // 最小值</span><br><span class="line">    x = x &gt; 0 ? x : 0;</span><br><span class="line">    y = y &gt; 0 ? y : 0;</span><br><span class="line"></span><br><span class="line">    // 最大值</span><br><span class="line">    x = x &lt; maxX ? x : maxX;</span><br><span class="line">    y = y &lt; maxY ? y : maxY;</span><br><span class="line"></span><br><span class="line">    setXY($(&quot;mask&quot;), &#123;</span><br><span class="line">        left: x,</span><br><span class="line">        top: y</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    // 大图跟着移动</span><br><span class="line">    // 计算比例 大图片的宽度 / 小图片的宽度</span><br><span class="line">    let xProportion = $(&quot;bigImg&quot;).offsetWidth / $(&quot;smallImg&quot;).offsetWidth;</span><br><span class="line">    let yProportion = $(&quot;bigImg&quot;).offsetHeight / $(&quot;smallImg&quot;).offsetHeight;</span><br><span class="line"></span><br><span class="line">    // 设置对应值 移动的x值乘计算出来的x比例</span><br><span class="line">    setXY($(&quot;bigImg&quot;), &#123;</span><br><span class="line">        left: -x * xProportion,</span><br><span class="line">        top: -y * yProportion</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;;</span><br><span class="line">/**</span><br><span class="line"> * 设置元素的left 和 top</span><br><span class="line"> * @param &#123;element&#125; el </span><br><span class="line"> * @param &#123;json&#125; attrs </span><br><span class="line"> */</span><br><span class="line">function setXY(el, attrs) &#123;</span><br><span class="line">    for (const key in attrs) &#123;</span><br><span class="line">        el.style[key] = `$&#123;attrs[key]&#125;px`;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/05/24/hello-world/" rel="next" title="我是蓝海"><i class="fas fa-angle-left"></i><span class="nav-title">我是蓝海</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/lanhai.jpg" alt="蓝海">
+  
+  <h1 class="author-name">蓝海</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#xmind图释"><span class="toc-text">xmind图释</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links<p></p></div>
+      <ul>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://www.jianshu.com/u/d8804c6134a6" target="_blank">简书</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">蓝海</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
