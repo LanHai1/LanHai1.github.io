@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="LanHai bolg" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "Copied";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "Copy";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>JavaScript ECMAScript语法概括 | LanHai bolg</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="default" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">LanHai bolg</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">文章</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/ECMAScript/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="蓝海">
+       <meta itemprop="description" content>
+       <meta itemprop="image" content="/images/lanhai.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="LanHai bolg">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">JavaScript ECMAScript语法概括</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-24T00:25:00+08:00">2019-05-24 00:25:00</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p><em>本篇讲解ecma语法</em></p>
+<h2 id="JavaScript是什么-？"><a href="#JavaScript是什么-？" class="headerlink" title="JavaScript是什么 ？"></a>JavaScript是什么 ？</h2><ul>
+<li>JavaScript是一门脚本语言<br>脚本语言:不需要编译，直接运行(js,python…)<br>编译语言:需要把代码翻译成计算机所认识的二进制语言，才能运行(c,c++,java…)<ul>
+<li>JavaScript是一门<strong>基于</strong>对象的语言<br>基于 而不是 面向<br>JavaScript可以模拟其他语言的特性(封装、继承、多态)</li>
+<li>JavaScript是一门动态类型的语言</li>
+<li>JavaScript是一门弱类型的语言</li>
+<li>JavaScript是一门解释性的语言</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="JavaScript能做什么？"><a href="#JavaScript能做什么？" class="headerlink" title="JavaScript能做什么？"></a>JavaScript能做什么？</h2><ul>
+<li>前端开发</li>
+<li>后端开发</li>
+<li>底层</li>
+<li>操作系统开发</li>
+<li>大数据</li>
+<li>区块链</li>
+<li>人工智能</li>
+<li>… js无所不能</li>
+</ul>
+<hr>
+<h2 id="引入js的两种方式"><a href="#引入js的两种方式" class="headerlink" title="引入js的两种方式"></a>引入js的两种方式</h2><ul>
+<li>内联<br>在html中 body标签内的最下方通过script标签 编写js代码<br> <code>&lt;script&gt;var a = 1;&lt;/script&gt;</code></li>
+<li>外联<br>引入外部文件 在html中 body标签内的最下方通过script标签的src属性引入文件<br><code>&lt;script src=&quot;./index.js&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
+<hr>
+<h2 id="为什么要有变量？"><a href="#为什么要有变量？" class="headerlink" title="为什么要有变量？"></a>为什么要有变量？</h2><blockquote>
+<p>为了存储和复用一个数据，方便修改</p>
+</blockquote>
+<p><code>当声明一个变量的时候 var a = 10 ,会在内存中开辟以一个空间 存放变量名和变量值 ,会将变量和值存放到window对象中 a:10</code></p>
+<hr>
+<h4 id="1-全局变量"><a href="#1-全局变量" class="headerlink" title="1. 全局变量"></a>1. 全局变量</h4><blockquote>
+<p>全局作用域中的变量 可以在该脚本文件中的任何地方访问到</p>
+</blockquote>
+<h4 id="2-局部变量"><a href="#2-局部变量" class="headerlink" title="2. 局部变量"></a>2. 局部变量</h4><blockquote>
+<p>局部作用域中的变量 局部变量只能在该函数中访问到</p>
+</blockquote>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p><code>在局部作用域中(函数中)声明变量 如果未加关键字 var || let || const</code> 这个变量就会变为隐式全局变量<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">  num = 1;</span><br><span class="line">&#125;</span><br><span class="line">=&gt;</span><br><span class="line">var num;</span><br><span class="line">function a()&#123;</span><br><span class="line">  num = 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*只有num1 是局部变量 ， num2 和 num3 是隐式全局变量*/</span><br><span class="line">function a()&#123;</span><br><span class="line">  var num1 = num2 = num3 = 100;</span><br><span class="line">&#125;</span><br><span class="line">=&gt;</span><br><span class="line">var num2;</span><br><span class="line">var num3;</span><br><span class="line">function a()&#123;</span><br><span class="line">  var num1 = 100;</span><br><span class="line">  num2 = 100;</span><br><span class="line">  num3 = 100;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="JavaScript代码规范以及变量命名"><a href="#JavaScript代码规范以及变量命名" class="headerlink" title="JavaScript代码规范以及变量命名"></a>JavaScript代码规范以及变量命名</h2><blockquote>
+<p>声明关键词 <code>var let const</code><br>变量名区分大小写</p>
+</blockquote>
+<p><code>命名规范</code></p>
+<blockquote>
+<p>一般以字母、$、下划线、数字组成(不能以数字开头)<br>不能使用系统关键词和保留字<br>一般遵循驼峰命名法(第一个单词首字面小写后面单词首字母大写)</p>
+</blockquote>
+<h2 id="变量名需得有意义"><a href="#变量名需得有意义" class="headerlink" title="变量名需得有意义"></a>变量名需得有意义</h2><h2 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h2><h2 id="JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍-预解析-并把-声明式-函数-和-变量-提升到-该作用域-的最顶端"><a href="#JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍-预解析-并把-声明式-函数-和-变量-提升到-该作用域-的最顶端" class="headerlink" title="JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍(预解析) 并把 **声明式** 函数 和 变量 提升到 **该作用域** 的最顶端"></a><code>JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍(预解析) 并把 **声明式** 函数 和 变量 提升到 **该作用域** 的最顶端</code></h2><h4 id="1-变量预解析"><a href="#1-变量预解析" class="headerlink" title="1. 变量预解析"></a>1. 变量预解析</h4><blockquote>
+<p>变量预解析只会将变量的声明提升到该作用域的最前面</p>
+</blockquote>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(a) // undefined</span><br><span class="line">var a = 10;</span><br><span class="line">=&gt;</span><br><span class="line">var a </span><br><span class="line">console.log(a) // undefined</span><br><span class="line">a = 10</span><br></pre></td></tr></table></figure>
+<h4 id="2-函数预解析"><a href="#2-函数预解析" class="headerlink" title="2. 函数预解析"></a>2. 函数预解析</h4><blockquote>
+<p>变量预解析只会将变量的声明提升到该作用域的最前面</p>
+</blockquote>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">b()</span><br><span class="line">function b()&#123;</span><br><span class="line">&#125;</span><br><span class="line">=&gt;</span><br><span class="line">function b()&#123;</span><br><span class="line">&#125;</span><br><span class="line">b()</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="断点调试"><a href="#断点调试" class="headerlink" title="断点调试"></a>断点调试</h2><p><code>直接在浏览器中Sources添加断点</code></p>
+<h2 id="或者在编辑器中在语句之后添加-debugger"><a href="#或者在编辑器中在语句之后添加-debugger" class="headerlink" title="或者在编辑器中在语句之后添加 debugger"></a><code>或者在编辑器中在语句之后添加 debugger</code></h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><hr>
+<h4 id="什么是数据类型？"><a href="#什么是数据类型？" class="headerlink" title="什么是数据类型？"></a>什么是数据类型？</h4><blockquote>
+<p>计算机里面有很多数据，JS为了方便调试与使用，提供了一些对应的辅助方法，将它们做了归类，就是数据类型。</p>
+</blockquote>
+<hr>
+<h4 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h4><hr>
+<h5 id="1-Number"><a href="#1-Number" class="headerlink" title="1. Number"></a>1. Number</h5><p>1.1. <strong>整数</strong> =&gt; 正数 负数<br>1.2. <strong>小数</strong><br>1.3. <strong>NaN</strong><br>  <em>Not a Number =&gt; 不是一个数字</em><br>  判断一个数字是否是非数字<code>isNaN(x)</code> 返回布尔值 <strong>true</strong>是一个非数字，<strong>false</strong>不是一个非数字<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isNaN(undefined) // true</span><br><span class="line">isNaN(null) // false</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>NaN不等于任何值，包括它自己</p>
+</blockquote>
+<ul>
+<li><p>数值的取之范围</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Infinity // 无穷大</span><br><span class="line">-Infinity // 无穷小</span><br><span class="line">Number.MAX_VALUE /*最大值*/</span><br><span class="line">Number.MIN_VALUE /*最小值*/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运算符<br>算数运算符</p>
+<blockquote>
+<p>+:加<br>-:减<br><em>:乘<br>/:除<br>%:求模<br>任何数除以0为无穷大<br>任何数`-</em>/%`字符串为NaN (除了+)</p>
+</blockquote>
+</li>
+</ul>
+<p>复合运算符</p>
+<blockquote>
+<p>+= &lt;a+=1 =&gt; a = a+1&gt;<br>-= &lt;a-=1 =&gt; a = a-1&gt;<br> “<em>=” &lt;a</em>=1 =&gt; a = a*1&gt; (乘等于)<br>/= &lt;a/=1 =&gt; a = a/1&gt;<br>“%=” &lt;a%=1 =&gt; a = a%1&gt;</p>
+</blockquote>
+<p>“==||===”<br>两个等于和三个等于的区别<br>两个等于只对比值 三个等于对比值和数据类型</p>
+<p>自增自减运算符<br><code>a++
+++a
+a--
+--a</code></p>
+<ul>
+<li>前置自增 ++a <code>先运算、再返回</code></li>
+<li>后置自增 a++ <code>先返回、再运算</code></li>
+</ul>
+<hr>
+<h5 id="2-String"><a href="#2-String" class="headerlink" title="2. String"></a>2. String</h5><p>2.1 字符串的长度<code>str.length</code></p>
+<h2 id="2-2-字符串加号运算-会将数据与数据拼接字符串-任何数据类型-拼接之后的新的字符串"><a href="#2-2-字符串加号运算-会将数据与数据拼接字符串-任何数据类型-拼接之后的新的字符串" class="headerlink" title="2.2 字符串加号运算 会将数据与数据拼接字符串 + 任何数据类型 = 拼接之后的新的字符串"></a>2.2 字符串加号运算 会将数据与数据拼接<code>字符串 + 任何数据类型 = 拼接之后的新的字符串</code></h2><h5 id="3-Boolean"><a href="#3-Boolean" class="headerlink" title="3. Boolean"></a>3. Boolean</h5><p><code>true =&gt; 1</code><br><code>false =&gt; 0</code></p>
+<blockquote>
+<p>用布尔值来判断条件真假</p>
+</blockquote>
+<hr>
+<h5 id="4-Undefined"><a href="#4-Undefined" class="headerlink" title="4. Undefined"></a>4. Undefined</h5><p>未定义</p>
+<hr>
+<h5 id="5-Null"><a href="#5-Null" class="headerlink" title="5. Null"></a>5. Null</h5><p>空</p>
+<hr>
+<ul>
+<li>undefined和null的区别<blockquote>
+<p>null 表示一个值被定义了，定义为null<br>undefined 表示一个值声明了 但是未定义(未赋值)<br>所以设置一个值为null是合理的 设置一个值为undefined是不合理的<br>null == undefined // true<br>null === undefined // false<br>说明 null 和 undefined 在转boolean 的时候都为 0 值相同 所以 == 为true  ，数据类型不一样 === 为false</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h4 id="复杂数据类型"><a href="#复杂数据类型" class="headerlink" title="复杂数据类型"></a>复杂数据类型</h4><hr>
+<h5 id="1-Array"><a href="#1-Array" class="headerlink" title="1. Array"></a>1. Array</h5><ul>
+<li>创建数组的方式</li>
+</ul>
+<p><code>new</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">new Array()</span><br><span class="line">new Array(初始长度)</span><br><span class="line">new Array( 1 , 2 , 3 )</span><br></pre></td></tr></table></figure></p>
+<p><code>字面量</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ ]</span><br><span class="line">[ 1 , 2 , 3 ]</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>数组的三个概念<blockquote>
+<p>元素: 数组中的值就是元素<br>下标(索引): 下标从0开始<br>长度: length 数组的长度 从1开始</p>
+</blockquote>
+</li>
+<li>遍历数组</li>
+</ul>
+<p><code>正叙遍历</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(let i = 0; i &lt; arr.length; i++)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>倒叙遍历</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(let i = arr.length; i &gt; 0; i--)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>栈和队列操作</li>
+</ul>
+<p><code>栈操作 先进后出</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.unshift() /*从头部放入*/</span><br><span class="line">arr.shift() /*从头部取出*/</span><br></pre></td></tr></table></figure></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.push(); /*从尾部放入*/</span><br><span class="line">arr.pop(); /*从尾部取出*/</span><br></pre></td></tr></table></figure>
+<p><code>队列操作 先进先出</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.unshift() /*从头部放入*/</span><br><span class="line">arr.pop(); /*从尾部取出*/</span><br></pre></td></tr></table></figure></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.push(); /*从尾部放入*/</span><br><span class="line">arr.shift() /*从头部取出*/</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="2-Function"><a href="#2-Function" class="headerlink" title="2. Function"></a>2. Function</h5><ul>
+<li>函数的声明</li>
+</ul>
+<p><code>声明式创建函数</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function fn ()&#123;</span><br><span class="line">  //代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>匿名方式创建函数</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let fn = function()&#123;</span><br><span class="line">  //代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>函数对象</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let fn = new Function(&quot;形参&quot;,&quot;形参&quot;,&quot;代码块&quot;) /*前面的都是参数，最后面的参数是代码块*/</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>函数的默认值<br><code>形参默认值 形参 = 形参 || 默认值</code></li>
+<li>函数的调用<br><code>函数名(实参列表)</code></li>
+<li>return 关键字<blockquote>
+<p>函数中 return 将数据给调用者<br>函数中遇到 return 直接跳出函数 后面代码不执行<br>函数默认 return undefined</p>
+</blockquote>
+</li>
+<li><p>函数的预解析</p>
+<blockquote>
+<p>只有声明式的函数和变量才会预解析<br>先调用 -&gt; 后声明<br>在js执行的时候 浏览器会执行 预解析的操作<br><code>预解析会把所有的 声明式 创建的函数(包括变量) 提升到当前作用域的最顶端</code></p>
+</blockquote>
+</li>
+<li><p>回调函数<br><code>函数作为参数传递</code><br><code>函数作为返回值</code></p>
+</li>
+<li><p>arguments 属性</p>
+<blockquote>
+<p>函数内部的特殊属性 用来保存实参列表<br>arguments 是一个 <code>伪数组</code> =&gt; 不是数组 但是具有数组的特性(下标索引、长度、可以进行循环遍历)<br>可以模拟函数重载 =&gt; 同一个函数，因为传递的实参数量不同，可以执行不同的操作</p>
+</blockquote>
+</li>
+<li>工厂函数 和 构造函数<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/*工厂函数*/</span><br><span class="line">function createStr(name,age)&#123;</span><br><span class="line">  let obj = new Object()</span><br><span class="line">  obj.name = name</span><br><span class="line">  obj.age = age</span><br><span class="line">  obj.sayHi = function()&#123;</span><br><span class="line">    console.log(this.obj)</span><br><span class="line">  &#125;</span><br><span class="line">  return obj</span><br><span class="line">&#125;</span><br><span class="line">let obj1 = createStr(&quot;蓝海&quot;,11)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*构造函数*/</span><br><span class="line">function StuInFo(name,age)&#123;</span><br><span class="line">  this.name = name</span><br><span class="line">  this.age = age</span><br><span class="line">  this.sayHi = function()&#123;</span><br><span class="line">    console.log(this.obj)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">let obj2 = new StuInFo(&quot;蓝海&quot;,11)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>构造函数相对于自定义类(class)<br>1.变量名一般用名词，首字母大写<br>2.构造函数中 不需要我们去创建对象、返回对象<br>3.构造函数一般 被 new 关键词调用</p>
+</blockquote>
+<blockquote>
+<p>new 关键字 做的四件事</p>
+<ol>
+<li>创建空对象</li>
+<li>将空对象 传递给 构造函数 里面的 this</li>
+<li>调用构造函数</li>
+<li>返回对象</li>
+</ol>
+<ul>
+<li>自调用函数<br>声明的时候直接调用执行<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function(&quot;形参列表&quot;)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;)(&quot;实参列表&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>函数内存存放<br><code>函数名存放在栈里面</code><br><code>通过内存地址相关联</code><br><code>函数体和形参列表存放在堆里面</code></li>
+</ul>
+<hr>
+<h5 id="3-Object"><a href="#3-Object" class="headerlink" title="3. Object"></a>3. Object</h5><ul>
+<li>创建对象的方式</li>
+</ul>
+<p><code>new</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let obj = new Object()</span><br><span class="line">||</span><br><span class="line">let obj = new Object(&#123;</span><br><span class="line">  name : &quot;蓝海&quot;,</span><br><span class="line">  age : 11</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><code>字面量</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123; &#125;</span><br><span class="line">||</span><br><span class="line">let obj = &#123;</span><br><span class="line">  name : &quot;蓝海&quot;,</span><br><span class="line">  age : 11</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>访问对象中的属性<br><code>对象.属性</code><br><code>对象[&quot;属性&quot;]</code> =&gt; 注意 用中括号的方式访问对象中的属性 属性名🉐️加引号<br><code>访问对象中不存在的属性</code> =&gt; undefined</li>
+<li>对象属性操作<br><code>添加属性</code> =&gt; 直接对象 . 属性名 = 属性值<br><code>删除属性</code> =&gt;  delete 对象 . 属性名 || delete 对象 . 方法名</li>
+<li>判断一个对象中是否存在某个属性或某个方法<br><code>&quot;属性&quot; in 对象</code> =&gt; <code>&quot;name&quot; in obj</code></li>
+<li>对象中的 this <blockquote>
+<p>对象中的this就是这个对象 可以通过this.属性名 在对象的方法中访问对象里的其他属性或方法</p>
+</blockquote>
+</li>
+<li>对象内存存放<br><code>对象名存放在栈里面</code><br><code>通过内存地址相关联</code><br><code>对象里面的方法和属性存放在堆里面</code></li>
+</ul>
+<hr>
+<h2 id="获取数据类型"><a href="#获取数据类型" class="headerlink" title="获取数据类型"></a>获取数据类型</h2><h4 id="1-typeof"><a href="#1-typeof" class="headerlink" title="1. typeof"></a>1. typeof</h4><p><code>typeof</code>检查简单数据类型[值类型] 返回的是 字符串类型的数据类型<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typeof(123) =&gt; &quot;number&quot;</span><br><span class="line">/*注意点*/</span><br><span class="line">typeof(typeof(123)) =&gt; &quot;string&quot;</span><br><span class="line">typeof(null) =&gt; &quot;object&quot;</span><br><span class="line">typeof(Infinity) =&gt; &quot;number&quot;</span><br><span class="line">typeof(NaN) =&gt; &quot;number&quot;</span><br><span class="line">typeof(new Date()) =&gt; &quot;object&quot; =&gt; /*typeof检查其他new出来的对象 都返回 object*/</span><br><span class="line">/*typeof() 复杂数据类型object、array 和 null 都返回 object</span><br><span class="line">  typeof(function) =&gt; function // 函数除外</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-instanceof"><a href="#2-instanceof" class="headerlink" title="2. instanceof"></a>2. instanceof</h4><p><code>instanceof</code>检查复杂数据类型[引用类型] 返回boolean值<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数据名 instanceof 数据类型 /*[Function||Object||Array]*/</span><br><span class="line">返回 false 或 true</span><br><span class="line">只能检查复杂数据类型 简单数据类型都返回false</span><br></pre></td></tr></table></figure></p>
+<h4 id="typeof-和-instanceof-的区别"><a href="#typeof-和-instanceof-的区别" class="headerlink" title="typeof  和 instanceof 的区别"></a>typeof  和 instanceof 的区别</h4><p><code>typeof</code>用来检测简单数据类型 返回值是一个字符串的数据类型</p>
+<h2 id="instanceof用来检测复杂数据类型-返回的是boolean值-如果用来检测简单数据类型都会返回false"><a href="#instanceof用来检测复杂数据类型-返回的是boolean值-如果用来检测简单数据类型都会返回false" class="headerlink" title="instanceof用来检测复杂数据类型 返回的是boolean值 如果用来检测简单数据类型都会返回false"></a><code>instanceof</code>用来检测复杂数据类型 返回的是boolean值 如果用来检测简单数据类型都会返回false</h2><h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><hr>
+<h4 id="1-转换为字符串"><a href="#1-转换为字符串" class="headerlink" title="1. 转换为字符串"></a>1. 转换为字符串</h4><p><code>str.tostring()</code> <em>默认模式</em>把变量转换为字符串 || <em>基模式</em><br><code>String(str)</code> 把特殊值转换为字符串 String(undefined) =&gt; “undefined”<br><code>加号拼接字符串</code></p>
+<h4 id="2-转换为数组"><a href="#2-转换为数组" class="headerlink" title="2. 转换为数组"></a>2. 转换为数组</h4><p><code>parseFloat(str)</code> 把字符串转换为浮点数(小数)<br><code>parseInt(str)</code> 把字符串转换为整数</p>
+<p>{<code>Number(str)</code> 任何数据转换为整数</p>
+<blockquote>
+<p>如果字符串截去开头和结尾的空白字符后，<br>不是纯数字字符串，那么最终返回NaN。<br>如果字符串中只包含了数字，(包括前面带正号和负号)，<br>则将其转换为十进制数值，即”1”-&gt;1，”011“-&gt;11<br>如果字符串是空的””则返回0<br>如果字符串包含除了上面的格式之外的字符，则将其转换为NaN<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">boolean  true转换为1 false转换为0</span><br><span class="line">null 返回 0</span><br><span class="line">undefined 返回 NaN</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>}</p>
+<h4 id="3-转换为布尔值"><a href="#3-转换为布尔值" class="headerlink" title="3. 转换为布尔值"></a>3. 转换为布尔值</h4><p><code>Boolean()</code> </p>
+<blockquote>
+<p>将布尔字符串转成布尔值<br>除了 0、false 、undefiend、NaN、null 转换为false  其他都为true</p>
+</blockquote>
+<h4 id="4-转义符"><a href="#4-转义符" class="headerlink" title="4. 转义符"></a>4. 转义符</h4><p><code>console.log(&quot;转义符的应用\&quot;嗯&quot;) -&gt;[转义符的应用“嗯]</code><br><em>常用</em></p>
+<ul>
+<li>\n 换行符</li>
+<li>\” 双引号</li>
+<li>\’ 单引号</li>
+<li>\ \ 斜杠\</li>
+</ul>
+<hr>
+<h2 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h2><p><a href="https://www.jianshu.com/p/861983d569f3" target="_blank" rel="noopener">戳一下👇</a> 之前总结的常用内置对象博客</p>
+<hr>
+<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><p><em>一些很简单条件判断这里就不说了哈</em> 😶</p>
+<h4 id="1-三元运算符"><a href="#1-三元运算符" class="headerlink" title="1. 三元运算符"></a>1. 三元运算符</h4><p><code>条件 ? true : false</code></p>
+<h4 id="2-switch-case"><a href="#2-switch-case" class="headerlink" title="2. switch-case"></a>2. switch-case</h4><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*相对于 if (a === 1) 用来做全等判断*/</span><br><span class="line">break /*每个case里面的代码断都要写 break 否则会穿透*/</span><br><span class="line">/*合理使用switch穿透 &lt;当多个case要执行的代码需求一样的时候&gt;*/</span><br><span class="line">default /*如果case都不匹配的情况下 会执行 default 里面的代码*/</span><br></pre></td></tr></table></figure>
+<h4 id="3-amp-amp"><a href="#3-amp-amp" class="headerlink" title="3. &amp;&amp; || !"></a>3. &amp;&amp; || !</h4><p><code>&amp;&amp;</code> 与 一假则假<br><code>||</code> 或 一真则真</p>
+<h2 id="非-取反"><a href="#非-取反" class="headerlink" title="! 非 取反"></a><code>!</code> 非 取反</h2><h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><hr>
+<h4 id="1-for"><a href="#1-for" class="headerlink" title="1. for"></a>1. for</h4><p><em>for 循环体上面的 i 变量的作用域是全局作用域 如果在函数中使用就是局部作用域 一般建议使用let 关键词来声明 i</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 1;i &lt; 10; i++)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;</span><br><span class="line">/*拆解为*/</span><br><span class="line">let i = 1;</span><br><span class="line">for(;i&lt;10;)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">  i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-do-while"><a href="#2-do-while" class="headerlink" title="2. do while"></a>2. do while</h4><p><code>先执行do里面的代码块 再条件判断</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">do&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;while(boolean)</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-while"><a href="#3-while" class="headerlink" title="3. while"></a>3. while</h4><p><code>先条件判断 再执行代码块</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while(boolean)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="do-while-与-while-的区别"><a href="#do-while-与-while-的区别" class="headerlink" title="do-while 与 while 的区别"></a>do-while 与 while 的区别</h5><blockquote>
+<p>do-while 不管条件是否成立 都会执行一次do里面的代码块 然后再进行条件判断<br>while 先进行条件判断 再执行代码块</p>
+</blockquote>
+<h4 id="3-for-in"><a href="#3-for-in" class="headerlink" title="3. for in"></a>3. for in</h4><p><code>遍历对象</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(let &quot;属性名&quot; in &quot;对象&quot;)&#123;</span><br><span class="line">  /*访问对象中的属性或方法*/ /*这里的属性名已经是string类型 所以无需再加引号*/</span><br><span class="line">  obj[name] =&gt; /*对象[属性名]*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="break-和-continue-的区别"><a href="#break-和-continue-的区别" class="headerlink" title="break 和 continue 的区别"></a>break 和 continue 的区别</h5><blockquote>
+<p>break 跳出整个循环 后面的循环不再执行</p>
+</blockquote>
+<h2 id="continue-跳出本次循环-继续执行后面的循环"><a href="#continue-跳出本次循环-继续执行后面的循环" class="headerlink" title="continue 跳出本次循环 继续执行后面的循环"></a>continue 跳出本次循环 继续执行后面的循环</h2><p><img src="https://upload-images.jianshu.io/upload_images/12946880-a93529cf1a80804e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="xmind知识导图"><br><em>部分很简单的知识点未写入博客</em></p>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/05/24/webAPI/" rel="prev" title="webAPI"><span class="nav-title">webAPI</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/lanhai.jpg" alt="蓝海">
+  
+  <h1 class="author-name">蓝海</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript是什么-？"><span class="toc-text">JavaScript是什么 ？</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript能做什么？"><span class="toc-text">JavaScript能做什么？</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#引入js的两种方式"><span class="toc-text">引入js的两种方式</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#为什么要有变量？"><span class="toc-text">为什么要有变量？</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#1-全局变量"><span class="toc-text">1. 全局变量</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#2-局部变量"><span class="toc-text">2. 局部变量</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#注意"><span class="toc-text">注意</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript代码规范以及变量命名"><span class="toc-text">JavaScript代码规范以及变量命名</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#变量名需得有意义"><span class="toc-text">变量名需得有意义</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#预解析"><span class="toc-text">预解析</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍-预解析-并把-声明式-函数-和-变量-提升到-该作用域-的最顶端"><span class="toc-text">JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍(预解析) 并把 **声明式** 函数 和 变量 提升到 **该作用域** 的最顶端</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#1-变量预解析"><span class="toc-text">1. 变量预解析</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#2-函数预解析"><span class="toc-text">2. 函数预解析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#断点调试"><span class="toc-text">断点调试</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#或者在编辑器中在语句之后添加-debugger"><span class="toc-text">或者在编辑器中在语句之后添加 debugger</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#什么是数据类型？"><span class="toc-text">什么是数据类型？</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#简单数据类型"><span class="toc-text">简单数据类型</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#1-Number"><span class="toc-text">1. Number</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-String"><span class="toc-text">2. String</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#2-2-字符串加号运算-会将数据与数据拼接字符串-任何数据类型-拼接之后的新的字符串"><span class="toc-text">2.2 字符串加号运算 会将数据与数据拼接字符串 + 任何数据类型 = 拼接之后的新的字符串</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#3-Boolean"><span class="toc-text">3. Boolean</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#4-Undefined"><span class="toc-text">4. Undefined</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#5-Null"><span class="toc-text">5. Null</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#复杂数据类型"><span class="toc-text">复杂数据类型</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#1-Array"><span class="toc-text">1. Array</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#2-Function"><span class="toc-text">2. Function</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#3-Object"><span class="toc-text">3. Object</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#获取数据类型"><span class="toc-text">获取数据类型</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#1-typeof"><span class="toc-text">1. typeof</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#2-instanceof"><span class="toc-text">2. instanceof</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#typeof-和-instanceof-的区别"><span class="toc-text">typeof  和 instanceof 的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#instanceof用来检测复杂数据类型-返回的是boolean值-如果用来检测简单数据类型都会返回false"><span class="toc-text">instanceof用来检测复杂数据类型 返回的是boolean值 如果用来检测简单数据类型都会返回false</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#数据类型转换"><span class="toc-text">数据类型转换</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#1-转换为字符串"><span class="toc-text">1. 转换为字符串</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#2-转换为数组"><span class="toc-text">2. 转换为数组</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#3-转换为布尔值"><span class="toc-text">3. 转换为布尔值</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#4-转义符"><span class="toc-text">4. 转义符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript内置对象"><span class="toc-text">JavaScript内置对象</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#条件判断"><span class="toc-text">条件判断</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#1-三元运算符"><span class="toc-text">1. 三元运算符</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#2-switch-case"><span class="toc-text">2. switch-case</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#3-amp-amp"><span class="toc-text">3. &amp;&amp; || !</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#非-取反"><span class="toc-text">! 非 取反</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#循环"><span class="toc-text">循环</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#1-for"><span class="toc-text">1. for</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#2-do-while"><span class="toc-text">2. do while</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#3-while"><span class="toc-text">3. while</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#do-while-与-while-的区别"><span class="toc-text">do-while 与 while 的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#3-for-in"><span class="toc-text">3. for in</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#break-和-continue-的区别"><span class="toc-text">break 和 continue 的区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#continue-跳出本次循环-继续执行后面的循环"><span class="toc-text">continue 跳出本次循环 继续执行后面的循环</span></a></li></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links<p></p></div>
+      <ul>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://www.jianshu.com/u/d8804c6134a6" target="_blank">简书</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">蓝海</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
