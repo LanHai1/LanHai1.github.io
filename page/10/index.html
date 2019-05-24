@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>magnifying-glass 放大镜 | LanHai bolg</title>
+    <title>LanHai bolg</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="default" data-spy="scroll" data-target=".list-group">
     
@@ -169,22 +169,25 @@
         <div class="main-container">
           <div class="content">
             
-<div id="post" class="page">
+
+<div id="index" class="index page">
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/magnifying-glass.1/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-       <meta itemprop="name" content="蓝海">
-       <meta itemprop="description" content="一名正在脱发的前端工程师">
-       <meta itemprop="image" content="/images/lanhai.jpg">
+        <meta itemprop="name" content="蓝海">
+        <meta itemprop="description" content="一名正在脱发的前端工程师">
+        <meta itemprop="image" content="/images/lanhai.jpg">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-       <meta itemprop="name" content="LanHai bolg">
+        <meta itemprop="name" content="LanHai bolg">
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">magnifying-glass 放大镜</h1>
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2019/05/24/magnifying-glass.1/" itemprop="url">magnifying-glass 放大镜</a>
+      </h1>
       <div class="post-meta">
         
         <span class="post-date">
@@ -196,6 +199,7 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
+      
       <p>本篇讲解仿京东 鼠标移入商品 放大显示</p>
 <p>🤪<br><img src="https://upload-images.jianshu.io/upload_images/12946880-d9fb00e800fbcc04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果图"><br><code>git demo =&gt;</code><a href="https://github.com/LanHai1/magnifying-glass" target="_blank" rel="noopener">https://github.com/LanHai1/magnifying-glass</a></p>
 <h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ul>
@@ -206,6 +210,7 @@
 <p><code>结构</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot; id=&quot;box&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;small&quot; id=&quot;smallBox&quot;&gt;</span><br><span class="line">        &lt;img id=&quot;smallImg&quot; src=&quot;images/001.jpg&quot; width=&quot;350&quot; alt=&quot;&quot; /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div class=&quot;mask&quot; id=&quot;mask&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;big&quot; id=&quot;bigBox&quot;&gt;</span><br><span class="line">        &lt;img id=&quot;bigImg&quot; src=&quot;images/0001.jpg&quot; width=&quot;800&quot; alt=&quot;&quot; /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p><code>行为</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 根据id获取元素</span><br><span class="line"> * @param &#123;*&#125; id </span><br><span class="line"> */</span><br><span class="line">let $ = id =&gt; document.getElementById(id);</span><br><span class="line"></span><br><span class="line">// 鼠标移入移出显示隐藏 mask阴影和大图</span><br><span class="line">$(&quot;smallBox&quot;).onmouseover = function() &#123;</span><br><span class="line">    $(&quot;mask&quot;).style.display = $(&quot;bigBox&quot;).style.display = &quot;block&quot;;</span><br><span class="line">&#125;;</span><br><span class="line">$(&quot;smallBox&quot;).onmouseout = function() &#123;</span><br><span class="line">    $(&quot;mask&quot;).style.display = $(&quot;bigBox&quot;).style.display = &quot;none&quot;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 为小盒子添加鼠标移动事件</span><br><span class="line">$(&quot;smallBox&quot;).onmousemove = function(e) &#123;</span><br><span class="line">    // 事件对象e做兼容</span><br><span class="line">    e = e || window.event;</span><br><span class="line">    // 获取鼠标相对于小盒子里面的x和y</span><br><span class="line">    // offsetX和offsetY有bug 自己计算 </span><br><span class="line">    // x = e.clientX - 盒子自身到可视区域的left</span><br><span class="line">    // y = e.clientY - 盒子自身到可视区域的top </span><br><span class="line">    // 因为想要鼠标在阴影层的中间 所以减去阴影盒子宽高的一半</span><br><span class="line">    let x = e.clientX - $(&quot;smallBox&quot;).getBoundingClientRect()[&quot;left&quot;] - $(&quot;mask&quot;).offsetWidth / 2;</span><br><span class="line">    let y = e.clientY - $(&quot;smallBox&quot;).getBoundingClientRect()[&quot;top&quot;] - $(&quot;mask&quot;).offsetHeight / 2;</span><br><span class="line"></span><br><span class="line">    // 获取阴影盒子最大和最小区域范围</span><br><span class="line">    // 小盒子宽度 - 阴影盒子的宽度</span><br><span class="line">    let maxX = $(&quot;smallBox&quot;).offsetWidth - $(&quot;mask&quot;).offsetWidth;</span><br><span class="line">    let maxY = $(&quot;smallBox&quot;).offsetHeight - $(&quot;mask&quot;).offsetHeight;</span><br><span class="line"></span><br><span class="line">    // 最小值</span><br><span class="line">    x = x &gt; 0 ? x : 0;</span><br><span class="line">    y = y &gt; 0 ? y : 0;</span><br><span class="line"></span><br><span class="line">    // 最大值</span><br><span class="line">    x = x &lt; maxX ? x : maxX;</span><br><span class="line">    y = y &lt; maxY ? y : maxY;</span><br><span class="line"></span><br><span class="line">    setXY($(&quot;mask&quot;), &#123;</span><br><span class="line">        left: x,</span><br><span class="line">        top: y</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    // 大图跟着移动</span><br><span class="line">    // 计算比例 大图片的宽度 / 小图片的宽度</span><br><span class="line">    let xProportion = $(&quot;bigImg&quot;).offsetWidth / $(&quot;smallImg&quot;).offsetWidth;</span><br><span class="line">    let yProportion = $(&quot;bigImg&quot;).offsetHeight / $(&quot;smallImg&quot;).offsetHeight;</span><br><span class="line"></span><br><span class="line">    // 设置对应值 移动的x值乘计算出来的x比例</span><br><span class="line">    setXY($(&quot;bigImg&quot;), &#123;</span><br><span class="line">        left: -x * xProportion,</span><br><span class="line">        top: -y * yProportion</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;;</span><br><span class="line">/**</span><br><span class="line"> * 设置元素的left 和 top</span><br><span class="line"> * @param &#123;element&#125; el </span><br><span class="line"> * @param &#123;json&#125; attrs </span><br><span class="line"> */</span><br><span class="line">function setXY(el, attrs) &#123;</span><br><span class="line">    for (const key in attrs) &#123;</span><br><span class="line">        el.style[key] = `$&#123;attrs[key]&#125;px`;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
+      
     </main>
     <footer class="post-footer">
       
@@ -213,17 +218,8 @@
   </article>
   
   
-  <nav class="page-nav">
-    <div class="page-nav-next page-nav-item">
-      
-      <a href="/2019/05/24/mac&window/" rel="next" title="mac系统直接运行windows应用程序"><i class="fas fa-angle-left"></i><span class="nav-title">mac系统直接运行windows应用程序</span></a>
-      
-    </div>
-    <div class="page-nav-prev page-nav-item">
-      
-      <a href="/2019/05/24/baiduSearch/" rel="prev" title="百度搜索"><span class="nav-title">百度搜索</span><i class="fas fa-angle-right"></i></a>
-      
-    </div>
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fas fa-angle-left" aria-label="Previous Page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/"><i class="fas fa-angle-right" aria-label="Next Page"></i></a>
   </nav>
   
   
@@ -265,17 +261,6 @@
 
 
   <div class="sidebar-sticky">
-    
-    
-    
-    
-    
-    <hr>
-    <div class="post-toc sidebar-item" id="toc-div">
-      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#xmind图释"><span class="toc-text">xmind图释</span></a></li></ol></div>
-    </div>
-    
     
     
     <hr>
