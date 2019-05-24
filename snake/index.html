@@ -6,10 +6,469 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+        
+        .map {
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            background-color: #3f3f3fc4;
+            position: relative;
+        }
+        
+        .boxClose {
+            display: none;
+        }
+        
+        .boxClose>h1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .box,
+        .boxClose {
+            width: 300px;
+            height: 300px;
+            background-color: #374f85;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 30px;
+            box-shadow: 4px 4px 7px 0px #918f8f, inset 2px 2px 5px 1px #d1d1d1;
+        }
+        
+        h2 {
+            text-align: left;
+            width: 200px;
+            margin: 58px auto 20px;
+            color: #cbcbcb;
+        }
+        
+        input {
+            outline: none;
+            border: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        #text {
+            height: 30px;
+            box-sizing: border-box;
+            padding-left: 20px;
+            width: 80%;
+            margin: 0 10%;
+            font-size: 14px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        
+        #submit {
+            float: right;
+            margin: 30px 10%;
+            border-radius: 10px;
+            height: 30px;
+            width: 80px;
+            -webkit-appearance: button;
+            cursor: pointer;
+        }
+        
+        .openGame {
+            cursor: pointer;
+            color: #ff3434c4;
+            text-decoration: overline;
+        }
+        
+        .openGame:hover {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
-    hi你打开手机和卡手机卡
+    <div class="map">
+        <div class="box">
+            <h2>请输入您的姓名,默认游客登陆~</h2>
+            <input type="text" placeholder="游客" id="text" autofocus>
+            <br>
+
+            <input type="button" value="开始游戏" id="submit">
+        </div>
+
+        <div class="boxClose">
+            <h1>游戏结束
+                <a class="openGame">重新开始</a>
+            </h1>
+        </div>
+    </div>
+    <script>
+        // Food
+        (function() {
+
+            // 食物盒子
+            let foodList = [];
+
+            function Food(randomColor, width, height, x, y) {
+                this.x = x || 0;
+                this.y = y || 0;
+                this.width = width || 40;
+                this.height = height || 40;
+                this.bgColor = "green";
+
+                // 随机颜色
+                this.randomColor = randomColor;
+            }
+
+            /**
+             * 初始化
+             */
+            Food.prototype.init = function(map) {
+
+                removeFood();
+
+                let div = document.createElement("div");
+
+                div.style.width = `${this.width}px`;
+                div.style.height = `${this.height}px`;
+                this.randomColor.randomColor()
+
+                // 将颜色保存起来
+                this.bgColor = this.randomColor.random;
+
+                div.style.backgroundColor = `${this.randomColor.random}`;
+                div.style.zIndex = 10;
+                div.style.borderRadius = "50%";
+                div.style.position = "absolute";
+
+                // 计算比例
+                // 随机尝试位置
+                this.x = parseInt(Math.random() * (map.offsetWidth / this.width));
+                this.y = parseInt(Math.random() * (map.offsetHeight / this.height));
+
+                div.style.left = `${this.x  * this.width}px`;
+                div.style.top = `${this.y  * this.height}px`;
+
+                // 追加到页面
+                map.appendChild(div);
+
+                // 保存食物到盒子里面
+                foodList.push(div);
+            }
+
+            // 删除食物
+            function removeFood() {
+                for (let i = foodList.length - 1; i >= 0; i--) {
+                    foodList[i].parentNode.removeChild(foodList[i]);
+
+                    foodList.splice(i, 1)
+                }
+            }
+
+            // 暴露Food
+            window.Food = Food;
+        }());
+
+        // -----------------------
+
+        // Snake
+        (function() {
+            // 保存小蛇的盒子
+            let SnakeList = [];
+
+            function Snake(width, height, direction) {
+                this.width = width || 40;
+                this.height = height || 40;
+
+                // 小蛇身体
+                this.body = [{ // 头部
+                    x: 3,
+                    y: 1,
+                    bgColor: "red"
+                }, { // 身体
+                    x: 2,
+                    y: 1,
+                    bgColor: "yellow"
+                }, { //身体
+                    x: 1,
+                    y: 1,
+                    bgColor: "hotpink"
+                }]
+
+                // 方向
+                this.direction = direction || 'right';
+
+            }
+
+            // 初始化
+            Snake.prototype.init = function(map) {
+                // 先删
+                removeSnake();
+                for (let i = 0; i < this.body.length; i++) {
+                    let div = document.createElement("div");
+                    div.style.width = `${this.width}px`;
+                    div.style.height = `${this.height}px`;
+                    div.style.position = "absolute";
+                    div.style.zIndex = 9;
+
+                    div.style.backgroundColor = `${this.body[i].bgColor}`;
+                    div.style.left = `${this.body[i].x * this.width}px`;
+                    div.style.top = `${this.body[i].y * this.width}px`;
+
+                    div.style.borderRadius = "50%";
+
+                    map.appendChild(div);
+
+                    SnakeList.push(div);
+                }
+            }
+
+            // 小蛇移动
+            Snake.prototype.move = function(food, map) {
+
+                // 倒叙
+                for (let i = this.body.length - 1; i > 0; i--) {
+                    this.body[i].x = this.body[i - 1].x;
+                    this.body[i].y = this.body[i - 1].y;
+                }
+
+                // 处理蛇头 方向
+                switch (this.direction) {
+                    case "right":
+                        this.body[0].x += 1;
+                        break;
+                    case "left":
+                        this.body[0].x -= 1;
+                        break;
+                    case "top":
+                        this.body[0].y -= 1;
+                        break;
+                    case "bottom":
+                        this.body[0].y += 1;
+                        break;
+                }
+
+                this.eatFood(food, map)
+            }
+
+            // 吃食物
+            Snake.prototype.eatFood = function(food, map) {
+                let headX = this.body[0].x;
+                let headY = this.body[0].y;
+
+                if (headX == food.x && headY == food.y) {
+                    let obj = this.body[this.body.length - 1]; // 蛇尾
+                    this.body.push({
+                        x: obj.x,
+                        y: obj.y,
+                        bgColor: food.bgColor
+                    }); // 追加一个蛇尾
+                    // 删除食物 食物初始化
+                    food.init(map)
+                }
+            }
+
+            // 删除小蛇
+            function removeSnake() {
+                for (let i = SnakeList.length - 1; i >= 0; i--) {
+                    // 从页面删除
+                    SnakeList[i].parentNode.removeChild(SnakeList[i]);
+                    // 从盒子删除
+                    SnakeList.splice(i, 1);
+                }
+            }
+
+            window.Snake = Snake;
+
+        }());
+
+        // -----------------------
+
+        // 颜色
+        (function() {
+            // 随机颜色构造函数
+            function Color(color) {
+                // 随机颜色
+                this.random = color || "green";
+                // rgb
+                this.colors = [255, 255, 255];
+
+            }
+            Color.prototype = {
+                constructor: Color,
+                // rgb 拼接
+                // Color.prototype.randomColor
+                randomColor: function() {
+                    this.colorful();
+                    this.random = `rgb(${this.colors[0]},${this.colors[1]},${this.colors[2]})`
+                },
+                // 随机数 0-255
+                colorful: function() {
+                    for (let i = 0; i < this.colors.length; i++) {
+                        this.colors[i] = parseInt(Math.random() * 255)
+                    }
+                }
+            }
+
+            window.Color = Color;
+        }(window));
+
+        // -----------------------
+
+        // Game
+        (function() {
+            let scoreList = []
+
+            function Game(map, user, open) {
+                this.open = open;
+                this.user = user || "游客";
+                this.map = map;
+                this.color = new Color();
+                this.food = new Food(this.color);
+                this.snake = new Snake();
+
+                // 保存this 
+                that = this;
+
+                this.score();
+            }
+
+            // 用户分数
+            Game.prototype.score = function() {
+
+                removeScore();
+
+                this.span = document.createElement("span")
+                this.span.innerHTML = `${this.user},您的分数为:${this.snake.body.length - 3}`;
+                this.span.style.position = "fixed";
+                this.span.style.left = this.span.style.top = "10px";
+                this.span.style.zIndex = 0;
+                this.span.style.fontSize = "30px";
+                this.span.style.fontWeight = 400;
+                this.map.appendChild(this.span);
+
+                scoreList.push(this.span);
+            }
+
+            function removeScore() {
+                for (let i = 0; i < scoreList.length; i++) {
+                    scoreList[i].parentNode.removeChild(scoreList[i]);
+                    scoreList.splice(i, 1);
+                }
+            }
+
+            // 开始游戏
+            Game.prototype.start = function() {
+                this.food.init(this.map);
+                this.snake.init(this.map);
+
+                var timeId = setInterval(() => {
+                    this.snake.move(this.food, this.map);
+
+                    let maxX = this.map.offsetWidth / this.snake.width;
+                    let maxY = this.map.offsetHeight / this.snake.height;
+
+                    // 游戏分数
+                    this.span.innerHTML = `${this.user},您的分数为:${this.snake.body.length - 3}`;
+
+                    // 蛇头
+                    let snakeT = this.snake.body[0];
+
+                    // 撞身体
+                    for (let i = 1; i < this.snake.body.length - 1; i++) {
+                        if (snakeT.x == this.snake.body[i].x && snakeT.y == this.snake.body[i].y) {
+                            clearInterval(timeId);
+                            this.open.style.display = "block";
+                            return
+                        }
+                    }
+                    // 撞墙
+                    if (snakeT.x < 0 || snakeT.x >= maxX || snakeT.y < 0 || snakeT.y >= maxY) {
+                        clearInterval(timeId);
+                        this.open.style.display = "block";
+                        return // 不继续初始化 (小蛇头部出map问题)
+                    }
+
+                    this.snake.init(this.map);
+                }, 150);
+
+
+
+
+                // 键盘按下事件
+                window.onkeydown = function(e) {
+                    e = e || window.event;
+
+                    let keyCode = e.keyCode;
+                    // 37左 38上 39右 40下
+                    switch (keyCode) {
+                        case 37:
+                            e.preventDefault(); // 禁止键盘上下方向键滚动浏览器窗口
+                            if (that.snake.direction != "right") {
+                                that.snake.direction = "left"
+                            }
+                            break;
+                        case 38:
+                            e.preventDefault();
+                            if (that.snake.direction != "bottom") {
+                                that.snake.direction = "top"
+                            }
+                            break;
+                        case 39:
+                            e.preventDefault();
+                            if (that.snake.direction != "left") {
+                                that.snake.direction = "right"
+                            }
+                            break;
+                        case 40:
+                            e.preventDefault();
+                            if (that.snake.direction != "top") {
+                                that.snake.direction = "bottom"
+                            }
+                            break;
+                    }
+                }
+
+            }
+
+            window.Game = Game;
+        }());
+
+        // -----------------------
+        let map = document.querySelector(".map");
+
+
+        let $ = id => document.getElementById(id);
+
+        let user;
+
+        let open = document.querySelector(".openGame");
+        $("submit").onclick = function() {
+            document.querySelector(".box").style.display = "none";
+            user = $("text").value;
+            let game = new Game(map, user, document.querySelector(".boxClose"));
+            game.start();
+        }
+
+        open.onclick = function() {
+            let game = new Game(map, user, document.querySelector(".boxClose"));
+            game.start();
+            document.querySelector(".boxClose").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
