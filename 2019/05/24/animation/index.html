@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="LanHai bolg" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "Copied";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "Copy";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>animation动画 | LanHai bolg</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="default" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">LanHai bolg</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/lanhailogo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">文章</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/animation/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="蓝海">
+       <meta itemprop="description" content="一名正在脱发的前端工程师">
+       <meta itemprop="image" content="/images/lanhai.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="LanHai bolg">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">animation动画</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-24T12:02:09+08:00">2019-05-24 12:02:09</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>做了个类似jquery的动画函数封装<br><code>gitDemo =&gt;</code><a href="https://github.com/LanHai1/animation" target="_blank" rel="noopener">https://github.com/LanHai1/animation</a><br><img src="https://upload-images.jianshu.io/upload_images/12946880-5f2fe63703015a6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><ul>
+<li>三参数<pre><code>el 动画元素
+attrs 动画属性{key:value}
+callback 回调函数
+</code></pre></li>
+<li>1- 每次调用前先清除动画定时器 el.timeId</li>
+<li>2- 开启定时器</li>
+<li>3- 声明一个flag 属性是否全部到达目标点</li>
+<li>4- forin attrs<pre><code>判断key 是否是透明度 处理
+    获取元素当前状态 * 100
+    元素目标状态 * 100
+    每次执行步数
+        (目标位置-当前位置)/10
+            目标大于当前 向上取整 Math.ceil
+            目标小于当前 向下取整 Math.floor
+        当前位置 += 每次执行步数
+    当前位置 / 100
+    设置元素样式
+    判断是否还有值未到达目标点
+        (target / 100 != current)
+</code></pre></li>
+<li>flag = false<pre><code>其他属性处理
+    获取元素当前状态 =&gt; 取整
+    元素目标状态
+    每次执行步数
+        (目标位置-当前位置)/10
+            目标大于当前 向上取整 Math.ceil
+            目标小于当前 向下取整 Math.floor
+        当前位置 += 每次执行步数
+    设置元素样式
+    判断是否还有值未到达目标点
+        (target  != current)
+</code></pre></li>
+<li>flag = false</li>
+<li>5- 判断是否全部到达目标点<pre><code>清除动画定时器 el.timeId
+判断callback是否是函数
+    调用callback
+</code></pre><h4 id="xmind图解"><a href="#xmind图解" class="headerlink" title="xmind图解"></a>xmind图解</h4><img src="https://upload-images.jianshu.io/upload_images/12946880-86d67db50215f532.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br><code>样式</code><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">    position: absolute;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box1 &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: hotpink;</span><br><span class="line">    position: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>结构</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;button&quot; value=&quot;点击400&quot; id=&quot;btn1&quot;&gt;</span><br><span class="line">&lt;input type=&quot;button&quot; value=&quot;点击800&quot; id=&quot;btn2&quot;&gt;</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;box1&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>行为</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">let box = document.querySelector(&quot;.box&quot;);</span><br><span class="line">let box1 = document.querySelector(&quot;.box1&quot;);</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 根据id获取元素</span><br><span class="line"> * @param &#123;string&#125; id </span><br><span class="line"> */</span><br><span class="line">let $ = id =&gt; document.getElementById(id);</span><br><span class="line"></span><br><span class="line">$(&quot;btn1&quot;).onclick = function() &#123;</span><br><span class="line">    animation_s(box, &#123;</span><br><span class="line">        width: 300,</span><br><span class="line">        height: 600</span><br><span class="line">    &#125;, () =&gt; &#123;</span><br><span class="line">        animation_s(box, &#123;</span><br><span class="line">            left: 100,</span><br><span class="line">            opacity: 0.3</span><br><span class="line">        &#125;, () =&gt; &#123;</span><br><span class="line">            animation_s(box1, &#123;</span><br><span class="line">                left: 500,</span><br><span class="line">                height: 10</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">$(&quot;btn2&quot;).onclick = () =&gt; &#123;</span><br><span class="line">    animation_s(box1, &#123;</span><br><span class="line">        left: 500,</span><br><span class="line">        height: 10</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 缓动动画</span><br><span class="line"> * @param &#123;element&#125; el </span><br><span class="line"> * @param &#123;attributeJson&#123;key:value&#125;&#125; attrs </span><br><span class="line"> * @param &#123;fn&#125; callback </span><br><span class="line"> */</span><br><span class="line">function animation_s(el, attrs, callback) &#123;</span><br><span class="line">    // 每次调用前先清除已有的定时器</span><br><span class="line">    clearInterval(el.timeId);</span><br><span class="line">    el.timeId = setInterval(() =&gt; &#123;</span><br><span class="line">        // 全部到达目标点</span><br><span class="line">        let flag = true;</span><br><span class="line">        for (const key in attrs) &#123; // 还需考虑其他属性的处理 如background-color...</span><br><span class="line">            if (key == &quot;opacity&quot;) &#123; // 透明度处理</span><br><span class="line">                // 元素当前状态</span><br><span class="line">                let current = +(window.getComputedStyle(el)[key]) * 100;</span><br><span class="line">                // 元素目标状态</span><br><span class="line">                let target = attrs[key] * 100;</span><br><span class="line">                // 每次执行步数</span><br><span class="line">                // 目标大于当前 向上取整 =&gt; 目标小于当前 向下取整</span><br><span class="line">                let temp = target &gt; current ? Math.ceil((target - current) / 10) : Math.floor((target - current) / 10);</span><br><span class="line">                current += temp;</span><br><span class="line">                current = current / 100;</span><br><span class="line">                // 设置元素样式</span><br><span class="line">                el.style[key] = `$&#123;current&#125;`;</span><br><span class="line">                // 判断是否全部到达目标点</span><br><span class="line">                if (target / 100 != current) &#123;</span><br><span class="line">                    flag = false;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                // 元素当前状态</span><br><span class="line">                let current = parseInt(window.getComputedStyle(el)[key]);</span><br><span class="line">                // 元素目标状态</span><br><span class="line">                let target = attrs[key];</span><br><span class="line">                // 每次执行步数</span><br><span class="line">                // 目标大于当前 向上取整 =&gt; 目标小于当前 向下取整</span><br><span class="line">                let temp = target &gt; current ? Math.ceil((target - current) / 10) : Math.floor((target - current) / 10);</span><br><span class="line">                current += temp;</span><br><span class="line">                // 设置元素样式</span><br><span class="line">                el.style[key] = `$&#123;current&#125;px`;</span><br><span class="line">                // 判断是否全部到达目标点</span><br><span class="line">                if (target != current) &#123;</span><br><span class="line">                    flag = false;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (flag) &#123;</span><br><span class="line">            clearInterval(el.timeId);</span><br><span class="line">            // 回调函数</span><br><span class="line">            if (callback instanceof Function) &#123;</span><br><span class="line">                callback();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, 20)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/05/24/Front-end/" rel="next" title="前端题 n道"><i class="fas fa-angle-left"></i><span class="nav-title">前端题 n道</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/lanhai.jpg" alt="蓝海">
+  
+  <h1 class="author-name">蓝海</h1>
+  <h2 class="author-description">一名正在脱发的前端工程师</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#xmind图解"><span class="toc-text">xmind图解</span></a></li></ol></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links<p></p></div>
+      <ul>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://www.jianshu.com/u/d8804c6134a6" target="_blank">简书</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">蓝海</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

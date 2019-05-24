@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>我是蓝海 | LanHai bolg</title>
+    <title>定位当前地理位置 | LanHai bolg</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="default" data-spy="scroll" data-target=".list-group">
     
@@ -146,7 +146,7 @@
       </div>
       
       <div class="logo">
-        <img src="/images/logo.png" alt="logo">
+        <img src="/images/lanhailogo.png" alt="logo">
       </div>
       
     </div>
@@ -173,10 +173,10 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/hello-world/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/positionMap/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="蓝海">
-       <meta itemprop="description" content>
+       <meta itemprop="description" content="一名正在脱发的前端工程师">
        <meta itemprop="image" content="/images/lanhai.jpg">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -184,11 +184,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">我是蓝海</h1>
+      <h1 class="post-title" itemprop="name headline">定位当前地理位置</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-24T00:25:00+08:00">2019-05-24 00:25:00</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-24T11:50:37+08:00">2019-05-24 11:50:37</time></span>
         </span>
         
         
@@ -196,15 +196,76 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start1111"><a href="#Quick-Start1111" class="headerlink" title="Quick Start1111"></a>Quick Start1111</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+      <h4 id="使用-HTML5-Geolocation-API-来构建基于地理位置的应用～"><a href="#使用-HTML5-Geolocation-API-来构建基于地理位置的应用～" class="headerlink" title="使用 HTML5 Geolocation API 来构建基于地理位置的应用～"></a>使用 HTML5 Geolocation API 来构建基于地理位置的应用～</h4><p>各种浏览器对HTML5 Geolocation 的支持<br>浏览器 | 版本 | 只支持HTTPS版本</p>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>版本</th>
+<th>只支持HTTPS版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IE</td>
+<td>9+</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Edge</td>
+<td>12+</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>3.5+</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>5+</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>5+</td>
+<td>39</td>
+</tr>
+<tr>
+<td>iOS Safari</td>
+<td>3.2+</td>
+<td>10.2</td>
+</tr>
+<tr>
+<td>Android Browser</td>
+<td>2.1+</td>
+<td>56</td>
+</tr>
+<tr>
+<td>Chrome for Android</td>
+<td>57+</td>
+<td>5</td>
+</tr>
+<tr>
+<td>UC Browser for Android</td>
+<td>11.4+</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>出于安全考虑，部分浏览器只允许通过HTTPS协议使用 Geolocation API。在HTTP协议下使用Geolocation API 浏览器会抛出异常，在开发阶段，127.0.0.1和localhost 等本地域在两种协议下均可使用。</p>
+</blockquote>
+<p>Geolocation API 通过 navigator.geolocation 全局对象进行访问，第一次访问的时候会询问用户是否允许共享位置。</p>
+<p>判断浏览器是否支持 Geolocation API<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 判断浏览器属否支持获取位置</span><br><span class="line">if(navigator.geolocation)&#123;</span><br><span class="line">    console.log(&quot;可以获取&quot;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    console.log(&quot;不支持&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>实例代码如下：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    获取用户地理位置</span><br><span class="line">    &lt;input type=&quot;button&quot; value=&quot;点击获取位置&quot; id=&quot;btn&quot;&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        let btnBtn = document.getElementById(&apos;btn&apos;)</span><br><span class="line">        btnBtn.onclick = () =&gt; &#123; // 点击事件</span><br><span class="line">                getAdd()</span><br><span class="line">            &#125;</span><br><span class="line">            // 成功回调</span><br><span class="line">        let success = (position) =&gt; &#123;</span><br><span class="line">                console.log(`获取位置成功：$&#123;position.coords&#125;`);</span><br><span class="line">                console.log(position.coords); // 获取坐标信息</span><br><span class="line">                // coords的常用属性</span><br><span class="line">                console.log(position.coords.latitude); // 获取坐标纬度</span><br><span class="line">                console.log(position.coords.longitude); // 获取坐标经度</span><br><span class="line">                console.log(position.coords.accuracy); // 获取坐标精度，单位为米</span><br><span class="line">                console.log(position.timestamp); // 获取位置的时间戳</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            // 失败回调</span><br><span class="line">        let error = (positionErr) =&gt; &#123;</span><br><span class="line">            console.log(`获取位置失败：$&#123;positionErr.code&#125;+$&#123;positionErr.message&#125;`);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        let options = &#123;</span><br><span class="line">            enableHightAccuracy: false, // 获取高精度的位置信息，可能会增加响应时间，默认是false</span><br><span class="line">            timeout: 30000, // 设置超时时间，单位毫秒，如果到达设定的时间没获取到信息则回触发失败回调，默认值为0，无限大</span><br><span class="line">            maximumAge: 0 // 设置用户位置信息缓存的最大时间</span><br><span class="line">        &#125;</span><br><span class="line">        let getAdd = () =&gt; &#123;</span><br><span class="line">            navigator.geolocation.getCurrentPosition(success, error, options)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        // 判断浏览器属否支持获取位置</span><br><span class="line">        if(navigator.geolocation)&#123;</span><br><span class="line">            console.log(&quot;可以获取&quot;);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            console.log(&quot;不支持&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>当获取位置失败时，会调用失败回调(error函数)。返回的参数&lt;positionErr.code 标识错误的原因&gt;&lt;positionErr.message错误信息描述&gt;<br>positionErr.code 值</p>
+<ul>
+<li>UNKNOWN_ERROR(0): 其他错误</li>
+<li>PERMISSION_DENIED(1): 用户拒绝分享位置信息</li>
+<li>POSITION_UNAVAILABLE(2): 获取用户位置信息失败</li>
+<li>TIMEOUT(3): 获取用户位置信息超时</li>
+</ul>
 
     </main>
     <footer class="post-footer">
@@ -216,12 +277,12 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/2019/05/24/webAPI/" rel="next" title="webAPI"><i class="fas fa-angle-left"></i><span class="nav-title">webAPI</span></a>
+      <a href="/2019/05/24/typescript/" rel="next" title="TypeScript概括"><i class="fas fa-angle-left"></i><span class="nav-title">TypeScript概括</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/2019/05/24/magnifying-glass/" rel="prev" title="magnifying-glass 放大镜"><span class="nav-title">magnifying-glass 放大镜</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2019/05/24/webApp/" rel="prev" title="移动端Web开发"><span class="nav-title">移动端Web开发</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -248,7 +309,7 @@
   <img class="author-avatar" src="/images/lanhai.jpg" alt="蓝海">
   
   <h1 class="author-name">蓝海</h1>
-  <h2 class="author-description"></h2>
+  <h2 class="author-description">一名正在脱发的前端工程师</h2>
   <div class="site-count">
     
     
@@ -273,7 +334,7 @@
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>Table of Contents</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Quick-Start1111"><span class="toc-text">Quick Start1111</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#使用-HTML5-Geolocation-API-来构建基于地理位置的应用～"><span class="toc-text">使用 HTML5 Geolocation API 来构建基于地理位置的应用～</span></a></li></ol></div>
     </div>
     
     
@@ -337,7 +398,7 @@
           
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+         
         </div>
       </div>
     </div>

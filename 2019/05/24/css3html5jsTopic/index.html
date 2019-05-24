@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="LanHai bolg" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "Copied";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "Copy";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>html5+css3+基础JavaScript语法题 | LanHai bolg</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="default" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">LanHai bolg</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/lanhailogo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">文章</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/css3html5jsTopic/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="蓝海">
+       <meta itemprop="description" content="一名正在脱发的前端工程师">
+       <meta itemprop="image" content="/images/lanhai.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="LanHai bolg">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">html5+css3+基础JavaScript语法题</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-24T11:43:00+08:00">2019-05-24 11:43:00</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>一些很重要的点 都通过注释写在了代码里面</p>
+<ul>
+<li><p>求以下的i输出多少?</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var i = 10; // 全局作用域的this 是window</span><br><span class="line">function demo() &#123;</span><br><span class="line">    i = 20; // 函数中未写关键字直接赋值 i为全局变量 </span><br><span class="line">    for (var i = 0; i &lt; 10; i++) &#123; // 执行 10 次 当第十次的时候 i = 10 </span><br><span class="line">    //进行条件判断为false 跳出循环 (var 关键词 变量名相同 向上覆盖)</span><br><span class="line">        console.log(i); // 0 1 2 3 4 5 6 7 8 9</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for 循环 拆构</span><br><span class="line">    var i = 0；</span><br><span class="line">    for (; i &lt; 10;) &#123;</span><br><span class="line">        代码块</span><br><span class="line">        i++</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    console.log(i); // 10</span><br><span class="line">    console.log(this.i); // 10 函数中的this 是 window</span><br><span class="line">&#125;;</span><br><span class="line">demo();</span><br><span class="line">console.log(i); // 10</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>求以下输出的值</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    age: 18</span><br><span class="line">&#125;;</span><br><span class="line">// (&apos;age&apos; in obj) =&gt; 判断obj对象中是否存在age属性名 //true</span><br><span class="line">if (!(&apos;age&apos; in obj)) &#123; // ! 取反 (!true)=&gt; false </span><br><span class="line">    var a = 20</span><br><span class="line">    console.log(a)</span><br><span class="line">&#125; // 不会输入任何值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>arr的值为?</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,1,3,5,9]</span><br><span class="line">// 第一个参数 索引值-&gt;下标</span><br><span class="line">// 第二个参数是 从索引值开始删除几个元素</span><br><span class="line">arr.splice(1,1) // [1,1,3,5,9]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>请写出以下结果</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var name = &apos;hello window&apos;;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    name: &quot;objName&quot;,</span><br><span class="line">    getName: function () &#123;</span><br><span class="line">        // this.name =&gt; obj.name </span><br><span class="line">        console.log(this.name) // 这里的this是这个对象obj this-&gt;当前作用域</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.getName(); //打印什么? //“objName”</span><br><span class="line">// 两个等于对比值 </span><br><span class="line">//          obj.name == window.name</span><br><span class="line">//          &quot;objName&quot; == &quot;hello window&quot;</span><br><span class="line">console.log(obj.getName() == name); // false or true // false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将var str = [‘a’,’b’,’c’,3,4,5,’e’,’f’,’g’,’a’,’b’,’c’,’a’,’b’],写出3条js语句实现以下3个功能</p>
+</li>
+<li><p>去掉数组中的a,b,c字符,得出结果345efg ;</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, 3, 4, 5, &apos;e&apos;, &apos;f&apos;, &apos;g&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;a&apos;, &apos;b&apos;]</span><br><span class="line"></span><br><span class="line">function splice_abc(str) &#123;</span><br><span class="line">    // 正叙循环有可能删不干净 -&gt; 删除一个后 数组的长度就会改变 每个元素的索引值也会改变</span><br><span class="line">    for (let index = str.length; index &gt;= 0; index--) &#123; // 倒叙循环 </span><br><span class="line">        if (str[index] == &apos;a&apos; || str[index] == &apos;b&apos; || str[index] == &apos;c&apos;) &#123;</span><br><span class="line">            str.splice(index, 1)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return str</span><br><span class="line">&#125;</span><br><span class="line">console.log(splice_abc(arr))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将数组中的数字用中括号括起来,得出结果abc[3][4][5]efgabcab;</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, 3, 4, 5, &apos;e&apos;, &apos;f&apos;, &apos;g&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;a&apos;, &apos;b&apos;]</span><br><span class="line"></span><br><span class="line">function parentheses(str) &#123;</span><br><span class="line">    let new_str = &apos;&apos;;</span><br><span class="line">    for (let index = 0; index &lt; str.length; index++) &#123;</span><br><span class="line">        if (typeof str[index] == &quot;number&quot;) &#123; // 判断 该元素是否为 数字类型</span><br><span class="line">            str[index] = `[$&#123;str[index]&#125;]`</span><br><span class="line">        &#125;</span><br><span class="line">        new_str += str[index]</span><br><span class="line">    &#125;</span><br><span class="line">    return new_str</span><br><span class="line">&#125;</span><br><span class="line">console.log(parentheses(arr))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将数组中的数字都乘以2,得出结果 abc6810efgabcab;</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, 3, 4, 5, &apos;e&apos;, &apos;f&apos;, &apos;g&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;a&apos;, &apos;b&apos;]</span><br><span class="line"></span><br><span class="line">function mult(str) &#123;</span><br><span class="line">    let new_str = &apos;&apos;</span><br><span class="line">    for (let index = 0; index &lt; str.length; index++) &#123;</span><br><span class="line">        if (typeof str[index] == &quot;number&quot;) &#123; // 判断 该元素是否为 数字类型</span><br><span class="line">            str[index] = str[index] * 2</span><br><span class="line">        &#125;</span><br><span class="line">        new_str += str[index]</span><br><span class="line">    &#125;</span><br><span class="line">    return new_str</span><br><span class="line">&#125;</span><br><span class="line">console.log(mult(arr))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>css的选择器有哪些?优先级是怎样的?<br>选择器有：{<br>基础选择器<img src="https://upload-images.jianshu.io/upload_images/12946880-09e0d6d617479259.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>组合选择器<img src="https://upload-images.jianshu.io/upload_images/12946880-b4ac92507d328d6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>属性选择器(个人最常用的)<img src="https://upload-images.jianshu.io/upload_images/12946880-0da45104b94f9b78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>伪类选择器<img src="https://upload-images.jianshu.io/upload_images/12946880-80abd55cf83ef71b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>伪元素选择器<img src="https://upload-images.jianshu.io/upload_images/12946880-40356635096e7bba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+</li>
+</ul>
+<p>}<br>优先级：(从上到下)<br>!important<br>内联(1,0,0,0) 1000<br>id: (0,1,0,0) 100<br>类：(0,0,1,0) 10<br>伪类/属性<br>元素：(0,0,0,1) 1<br>通配符</p>
+<ul>
+<li>标准盒模型和怪异盒模型有什么区别?<br>标准盒模型: 一个块的总宽度 = width+padding 左右+margin 左右 + border 左右<br>怪异盒模型: 一个块的总宽度 = width + margin 左右<br>box-sizing:border-box<br>手机端用的更多 pc端也不少 </li>
+<li>将一个不定宽高的盒子设置水平垂直居中  方法越多越好</li>
+<li><p>通过 定位加 translate 无需手动计算值</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.con &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line">    background-color: coral;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.cent &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: hotpink;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 50%;</span><br><span class="line">    top: 50%;</span><br><span class="line">    transform: translate(-50%, -50%)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过定位加上 手动计算 设置margin</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.con &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line">    background-color: coral;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.cent &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: hotpink;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 50%;</span><br><span class="line">    top: 50%;</span><br><span class="line">    margin-top: -50px;</span><br><span class="line">    margin-left: -50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>父盒子设置为弹性盒子 水平居中 垂直居中属性</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.con &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line">    background-color: coral;</span><br><span class="line">    display: flex;</span><br><span class="line">    /* 弹性盒子 */</span><br><span class="line">    justify-content: center;</span><br><span class="line">    /* 水平居中 */</span><br><span class="line">    align-items: center;</span><br><span class="line">    /*垂直居中*/</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.cent &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: hotpink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将元素转换为表格特性</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.con &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 500px;</span><br><span class="line">    background-color: coral;</span><br><span class="line">    display: table-cell;</span><br><span class="line">    /* 作为一个表格单元格显示 td th*/</span><br><span class="line">    text-align: center;</span><br><span class="line">    /*文本居中*/</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.cent &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: hotpink;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    /* 行类块元素*/</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    /*把此元素放置在父元素的中部*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;con&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;cent&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>实现以下布局   左边固定宽度200px  右边自适应</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        * &#123;</span><br><span class="line">            padding: 0;</span><br><span class="line">            margin: 0;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .content &#123;</span><br><span class="line">            position: fixed;</span><br><span class="line">            left: 0;</span><br><span class="line">            top: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            display: flex;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .left &#123;</span><br><span class="line">            height: 100%;</span><br><span class="line">            width: 200px;</span><br><span class="line">            background-color: blueviolet;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .main &#123;</span><br><span class="line">            flex: 1;</span><br><span class="line">            background-color: brown;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;!-- 实现以下布局   左边固定宽度200px  右边自适应 --&gt;</span><br><span class="line">    &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用过哪些h5c3的新特性?<br>语义化的标签、表单的很多新属性、音屏、视频、canvas、webstorage、websocket、地理位置</p>
+</li>
+<li><p>封装一个函数,实现求最大值和最小值.</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">// 封装一个函数,实现求最大值和最小值.</span><br><span class="line">function getMaxMin(arr, fn) &#123;</span><br><span class="line">    let max = min = arr[0]</span><br><span class="line">    let type = typeof arr[0] == &quot;string&quot; // 判断数组的第一个元素是否为字符串</span><br><span class="line">    if (!fn) throw new Error(&apos;fn is no incoming&apos;) // 抛异常</span><br><span class="line">    for (let index = 0; index &lt; arr.length; index++) &#123;</span><br><span class="line">        if (type ? fn(max, arr[index]) &lt; 0 : arr[index] &gt; max) &#123;</span><br><span class="line">            max = arr[index]</span><br><span class="line">        &#125;</span><br><span class="line">        if (type ? fn(min, arr[index]) &gt; 0 : arr[index] &lt; min) &#123;</span><br><span class="line">            min = arr[index]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        max,</span><br><span class="line">        min</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 兼容代码 字符串做比较</span><br><span class="line">function jr(str1, str2) &#123;</span><br><span class="line">    if (str1.length &gt; str2.length) &#123;</span><br><span class="line">        return 1</span><br><span class="line">    &#125; else if (str1.length &lt; str2.length) &#123;</span><br><span class="line">        return -1</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return 0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let arr_n = [1, 2, 3, 4, 1, 2, 4, 8]</span><br><span class="line">let obj = getMaxMin(arr_n, jr)</span><br><span class="line">console.log(obj.max, obj.min)</span><br><span class="line"></span><br><span class="line">let arr = [&quot;sdas&quot;, &quot;sdsss&quot;, &quot;22&quot;, &quot;bsjbdjasdbsaj&quot;, &quot;1&quot;]</span><br><span class="line">let obj1 = getMaxMin(arr, jr)</span><br><span class="line">console.log(obj1.max, obj1.min)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>封装一个排序</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function sort_n(arr) &#123;</span><br><span class="line">    for (let row = 0; row &lt; arr.length; row++) &#123;</span><br><span class="line">        for (let index = 0; index &lt; arr.length - row; index++) &#123;</span><br><span class="line">            if (arr[index] &gt; arr[index + 1]) &#123;</span><br><span class="line">                let temp = arr[index]</span><br><span class="line">                arr[index] = arr[index + 1]</span><br><span class="line">                arr[index + 1] = temp</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let arr = [1, 2, 5, 6, 8, 4]</span><br><span class="line">console.log(sort_n(arr))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>控制台会输出什么,为什么会这样输出</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 声明的函数名、对象名、数组名 在内存中 存放在栈里面</span><br><span class="line">// 通过内存地址相关联</span><br><span class="line">// 函数体和形参列表、对象体、数组值 存放在堆里面</span><br><span class="line">// 复杂数据类型的变量与变量之间的赋值 不是直接将数据复制一份到变量中 是将内存地址复制一份给变量</span><br><span class="line">var a = &#123;age:18&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.age = 15;</span><br><span class="line">console.log(b.age) // 15</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>null 和 undefined的区别?<br>null 表示一个值被定义了 定义为“null”<br>undefined 表示一个值被声明了 但是未赋值<br>所以设置一个值为null是合理的 设置一个值为undefined是不合理的<br>null == undefined (true)<br>null === undefined (false) =&gt; 值相同 (boolean转换都为0) 但是数据类型不同</p>
+</li>
+<li><p>执行这段代码,输出的结果</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function test()&#123;</span><br><span class="line">console.log(a); // undefined</span><br><span class="line"></span><br><span class="line">console.log(foo()); // 2</span><br><span class="line">var a = 1;</span><br><span class="line">function foo()&#123;</span><br><span class="line">return 2;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">test()</span><br><span class="line">// 预解析 声明是函数和变量都会提升到作用域的最上面</span><br><span class="line">//     函数会将整个函数代码都提升</span><br><span class="line">//     变量只会提升变量的声明</span><br><span class="line">function test()&#123;</span><br><span class="line">	var a;</span><br><span class="line">	console.log(a); // undefined</span><br><span class="line">	function foo()&#123;</span><br><span class="line">		return 2;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(foo()) // 2</span><br><span class="line">	a = 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>请使用三元表达式完成下列判断</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">if(a &lt; 1)&#123;</span><br><span class="line">  a = 0</span><br><span class="line">&#125;else&#123;</span><br><span class="line">  a = 2</span><br><span class="line">&#125;</span><br><span class="line">// : 前面的为true ，: 后面的为false</span><br><span class="line">var a = a&lt;1?0:2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现数组去重   方法越多越好<br>var a = [1,3,4,6,1,1,9,4,3]</p>
+<ul>
+<li>双循环 -&gt;效率不高<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function getN(arr) &#123;</span><br><span class="line">    let now = [arr[0]] // 新数组 -&gt; 将传递进来的数组第一个元素push进去</span><br><span class="line">    for (let index = 0; index &lt; arr.length; index++) &#123; // 循环传递进来的数组</span><br><span class="line">        let flag = true // 声名一个flag 用来判断是否重复</span><br><span class="line">        for (let i = 0; i &lt; now.length; i++) &#123; // 循环新数组 </span><br><span class="line">            if (arr[index] === now[i]) &#123; // 判断是否有一样的元素</span><br><span class="line">                flag = false </span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (flag) &#123;</span><br><span class="line">            now.push(arr[index]) </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return now</span><br><span class="line">&#125;</span><br><span class="line">console.log(getN([1, 2, 11, 2, 1, 2, 5, 22, 11, 545, 12]))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>es6新方法</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// es6 新提供的方法</span><br><span class="line">// Set 数据不重复</span><br><span class="line">function es6_set(arr) &#123;</span><br><span class="line">    return new Set(arr)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(es6_set([1, 2, 11, 2, 1, 2, 5, 22, 11, 545, 12]))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>indexof</p>
+</li>
+<li>布局中,造成盒子margin塌陷的原因是什么? 怎么解决塌陷问题?<br>Margin 塌陷 是什么？<br>当父元素包裹着子元素(都为block块级元素)，当给子元素设置margin-top时。子元素没有位移 反而父元素位移了<br>如何解决？<br>给父元素 加border<br>给父元素 溢出隐藏 overflow: hidden;<br>给父元素 加浮动<br>给父元素 设置 display:table<br>给父元素 设置 position:fixed<br>给子元素 设置 display:inline-block<br>通过伪元素来解决margin塌陷</li>
+<li>如何清除浮动? 方法越多越好<br>额外标签法 在浮动标签的后面添加一个元素 该元素设置 clear:both<br>使用overflow 给父盒子设置 overflow:hidden<br>伪元素清除浮动<br>双伪元素清除浮动<br><a href="https://www.jianshu.com/p/25766fe5b34f" target="_blank" rel="noopener">https://www.jianshu.com/p/25766fe5b34f</a></li>
+</ul>
+
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/05/24/BlessingWall/" rel="next" title="祝福墙案例分析"><i class="fas fa-angle-left"></i><span class="nav-title">祝福墙案例分析</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/05/24/typescript/" rel="prev" title="TypeScript概括"><span class="nav-title">TypeScript概括</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/lanhai.jpg" alt="蓝海">
+  
+  <h1 class="author-name">蓝海</h1>
+  <h2 class="author-description">一名正在脱发的前端工程师</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links<p></p></div>
+      <ul>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://www.jianshu.com/u/d8804c6134a6" target="_blank">简书</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">蓝海</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
