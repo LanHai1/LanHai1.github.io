@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="LanHai bolg" type="application/atom+xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var cb = null;
+      var els = $(".post figure.highlight");
+      if (els.length) {
+        // Enabled Hexo highlight line number.
+        $(els).each(function (i, e) {
+          $(e).before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout with line number.
+              return trigger.nextElementSibling.firstChild.firstChild.firstChild.lastChild.firstChild.firstChild;
+          }
+        });
+      } else {
+        // Disabled Hexo highlight line number.
+        els = $(".post pre code");
+        $(els).each(function (i, e) {
+          // Add button before pre, not code.
+          $(e).parent().before("<button class=\"copy button\">Copy</button>");
+        });
+        cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // nextElementSibling is figure,highlight.
+              // And following is the sequence of Hexo's internal
+              // highlight layout without line number.
+              return trigger.nextElementSibling.firstChild;
+          }
+        });
+      }
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "Copied";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "Copy";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>TypeScript概括 | LanHai bolg</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="default" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">LanHai bolg</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">文章</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/typescript/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="蓝海">
+       <meta itemprop="description" content>
+       <meta itemprop="image" content="/images/lanhai.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="LanHai bolg">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">TypeScript概括</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-24T11:44:37+08:00">2019-05-24 11:44:37</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h3 id="浅谈-开篇前言"><a href="#浅谈-开篇前言" class="headerlink" title="浅谈-开篇前言"></a>浅谈-开篇前言</h3><p>TypeScript是JavaScript的超集（遵循ECMAScript6语法）， 这个语言添加了基于类的面向对象编程。TypeScript作为JavaScript很大的一个语法糖，本质上是类似于css的less、sass，都是为了易于维护、开发，最后还是编译成JavaScript，只要是js可以运行的地方它都可以运行。</p>
+<h5 id="ES是什么？ES6和ES5之间的关系？和JS和TS的关系？"><a href="#ES是什么？ES6和ES5之间的关系？和JS和TS的关系？" class="headerlink" title="ES是什么？ES6和ES5之间的关系？和JS和TS的关系？"></a>ES是什么？ES6和ES5之间的关系？和JS和TS的关系？</h5><p>简单来说ES就是一种规范，ES6和ES5就是这个规范的不同版本，JS实现了ES5，TS实现了ES6，JS和TS是客户端不同的版本。</p>
+<h5 id="TypeScript相对于JavaScript的优势"><a href="#TypeScript相对于JavaScript的优势" class="headerlink" title="TypeScript相对于JavaScript的优势"></a>TypeScript相对于JavaScript的优势</h5><ul>
+<li>支持 <strong>ES6</strong> 的规范</li>
+<li>强大的 <strong>IDE</strong> 支持<br>  2.1 <strong>类型检查</strong><br><em>为变量指定类型 -&gt; 减少开发阶段的几率</em><br> 2.2 <strong>语法提示</strong><br><em>根据上下文，把所可能需要的类、变量方法、关键字都会有提示 -&gt; 提高开发效率</em><br>2.3 <strong>重构</strong><br><em>方便修改变量、方法名、文件名(IDE会自动修改) -&gt; 提高代码质量和效率</em></li>
+<li>angular2 的开发语言<h4 id="学习TypeScript的收益"><a href="#学习TypeScript的收益" class="headerlink" title="学习TypeScript的收益"></a>学习TypeScript的收益</h4></li>
+<li>强大的静态类型系统</li>
+<li>完善的内部代码库</li>
+<li>几乎所有的<strong>API</strong>都能得到准确的智能提示</li>
+<li>可以帮助团队更好的理解架构内容的数据流向<h3 id="搭建TS开发环境"><a href="#搭建TS开发环境" class="headerlink" title="搭建TS开发环境"></a>搭建TS开发环境</h3><code>sudo npm install -g typescript</code><blockquote>
+<p>目前的主流浏览器还不完全支持ES6的语法 所以目前想要在浏览器运行TS代码需要Compiler编译器来将TS代码转换为浏览器支持的JS代码</p>
+</blockquote>
+</li>
+</ul>
+<p><code>tsc 文件名.ts</code><br>文件名.ts -&gt; 文件名.js</p>
+<h4 id="Type类型"><a href="#Type类型" class="headerlink" title="Type类型"></a>Type类型</h4><p><em>所有类型都是any类型的子类型</em></p>
+<p><strong>元类型</strong>(<em>primitive types</em>)<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">number、boolean、string、null、undefined</span><br></pre></td></tr></table></figure></p>
+<p><strong>对象类型</strong>(<em>object types</em>)<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">所有类、模块、接口、字面量</span><br></pre></td></tr></table></figure></p>
+<h2 id="TypeScript-新特性"><a href="#TypeScript-新特性" class="headerlink" title="TypeScript 新特性"></a>TypeScript 新特性</h2><h4 id="字符串新类型"><a href="#字符串新类型" class="headerlink" title="字符串新类型"></a>字符串新类型</h4><ul>
+<li><p>多行字符串</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(`</span><br><span class="line">&lt;a&gt;1&lt;/a&gt;</span><br><span class="line">&lt;sapn&gt;2&lt;/span&gt;</span><br><span class="line">`)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字符串模版</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let tt= 1</span><br><span class="line">console.log(`你好我叫$&#123;tt&#125;`)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自动拆分字符串</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function test_n(template,name,age)&#123;</span><br><span class="line">    console.log(template)</span><br><span class="line">    console.log(name)</span><br><span class="line">    console.log(age)</span><br><span class="line">&#125;</span><br><span class="line">var myname = &quot;兰海&quot;</span><br><span class="line">var getAge = ()=&gt;&#123;</span><br><span class="line">    return 19</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line">直接函数调用 函数名`` </span><br><span class="line">-&gt;会将里面的 模版string 作为第一个参数 返回一个数组[&apos;我叫&apos;,&apos;，今年&apos;,&apos;!&apos;] 根据模版字符串切割</span><br><span class="line">-&gt;第一个模版和第二个模版分别对应函数中的第二第三参数 只会返回对应的值 // 兰海  // 19</span><br><span class="line">*/</span><br><span class="line">test_n`我叫$&#123;myname&#125;，今年$&#123;getAge()&#125;!`</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="参数新类型"><a href="#参数新类型" class="headerlink" title="参数新类型"></a>参数新类型</h4><ul>
+<li>参数类型<blockquote>
+<p>在参数名称后面使用冒号来指定参数的类型<br>类型推断机制 -&gt; 根据编写的值来设定该变量的参数类型<br>(自定义类型)(字符串数组类型)(数字数组类型)(元组类型)(联合类型)(显式类型)</p>
+</blockquote>
+</li>
+</ul>
+<p><em>设置参数类型 类型推断机制</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var myname: string = &quot;兰海&quot;</span><br><span class="line"></span><br><span class="line">//-&gt; [ts] 后续变量声明必须属于同一类型。变量“myname”必须属于类型“string”，但此处却为类型“number”。</span><br><span class="line">// 因为在前面已经定义了变量的类型 所以后续再给变量赋值必须遵循之前声明的类型</span><br><span class="line">var myname = 1; // 报错</span><br></pre></td></tr></table></figure></p>
+<p><em>any 其他类型 -&gt; 元类型</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// any 所有类型都可以</span><br><span class="line">var myts1: any = 10</span><br><span class="line">myts1 = &quot;你好&quot;</span><br><span class="line"></span><br><span class="line">var myts2: boolean = true</span><br><span class="line">var myts3: string = &quot;str&quot;</span><br><span class="line">var myts4: number = 1</span><br><span class="line">var myts5: null = null</span><br><span class="line">var myts6: undefined = undefined</span><br></pre></td></tr></table></figure></p>
+<p><em>函数返回值</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// :void 该函数不需要任何返回值</span><br><span class="line">function test(): void &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// :any 该函数可以返回任何类型的返回值</span><br><span class="line">function test2(): any &#123;</span><br><span class="line">    return &quot;any&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 注意除了 :void 和 :any 以外其他声明的类型 都必须return一个值</span><br><span class="line"></span><br><span class="line">// 可以规定返回值类型 string number boolean null ....</span><br><span class="line">function test3(): string &#123;</span><br><span class="line">    return &quot;1&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 还可以设置函数的 形参的类型</span><br><span class="line">function test4(x: number, y: string): string &#123;</span><br><span class="line">    return &quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">// 在函数调用的时候 实参也必须遵循设置的类型</span><br><span class="line">test4(1,&apos;2&apos;)</span><br></pre></td></tr></table></figure></p>
+<p><em>自定义类型</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">    age: number;</span><br><span class="line">    name: string;</span><br><span class="line">&#125;</span><br><span class="line">var per: Person = new Person()</span><br><span class="line">per.age = 1</span><br><span class="line">per.name = &quot;兰海&quot;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>默认参数</p>
+<blockquote>
+<p>在参数声明的后面用等号来指定参数的默认值<br>(在参数名称后面用 <strong>:</strong> 指定参数的<strong>类型</strong>)<br>(在参数名称后面用 <strong>=</strong> 指定参数的<strong>默认值</strong>)<br><em>注意:带默认值的参数要声明在最后面！</em></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 指定参数的默认值</span><br><span class="line">// 不传参数会报错 所以可以设置默认值</span><br><span class="line">// 带默认值的参数一定要声明在最后面！</span><br><span class="line">function test6(x:number,y:number = 2):any&#123;</span><br><span class="line">    console.log(x,y)</span><br><span class="line">    return y</span><br><span class="line">&#125;</span><br><span class="line">var ts = test6(12)</span><br><span class="line">console.log(ts)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>可选参数</p>
+<blockquote>
+<p>在参数声明的后面用问号来指定参数为可选<br><em>注意:可选的参数要声明在最后面！默认值和可选不能同时设置，可选参数🉑️和指定参数类型一起设置</em></p>
+</blockquote>
+</li>
+</ul>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 参数可选 ? 可以传递也可以不传递</span><br><span class="line">// 注意 在函数内部得处理可选参数</span><br><span class="line">// 带可选的参数一定要声明在最后面 不能同时设置可选和默认值！</span><br><span class="line">function test7(x: string, y?: number) &#123;</span><br><span class="line">    console.log(x)</span><br><span class="line">    if (y) &#123;</span><br><span class="line">        console.log(`参数已传递`)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        console.log(y,`参数未传递`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">test7(&quot;11&quot;)</span><br><span class="line">test7(&quot;122&quot;,999)</span><br></pre></td></tr></table></figure>
+<h4 id="函数新类型"><a href="#函数新类型" class="headerlink" title="函数新类型"></a>函数新类型</h4><ul>
+<li><p>Rest and Spread 操作符 (…)</p>
+<blockquote>
+<p>用来声明任意数量的方法参数</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 用来声明任意数量的方法参数 </span><br><span class="line">// agrss -&gt; arguments 伪数组</span><br><span class="line">function ts1(...argss)&#123;</span><br><span class="line">    argss.forEach(arg =&gt; &#123;</span><br><span class="line">        console.log(arg)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">ts1(1,2,3,4,5,6)</span><br><span class="line">ts1(1,2)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>generator 函数</p>
+<blockquote>
+<p>控制函数的执行过程，手工暂停和恢复代码执行 (* yield)</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function* ts3() &#123;</span><br><span class="line">    console.log(&apos;start&apos;)</span><br><span class="line">    yield</span><br><span class="line">    console.log(&apos;center&apos;)</span><br><span class="line">    yield</span><br><span class="line">    console.log(&apos;end&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var ts3_3 = ts3()</span><br><span class="line">ts3_3.next() // statt</span><br><span class="line">ts3_3.next() // center</span><br><span class="line">ts3_3.next() // end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function* getStock(stock) &#123;</span><br><span class="line">    while (true) &#123;</span><br><span class="line">        yield Math.random() * 100</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var stockGenerator = getStock(&apos;BaiDu&apos;)</span><br><span class="line">var limPrice = 15</span><br><span class="line">var price = 100</span><br><span class="line">// 当返回的值大于15会一直循环 小于15就会停止循环</span><br><span class="line">while (price &gt; limPrice) &#123;</span><br><span class="line">    price = stockGenerator.next().value</span><br><span class="line">    console.log(`the generator return $&#123;price&#125;`)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>destructuring析构表达式</p>
+<blockquote>
+<p>通过表达式将对象或数组拆解成任意数量的变量<br>直接将对象里对应名称的变量定义和赋值到外部</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// var &#123;a,b&#125; = 对象 直接将对象里对应名称的变量定义和赋值到外部</span><br><span class="line">// 注意 析构表达式里面的变量要和对象里面的变量的名字是相同的</span><br><span class="line">function ts6() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        name_t: &apos;蓝海&apos;,</span><br><span class="line">        age: 18</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var &#123; name_t, age &#125; = ts6()</span><br><span class="line">console.log(name)</span><br><span class="line">console.log(age)</span><br><span class="line"></span><br><span class="line">// 如果需要后续自定义变量名</span><br><span class="line">var &#123; name_t: myname, age &#125; = ts6()</span><br><span class="line">console.log(myname)</span><br><span class="line">console.log(age);</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p><em>嵌套变量取值</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 取嵌套属性</span><br><span class="line">var obj = &#123;</span><br><span class="line">    t1: &apos;睡觉睡觉&apos;,</span><br><span class="line">    t2: &#123;</span><br><span class="line">        ts2_1: &quot;其擦好&quot;,</span><br><span class="line">        ts2_2: &quot;好的&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var &#123; t1, t2: &#123; ts2_2 &#125; &#125; = obj</span><br><span class="line">console.log(t1)</span><br><span class="line">console.log(ts2_2)</span><br></pre></td></tr></table></figure></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// var [1,2,3,4] = 数组 直接将数组里对应名称的变量定义和赋值到外部</span><br><span class="line">var arr = [1, 2, 3, 4]</span><br><span class="line">var [num1, num2] = arr</span><br><span class="line">console.log(num1, num2) // 1 2</span><br><span class="line"></span><br><span class="line">var [, , num1, num2] = arr</span><br><span class="line">console.log(num1, num2) // 3 4</span><br><span class="line"></span><br><span class="line">var [num1, , , num2] = arr // 1 4</span><br><span class="line">console.log(num1, num2)</span><br><span class="line"></span><br><span class="line">var [num1, , num2] = arr // 1 3</span><br><span class="line">console.log(num1, num2)</span><br><span class="line"></span><br><span class="line">var [num1, num2, ...other] = arr</span><br><span class="line">console.log(num1, num2, other) // 1 2 arr[3,4]</span><br></pre></td></tr></table></figure>
+<p><em>析构表达式 结合 Rest and Spread 操作符</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 2, 3, 4]</span><br><span class="line">function getArr([num1, num2, ...other]) &#123;</span><br><span class="line">    console.log(num1, num2, other)</span><br><span class="line">&#125;</span><br><span class="line">getArr(arr)</span><br></pre></td></tr></table></figure></p>
+<h4 id="表达式和循环"><a href="#表达式和循环" class="headerlink" title="表达式和循环"></a>表达式和循环</h4><ul>
+<li>箭头函数<blockquote>
+<p>用来声明匿名函数，消除传统匿名函数的this指针问题(setInterval)</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = (ag1, ag2) =&gt; ag1 + ag2</span><br><span class="line"></span><br><span class="line">var retarr = arr(1, 2)</span><br><span class="line">console.log(retarr) // 3</span><br><span class="line"></span><br><span class="line">var myarr: Array&lt;number&gt; = [1, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">console.log(myarr.filter(value =&gt; value % 2 == 0)) // arr[2,4]</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p><em>解决this指向</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var arr_n = (name_n) =&gt; &#123;</span><br><span class="line">    this.name_n = name_n</span><br><span class="line">    setInterval(() =&gt; &#123;</span><br><span class="line">        console.log(`name is:$&#123;this.name_n&#125;`) // 这里的thi还是全局的this 并不是函数的this</span><br><span class="line">    &#125;, 1000)</span><br><span class="line">&#125;</span><br><span class="line">arr_n(&quot;兰海&quot;)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>循环<blockquote>
+<p>forEach()、for in、for of</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// for of 可以打印字符串</span><br><span class="line">var arr_ss = []</span><br><span class="line">for (const iterator of &quot;我是一个字符串&quot;) &#123;</span><br><span class="line">    arr_ss.push(iterator)</span><br><span class="line">    console.log(iterator)</span><br><span class="line">&#125;</span><br><span class="line">console.log(arr_ss) //  [&quot;我&quot;, &quot;是&quot;, &quot;一&quot;, &quot;个&quot;, &quot;字&quot;, &quot;符&quot;, &quot;串&quot;]</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h2 id="面向对象特性"><a href="#面向对象特性" class="headerlink" title="面向对象特性"></a>面向对象特性</h2><h4 id="类-class"><a href="#类-class" class="headerlink" title="类(class)"></a>类(class)</h4><blockquote>
+<p>类是TypeScript的核心，使用TypeScript平时是，大部分代码都写在类里面<br>(类的定义、构造函数、类的继承)</p>
+</blockquote>
+<ul>
+<li>访问控制符<br><code>public</code> ：类的内部外部都能访问(默认)<br><code>private</code> ：只能在类的内部访问(私有的)<br><code>protected</code> ：能在类的内部和子类(继承)中使用(受保护的)</li>
+<li><p>类的构造函数</p>
+<blockquote>
+<p>constructor(){} 不能在外部访问到，只有在类的实例化的时候才会被调用(1次)<br><em>用途:该类实例化的时候必须带某个参数</em></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class person &#123;</span><br><span class="line">    // 构造函数 </span><br><span class="line">    // 该类实例化的时候必须带ages 属性</span><br><span class="line">    constructor(public ages:number)&#123; // 在构造函数上必须明确声明访问控制符</span><br><span class="line">        this.ages = ages </span><br><span class="line">        console.log(`只会在实例化过后执行一次`)</span><br><span class="line">    &#125;</span><br><span class="line">    public name_n; // public 公开的 默认</span><br><span class="line">    private food; // prevate 私有的 只能在类的内部访问</span><br><span class="line">    protected eat() &#123; // protected 受保护的 只能在类的内部和子类&#123;继承&#125;中使用</span><br><span class="line">        console.log(`$&#123;this.name_n&#125;在吃$&#123;this.food&#125;`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var per1: person = new person(1)</span><br><span class="line">per1.name_n = &quot;兰海&quot;</span><br><span class="line">console.log(per1.ages)</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>类的继承</p>
+<blockquote>
+<p>子类 extends 父类<br>super() 调用父类的构造函数<br>super.fn() 调用父类的方法</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class persons &#123;</span><br><span class="line">    // 必须传入名字</span><br><span class="line">    constructor(public name_n: string) &#123;</span><br><span class="line">        this.name_n = name_n</span><br><span class="line">        console.log(`haha`)</span><br><span class="line">    &#125;</span><br><span class="line">    private age: number;</span><br><span class="line">    public eat() &#123;</span><br><span class="line">        console.log(`$&#123;this.name_n&#125;在吃东西`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// extends 继承来的函数不能声明构造器 可以使用super()</span><br><span class="line">class student extends persons &#123;</span><br><span class="line">    constructor(name_n: string) &#123;</span><br><span class="line">        super(name_n) // 调用父类的构造函数 并执行函数</span><br><span class="line">    &#125;</span><br><span class="line">    public sex: string</span><br><span class="line">    public work() &#123;</span><br><span class="line">        super.eat() // 调用父类的函数(方法)</span><br><span class="line">        console.log(`工作$&#123;super.name_n&#125;`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var stu = new student(&quot;兰海&quot;);</span><br><span class="line">stu.eat()</span><br><span class="line">stu.work()</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h4 id="泛型-generic"><a href="#泛型-generic" class="headerlink" title="泛型(generic)"></a>泛型(generic)</h4><blockquote>
+<p>参数化的类型，一般用来限制集合(数组)里面值的数据类型<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 尖括号里面的就是泛型 规定arr数组里面的值只能是number类型</span><br><span class="line">var arr: Array&lt;number&gt; = new Array()</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="接口-Interface"><a href="#接口-Interface" class="headerlink" title="接口(Interface)"></a>接口(Interface)</h4><blockquote>
+<p>用来建立某种代码约定，使得其它开发者在调用某个方法或创建新的类时必须遵循接口所定义的代码约定</p>
+<ul>
+<li>接口Interface 用户规定参数的类型</li>
+<li>implements 实现某接口的类 必须实现该接口中的方法<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// interface 规定参数的类型</span><br><span class="line">interface IPerson &#123;</span><br><span class="line">    name_n: string,</span><br><span class="line">    age?: number</span><br><span class="line">&#125;</span><br><span class="line">class Person &#123;</span><br><span class="line">    constructor(public config: IPerson) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var p1 = new Person(&#123;</span><br><span class="line">    name_n: &quot;兰&quot;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// implements 实现某接口的类，必须实现该接口中的方法</span><br><span class="line">interface Ipers&#123;</span><br><span class="line">    eat();</span><br><span class="line">&#125;</span><br><span class="line">class per implements Ipers &#123;</span><br><span class="line">    eat()&#123;</span><br><span class="line">        console.log(`实现接口中的方法`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="模块-Module"><a href="#模块-Module" class="headerlink" title="模块(Module)"></a>模块(Module)</h4><blockquote>
+<p>模块可以帮助开发者将代码分割为可重用的单元，开发者可以自己决定将模块中的哪些资源(类、方法、变量)暴露出去供外部使用，一个文件就是一个方法</p>
+</blockquote>
+<ul>
+<li><code>export</code> 对外暴露</li>
+<li><code>import</code> 引入<h4 id="注释-annotation"><a href="#注释-annotation" class="headerlink" title="注释(annotation)"></a>注释(annotation)</h4><blockquote>
+<p>注解为程序的元素(类、方法、变量)加上更直观更明了的说明，这些说明信息与程序的业务逻辑无关，而是供指定的工具或框架使用的</p>
+</blockquote>
+<h4 id="类型定义文件-d-ts"><a href="#类型定义文件-d-ts" class="headerlink" title="类型定义文件(*.d.ts)"></a>类型定义文件(*.d.ts)</h4><blockquote>
+<p>类型定义文件用来帮助开发者在TypeScript中使用已有的js工具包如果:jquery</p>
+</blockquote>
+</li>
+</ul>
+<p><code>npm install @types/jquery</code></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>TypeScript的好处很明显，在编译的时候就能检查出很多语法问题，而不是在运行后，不过由于ts是基于类的面向对象编程，如果是纯前端的人员(没有后端的语言基础)，那么用起来会比较吃力。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12946880-e55d8a924b377a8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="xmind知识导图"></p>
+<h4 id="极致的代码提示"><a href="#极致的代码提示" class="headerlink" title="极致的代码提示"></a>极致的代码提示</h4><h4 id="极致的检查错误"><a href="#极致的检查错误" class="headerlink" title="极致的检查错误"></a>极致的检查错误</h4><h4 id="极致的代码重构"><a href="#极致的代码重构" class="headerlink" title="极致的代码重构"></a>极致的代码重构</h4><h4 id="极致的模块管理"><a href="#极致的模块管理" class="headerlink" title="极致的模块管理"></a>极致的模块管理</h4><h4 id="极致的JS支持"><a href="#极致的JS支持" class="headerlink" title="极致的JS支持"></a>极致的JS支持</h4><h4 id="极致的ES6"><a href="#极致的ES6" class="headerlink" title="极致的ES6"></a>极致的ES6</h4>
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/2019/05/24/css3html5jsTopic/" rel="next" title="html5+css3+基础JavaScript语法题"><i class="fas fa-angle-left"></i><span class="nav-title">html5+css3+基础JavaScript语法题</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/2019/05/24/positionMap/" rel="prev" title="定位当前地理位置"><span class="nav-title">定位当前地理位置</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control">
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/lanhai.jpg" alt="蓝海">
+  
+  <h1 class="author-name">蓝海</h1>
+  <h2 class="author-description"></h2>
+  <div class="site-count">
+    
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#浅谈-开篇前言"><span class="toc-text">浅谈-开篇前言</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#ES是什么？ES6和ES5之间的关系？和JS和TS的关系？"><span class="toc-text">ES是什么？ES6和ES5之间的关系？和JS和TS的关系？</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#TypeScript相对于JavaScript的优势"><span class="toc-text">TypeScript相对于JavaScript的优势</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#学习TypeScript的收益"><span class="toc-text">学习TypeScript的收益</span></a></li></ol><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#搭建TS开发环境"><span class="toc-text">搭建TS开发环境</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#Type类型"><span class="toc-text">Type类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#TypeScript-新特性"><span class="toc-text">TypeScript 新特性</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#字符串新类型"><span class="toc-text">字符串新类型</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#参数新类型"><span class="toc-text">参数新类型</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#函数新类型"><span class="toc-text">函数新类型</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#表达式和循环"><span class="toc-text">表达式和循环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#面向对象特性"><span class="toc-text">面向对象特性</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#类-class"><span class="toc-text">类(class)</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#泛型-generic"><span class="toc-text">泛型(generic)</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#接口-Interface"><span class="toc-text">接口(Interface)</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#模块-Module"><span class="toc-text">模块(Module)</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#注释-annotation"><span class="toc-text">注释(annotation)</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#类型定义文件-d-ts"><span class="toc-text">类型定义文件(*.d.ts)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#总结"><span class="toc-text">总结</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#极致的代码提示"><span class="toc-text">极致的代码提示</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#极致的检查错误"><span class="toc-text">极致的检查错误</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#极致的代码重构"><span class="toc-text">极致的代码重构</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#极致的模块管理"><span class="toc-text">极致的模块管理</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#极致的JS支持"><span class="toc-text">极致的JS支持</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#极致的ES6"><span class="toc-text">极致的ES6</span></a></li></ol></li></div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links<p></p></div>
+      <ul>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/" target="_blank">Weibo</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-link"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://github.com/LanHai1" target="_blank">GitHub</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://www.jianshu.com/u/d8804c6134a6" target="_blank">简书</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">蓝海</span><span class="year"><i class="far fa-copyright"></i>2019</span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
