@@ -197,15 +197,16 @@
             starty = e.touches[0].pageY;
             // e.preventDefault()
         }
-        //手指接触屏幕
-        if (!this.flag) {
-            document.addEventListener("touchstart", tocuhS, false);
-            this.flag = true;
-        } else {
-            console.log(11)
-            document.removeEventListener("touchstart", tocuhS, false);
-            this.flag = false;
-        }
+        // //手指接触屏幕
+        // if (!this.flag) {
+        //     document.addEventListener("touchstart", tocuhS, false);
+        //     this.flag = true;
+        // } else {
+        //     console.log(11)
+        //     document.removeEventListener("touchstart", tocuhS, false);
+        //     this.flag = false;
+        // }
+        document.addEventListener("touchstart", tocuhS, false);
 
         //手指离开屏幕
         document.addEventListener("touchend", function(e) {
