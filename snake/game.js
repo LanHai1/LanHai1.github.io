@@ -8,9 +8,6 @@
     }, {
         name: "兰海",
         score: 2
-    }, {
-        name: "蓝海",
-        score: 1
     }];
     let userEl = [];
 
@@ -44,14 +41,6 @@
         this.ulScore.style.position = "fixed"
 
 
-        // for (let i = 0; i < userList.length; i++) {
-        //     this.liScore = document.createElement("li");
-        //     this.liScore.innerHTML = `${userList[i].name} ------ ${userList[i].score}`;
-        //     this.ulScore.appendChild(this.liScore);
-        //     this.liScore.style.fontSize = "30px";
-        //     this.liScore.style.fontWeight = 400;
-        //     userEl.push(this.liScore)
-        // }
 
 
         this.span = document.createElement("span")
@@ -100,7 +89,6 @@
             this.userStorage();
 
             removeUserEl();
-
 
             for (let i = 0; i < userList.length; i++) {
                 this.liScore = document.createElement("li");
@@ -187,31 +175,39 @@
         }, {
             name: "兰海",
             score: 2
-        }, {
-            name: "蓝海",
-            score: 1
         }];
 
         // 本地数据存储
-        // localStorage.setItem("snakeLocal", JSON.stringify(tsuserList));
 
         userList = JSON.parse(localStorage.getItem("snakeLocal")) || tsuserList;
 
-        // userList = JSON.parse(localStorage.getItem("snakeLocal"))
-
-
+        var didFind = false;
         for (let i = 0; i < userList.length; i++) {
-
-            if (userList[i].score < maxScore.score) {
-                let temp = userList[i];
-                userList[i] = maxScore;
-                maxScore = temp;
+            if (userList[i].name == maxScore.name) {
+                if (userList[i].score < maxScore.score) {
+                    userList[i] = maxScore;
+                }
+                didFind = true;
+                break;
             }
-
         };
-        // 本地数据存储
-        localStorage.setItem("snakeLocal", JSON.stringify(tsuserList));
 
+        // 排序
+        for (let j = 0; j < userList.length; j++) {
+            for (let i = 0; i < userList.length - 1 - j; i++) {
+                if (userList[i].score < userList[i + 1].score) {
+                    let temp = userList[i];
+                    userList[i] = userList[i + 1];
+                    userList[i + 1] = temp;
+                }
+            }
+        }
+
+        if (!didFind) {
+            userList.push(maxScore)
+        }
+        // 本地数据存储
+        localStorage.setItem("snakeLocal", JSON.stringify(userList));
     }
 
     window.Game = Game;
