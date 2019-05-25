@@ -192,6 +192,7 @@
         }
 
         function tocuhS(e) {
+            e = e || window.event;
             startx = e.touches[0].pageX;
             starty = e.touches[0].pageY;
             e.preventDefault()
@@ -201,6 +202,7 @@
             document.addEventListener("touchstart", tocuhS, false);
             this.flag = true;
         } else {
+            console.log(11)
             document.removeEventListener("touchstart", tocuhS, false);
             this.flag = false;
         }
@@ -211,7 +213,7 @@
             endx = e.changedTouches[0].pageX;
             endy = e.changedTouches[0].pageY;
             var direction = getDirection(startx, starty, endx, endy);
-            e.preventDefault()
+            // e.preventDefault()
             switch (direction) {
                 case 1:
                     if (that.snake.direction != "bottom") {
