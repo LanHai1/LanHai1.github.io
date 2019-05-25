@@ -206,7 +206,8 @@
         //     document.removeEventListener("touchstart", tocuhS, false);
         //     this.flag = false;
         // }
-        document.addEventListener("touchstart", tocuhS, { passive: false });
+        // document.addEventListener("touchstart", tocuhS, { passive: false });
+        document.addEventListener("touchstart", tocuhS);
 
         //手指离开屏幕
         document.addEventListener("touchend", function(e) {
