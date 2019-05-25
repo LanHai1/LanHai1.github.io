@@ -195,7 +195,7 @@
             e = e || window.event;
             startx = e.touches[0].pageX;
             starty = e.touches[0].pageY;
-            e.preventDefault()
+            // e.preventDefault()
         }
         //手指接触屏幕
         if (!this.flag) {
