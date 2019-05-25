@@ -11,6 +11,8 @@
     }];
     let userEl = [];
 
+
+
     function Game(map, user, open) {
         this.open = open; // 重开
         this.user = user || "游客";
@@ -18,6 +20,7 @@
         this.color = new Color();
         this.food = new Food(this.color);
         this.snake = new Snake();
+        this.flag = false;
 
         // 游戏分数
         this.scoreUser = this.snake.body.length - 3;
@@ -40,9 +43,6 @@
         this.ulScore.style.margin = "50px 40px";
         this.ulScore.style.position = "fixed"
 
-
-
-
         this.span = document.createElement("span")
         this.span.innerHTML = `${this.user},您的分数为:${this.scoreUser}`;
         this.span.style.position = "fixed";
@@ -52,7 +52,6 @@
         this.map.appendChild(this.span);
 
         scoreList.push(this.span);
-
 
     }
 
@@ -111,6 +110,7 @@
                 if (snakeT.x == this.snake.body[i].x && snakeT.y == this.snake.body[i].y) {
                     clearInterval(timeId);
                     this.open.style.display = "block";
+                    this.flag = true;
                     return
                 }
             }
@@ -118,6 +118,7 @@
             if (snakeT.x < 0 || snakeT.x >= maxX || snakeT.y < 0 || snakeT.y >= maxY) {
                 clearInterval(timeId);
                 this.open.style.display = "block";
+                this.flag = true;
                 return // 不继续初始化 (小蛇头部出map问题)
             }
 
@@ -189,12 +190,21 @@
 
             return result;
         }
-        //手指接触屏幕
-        document.addEventListener("touchstart", function(e) {
+
+        function tocuhS(e) {
             startx = e.touches[0].pageX;
             starty = e.touches[0].pageY;
             e.preventDefault()
-        }, false);
+        }
+        //手指接触屏幕
+        if (!this.flag) {
+            document.addEventListener("touchstart", tocuhS, false);
+            this.flag = true;
+        } else {
+            document.removeEventListener("touchstart", tocuhS, false);
+            this.flag = false;
+        }
+
         //手指离开屏幕
         document.addEventListener("touchend", function(e) {
             var endx, endy;
