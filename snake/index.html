@@ -147,15 +147,24 @@
         let user;
 
         let open = document.querySelector(".openGame");
+
+        // 获取窗口宽高
+        console.log(document.body.clientWidth, document.body.clientHeight)
+
+        let domWidth = 40;
+        if (document.body.clientWidth < 400) {
+            domWidth = 20;
+        }
+
         $("submit").onclick = function() {
             document.querySelector(".box").style.display = "none";
             user = $("text").value;
-            let game = new Game(map, user, document.querySelector(".boxClose"));
+            let game = new Game(map, user, document.querySelector(".boxClose"), domWidth);
             game.start();
         }
 
         open.onclick = function() {
-            let game = new Game(map, user, document.querySelector(".boxClose"));
+            let game = new Game(map, user, document.querySelector(".boxClose"), domWidth);
             game.start();
             document.querySelector(".boxClose").style.display = "none";
         }

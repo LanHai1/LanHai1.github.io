@@ -13,7 +13,7 @@
 
 
 
-    function Game(map, user, open) {
+    function Game(map, user, open, domWidth) {
         this.open = open; // 重开
         this.user = user || "游客";
         this.map = map;
@@ -21,6 +21,8 @@
         this.food = new Food(this.color);
         this.snake = new Snake();
         this.flag = false;
+
+        this.food.width = this.food.height = this.snake.width = this.snake.height = domWidth;
 
         // 游戏分数
         this.scoreUser = this.snake.body.length - 3;
