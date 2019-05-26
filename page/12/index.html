@@ -14,25 +14,25 @@
     <meta name="keywords" content="Life, ARIA, Hexo">
     
     
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/lanhai.jpg">
     
     
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/lanhai.jpg">
     
     
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/lanhai.jpg">
     
     
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/lanhai.jpg">
     
     
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    <link rel="mask-icon" href="/images/lanhai.jpg" color="#33363b">
     
     
-    <link rel="manifest" href="/favicons/site.webmanifest">
+    <link rel="manifest" href="/images/lanhai.jpg">
     
     
-    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    <meta name="msapplication-config" content="/images/lanhai.jpg">
     
     
     <link rel="alternate" href="/atom.xml" title="LanHai bolg" type="application/atom+xml">
@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>LanHai bolg</title>
+    <title>LanHai bolg - LanHai bolg</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="default" data-spy="scroll" data-target=".list-group">
     
@@ -142,7 +142,7 @@
     <div class="header-container">
       <div class="header-title">
         <h1 class="title"><a href="/">LanHai bolg</a></h1>
-        <h2 class="subtitle"></h2>
+        <h2 class="subtitle">LanHai bolg</h2>
       </div>
       
       <div class="logo">
@@ -174,7 +174,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/ECMAScript/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/webAPI/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="蓝海">
         <meta itemprop="description" content="一名正在脱发的前端工程师">
@@ -186,7 +186,7 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2019/05/24/ECMAScript/" itemprop="url">JavaScript ECMAScript语法概括</a>
+        <a class="post-title-link post-title-link-external" href="/2019/05/24/webAPI/" itemprop="url">webAPI</a>
       </h1>
       <div class="post-meta">
         
@@ -200,244 +200,333 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <p><em>本篇讲解ecma语法</em></p>
-<h2 id="JavaScript是什么-？"><a href="#JavaScript是什么-？" class="headerlink" title="JavaScript是什么 ？"></a>JavaScript是什么 ？</h2><ul>
-<li>JavaScript是一门脚本语言<br>脚本语言:不需要编译，直接运行(js,python…)<br>编译语言:需要把代码翻译成计算机所认识的二进制语言，才能运行(c,c++,java…)<ul>
-<li>JavaScript是一门<strong>基于</strong>对象的语言<br>基于 而不是 面向<br>JavaScript可以模拟其他语言的特性(封装、继承、多态)</li>
-<li>JavaScript是一门动态类型的语言</li>
-<li>JavaScript是一门弱类型的语言</li>
-<li>JavaScript是一门解释性的语言</li>
+      <p>本篇讲解页面中的一些api与用法和兼容</p>
+<p>🤪</p>
+<h2 id="一、什么是webAPI"><a href="#一、什么是webAPI" class="headerlink" title="一、什么是webAPI?"></a>一、什么是webAPI?</h2><ul>
+<li>web: 网页</li>
+<li>API: 接口 一套别人封装的属性和方法</li>
+<li>webAPI: 专门操作网页的方法和属性<br><code>万物皆对象，在webAPI中把网页中所有元素 &lt;element&gt; 都当成对象来处理</code></li>
 </ul>
+<hr>
+<h2 id="二、文档树"><a href="#二、文档树" class="headerlink" title="二、文档树"></a>二、文档树</h2><h3 id="2-1-三个部分"><a href="#2-1-三个部分" class="headerlink" title="2.1 三个部分"></a>2.1 三个部分</h3><ul>
+<li>文档: document</li>
+<li>元素: 网页中的标签</li>
+<li>节点: 网页中所有的内容都叫节点(包括标签、属性、文本、注释)<h3 id="2-2-节点的三个属性"><a href="#2-2-节点的三个属性" class="headerlink" title="2.2 节点的三个属性"></a>2.2 节点的三个属性</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. nodeType(节点类型)</span><br><span class="line">2. nodeName(节点名字)</span><br><span class="line">3. nodeValue(节点值)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<hr>
-<h2 id="JavaScript能做什么？"><a href="#JavaScript能做什么？" class="headerlink" title="JavaScript能做什么？"></a>JavaScript能做什么？</h2><ul>
-<li>前端开发</li>
-<li>后端开发</li>
-<li>底层</li>
-<li>操作系统开发</li>
-<li>大数据</li>
-<li>区块链</li>
-<li>人工智能</li>
-<li>… js无所不能</li>
-</ul>
-<hr>
-<h2 id="引入js的两种方式"><a href="#引入js的两种方式" class="headerlink" title="引入js的两种方式"></a>引入js的两种方式</h2><ul>
-<li>内联<br>在html中 body标签内的最下方通过script标签 编写js代码<br> <code>&lt;script&gt;var a = 1;&lt;/script&gt;</code></li>
-<li>外联<br>引入外部文件 在html中 body标签内的最下方通过script标签的src属性引入文件<br><code>&lt;script src=&quot;./index.js&quot;&gt;&lt;/script&gt;</code></li>
-</ul>
-<hr>
-<h2 id="为什么要有变量？"><a href="#为什么要有变量？" class="headerlink" title="为什么要有变量？"></a>为什么要有变量？</h2><blockquote>
-<p>为了存储和复用一个数据，方便修改</p>
-</blockquote>
-<p><code>当声明一个变量的时候 var a = 10 ,会在内存中开辟以一个空间 存放变量名和变量值 ,会将变量和值存放到window对象中 a:10</code></p>
-<hr>
-<h4 id="1-全局变量"><a href="#1-全局变量" class="headerlink" title="1. 全局变量"></a>1. 全局变量</h4><blockquote>
-<p>全局作用域中的变量 可以在该脚本文件中的任何地方访问到</p>
-</blockquote>
-<h4 id="2-局部变量"><a href="#2-局部变量" class="headerlink" title="2. 局部变量"></a>2. 局部变量</h4><blockquote>
-<p>局部作用域中的变量 局部变量只能在该函数中访问到</p>
-</blockquote>
-<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p><code>在局部作用域中(函数中)声明变量 如果未加关键字 var || let || const</code> 这个变量就会变为隐式全局变量<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">  num = 1;</span><br><span class="line">&#125;</span><br><span class="line">=&gt;</span><br><span class="line">var num;</span><br><span class="line">function a()&#123;</span><br><span class="line">  num = 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*只有num1 是局部变量 ， num2 和 num3 是隐式全局变量*/</span><br><span class="line">function a()&#123;</span><br><span class="line">  var num1 = num2 = num3 = 100;</span><br><span class="line">&#125;</span><br><span class="line">=&gt;</span><br><span class="line">var num2;</span><br><span class="line">var num3;</span><br><span class="line">function a()&#123;</span><br><span class="line">  var num1 = 100;</span><br><span class="line">  num2 = 100;</span><br><span class="line">  num3 = 100;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="JavaScript代码规范以及变量命名"><a href="#JavaScript代码规范以及变量命名" class="headerlink" title="JavaScript代码规范以及变量命名"></a>JavaScript代码规范以及变量命名</h2><blockquote>
-<p>声明关键词 <code>var let const</code><br>变量名区分大小写</p>
-</blockquote>
-<p><code>命名规范</code></p>
-<blockquote>
-<p>一般以字母、$、下划线、数字组成(不能以数字开头)<br>不能使用系统关键词和保留字<br>一般遵循驼峰命名法(第一个单词首字面小写后面单词首字母大写)</p>
-</blockquote>
-<h2 id="变量名需得有意义"><a href="#变量名需得有意义" class="headerlink" title="变量名需得有意义"></a>变量名需得有意义</h2><h2 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h2><h2 id="JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍-预解析-并把-声明式-函数-和-变量-提升到-该作用域-的最顶端"><a href="#JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍-预解析-并把-声明式-函数-和-变量-提升到-该作用域-的最顶端" class="headerlink" title="JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍(预解析) 并把 **声明式** 函数 和 变量 提升到 **该作用域** 的最顶端"></a><code>JavaScript在执行的过程中，浏览器的js引擎会将代码扫描一遍(预解析) 并把 **声明式** 函数 和 变量 提升到 **该作用域** 的最顶端</code></h2><h4 id="1-变量预解析"><a href="#1-变量预解析" class="headerlink" title="1. 变量预解析"></a>1. 变量预解析</h4><blockquote>
-<p>变量预解析只会将变量的声明提升到该作用域的最前面</p>
-</blockquote>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(a) // undefined</span><br><span class="line">var a = 10;</span><br><span class="line">=&gt;</span><br><span class="line">var a </span><br><span class="line">console.log(a) // undefined</span><br><span class="line">a = 10</span><br></pre></td></tr></table></figure>
-<h4 id="2-函数预解析"><a href="#2-函数预解析" class="headerlink" title="2. 函数预解析"></a>2. 函数预解析</h4><blockquote>
-<p>变量预解析只会将变量的声明提升到该作用域的最前面</p>
-</blockquote>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">b()</span><br><span class="line">function b()&#123;</span><br><span class="line">&#125;</span><br><span class="line">=&gt;</span><br><span class="line">function b()&#123;</span><br><span class="line">&#125;</span><br><span class="line">b()</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="断点调试"><a href="#断点调试" class="headerlink" title="断点调试"></a>断点调试</h2><p><code>直接在浏览器中Sources添加断点</code></p>
-<h2 id="或者在编辑器中在语句之后添加-debugger"><a href="#或者在编辑器中在语句之后添加-debugger" class="headerlink" title="或者在编辑器中在语句之后添加 debugger"></a><code>或者在编辑器中在语句之后添加 debugger</code></h2><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><hr>
-<h4 id="什么是数据类型？"><a href="#什么是数据类型？" class="headerlink" title="什么是数据类型？"></a>什么是数据类型？</h4><blockquote>
-<p>计算机里面有很多数据，JS为了方便调试与使用，提供了一些对应的辅助方法，将它们做了归类，就是数据类型。</p>
-</blockquote>
-<hr>
-<h4 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h4><hr>
-<h5 id="1-Number"><a href="#1-Number" class="headerlink" title="1. Number"></a>1. Number</h5><p>1.1. <strong>整数</strong> =&gt; 正数 负数<br>1.2. <strong>小数</strong><br>1.3. <strong>NaN</strong><br>  <em>Not a Number =&gt; 不是一个数字</em><br>  判断一个数字是否是非数字<code>isNaN(x)</code> 返回布尔值 <strong>true</strong>是一个非数字，<strong>false</strong>不是一个非数字<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isNaN(undefined) // true</span><br><span class="line">isNaN(null) // false</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>NaN不等于任何值，包括它自己</p>
-</blockquote>
-<ul>
-<li><p>数值的取之范围</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Infinity // 无穷大</span><br><span class="line">-Infinity // 无穷小</span><br><span class="line">Number.MAX_VALUE /*最大值*/</span><br><span class="line">Number.MIN_VALUE /*最小值*/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运算符<br>算数运算符</p>
-<blockquote>
-<p>+:加<br>-:减<br><em>:乘<br>/:除<br>%:求模<br>任何数除以0为无穷大<br>任何数`-</em>/%`字符串为NaN (除了+)</p>
-</blockquote>
-</li>
-</ul>
-<p>复合运算符</p>
-<blockquote>
-<p>+= &lt;a+=1 =&gt; a = a+1&gt;<br>-= &lt;a-=1 =&gt; a = a-1&gt;<br> “<em>=” &lt;a</em>=1 =&gt; a = a*1&gt; (乘等于)<br>/= &lt;a/=1 =&gt; a = a/1&gt;<br>“%=” &lt;a%=1 =&gt; a = a%1&gt;</p>
-</blockquote>
-<p>“==||===”<br>两个等于和三个等于的区别<br>两个等于只对比值 三个等于对比值和数据类型</p>
-<p>自增自减运算符<br><code>a++
-++a
-a--
---a</code></p>
-<ul>
-<li>前置自增 ++a <code>先运算、再返回</code></li>
-<li>后置自增 a++ <code>先返回、再运算</code></li>
-</ul>
-<hr>
-<h5 id="2-String"><a href="#2-String" class="headerlink" title="2. String"></a>2. String</h5><p>2.1 字符串的长度<code>str.length</code></p>
-<h2 id="2-2-字符串加号运算-会将数据与数据拼接字符串-任何数据类型-拼接之后的新的字符串"><a href="#2-2-字符串加号运算-会将数据与数据拼接字符串-任何数据类型-拼接之后的新的字符串" class="headerlink" title="2.2 字符串加号运算 会将数据与数据拼接字符串 + 任何数据类型 = 拼接之后的新的字符串"></a>2.2 字符串加号运算 会将数据与数据拼接<code>字符串 + 任何数据类型 = 拼接之后的新的字符串</code></h2><h5 id="3-Boolean"><a href="#3-Boolean" class="headerlink" title="3. Boolean"></a>3. Boolean</h5><p><code>true =&gt; 1</code><br><code>false =&gt; 0</code></p>
-<blockquote>
-<p>用布尔值来判断条件真假</p>
-</blockquote>
-<hr>
-<h5 id="4-Undefined"><a href="#4-Undefined" class="headerlink" title="4. Undefined"></a>4. Undefined</h5><p>未定义</p>
-<hr>
-<h5 id="5-Null"><a href="#5-Null" class="headerlink" title="5. Null"></a>5. Null</h5><p>空</p>
-<hr>
-<ul>
-<li>undefined和null的区别<blockquote>
-<p>null 表示一个值被定义了，定义为null<br>undefined 表示一个值声明了 但是未定义(未赋值)<br>所以设置一个值为null是合理的 设置一个值为undefined是不合理的<br>null == undefined // true<br>null === undefined // false<br>说明 null 和 undefined 在转boolean 的时候都为 0 值相同 所以 == 为true  ，数据类型不一样 === 为false</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h4 id="复杂数据类型"><a href="#复杂数据类型" class="headerlink" title="复杂数据类型"></a>复杂数据类型</h4><hr>
-<h5 id="1-Array"><a href="#1-Array" class="headerlink" title="1. Array"></a>1. Array</h5><ul>
-<li>创建数组的方式</li>
-</ul>
-<p><code>new</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">new Array()</span><br><span class="line">new Array(初始长度)</span><br><span class="line">new Array( 1 , 2 , 3 )</span><br></pre></td></tr></table></figure></p>
-<p><code>字面量</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ ]</span><br><span class="line">[ 1 , 2 , 3 ]</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>数组的三个概念<blockquote>
-<p>元素: 数组中的值就是元素<br>下标(索引): 下标从0开始<br>长度: length 数组的长度 从1开始</p>
-</blockquote>
-</li>
-<li>遍历数组</li>
-</ul>
-<p><code>正叙遍历</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(let i = 0; i &lt; arr.length; i++)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><code>倒叙遍历</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(let i = arr.length; i &gt; 0; i--)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>栈和队列操作</li>
-</ul>
-<p><code>栈操作 先进后出</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.unshift() /*从头部放入*/</span><br><span class="line">arr.shift() /*从头部取出*/</span><br></pre></td></tr></table></figure></p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.push(); /*从尾部放入*/</span><br><span class="line">arr.pop(); /*从尾部取出*/</span><br></pre></td></tr></table></figure>
-<p><code>队列操作 先进先出</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.unshift() /*从头部放入*/</span><br><span class="line">arr.pop(); /*从尾部取出*/</span><br></pre></td></tr></table></figure></p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.push(); /*从尾部放入*/</span><br><span class="line">arr.shift() /*从头部取出*/</span><br></pre></td></tr></table></figure>
-<hr>
-<h5 id="2-Function"><a href="#2-Function" class="headerlink" title="2. Function"></a>2. Function</h5><ul>
-<li>函数的声明</li>
-</ul>
-<p><code>声明式创建函数</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function fn ()&#123;</span><br><span class="line">  //代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><code>匿名方式创建函数</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let fn = function()&#123;</span><br><span class="line">  //代码块</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><code>函数对象</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let fn = new Function(&quot;形参&quot;,&quot;形参&quot;,&quot;代码块&quot;) /*前面的都是参数，最后面的参数是代码块*/</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>函数的默认值<br><code>形参默认值 形参 = 形参 || 默认值</code></li>
-<li>函数的调用<br><code>函数名(实参列表)</code></li>
-<li>return 关键字<blockquote>
-<p>函数中 return 将数据给调用者<br>函数中遇到 return 直接跳出函数 后面代码不执行<br>函数默认 return undefined</p>
-</blockquote>
-</li>
-<li><p>函数的预解析</p>
-<blockquote>
-<p>只有声明式的函数和变量才会预解析<br>先调用 -&gt; 后声明<br>在js执行的时候 浏览器会执行 预解析的操作<br><code>预解析会把所有的 声明式 创建的函数(包括变量) 提升到当前作用域的最顶端</code></p>
-</blockquote>
-</li>
-<li><p>回调函数<br><code>函数作为参数传递</code><br><code>函数作为返回值</code></p>
-</li>
-<li><p>arguments 属性</p>
-<blockquote>
-<p>函数内部的特殊属性 用来保存实参列表<br>arguments 是一个 <code>伪数组</code> =&gt; 不是数组 但是具有数组的特性(下标索引、长度、可以进行循环遍历)<br>可以模拟函数重载 =&gt; 同一个函数，因为传递的实参数量不同，可以执行不同的操作</p>
-</blockquote>
-</li>
-<li>工厂函数 和 构造函数<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/*工厂函数*/</span><br><span class="line">function createStr(name,age)&#123;</span><br><span class="line">  let obj = new Object()</span><br><span class="line">  obj.name = name</span><br><span class="line">  obj.age = age</span><br><span class="line">  obj.sayHi = function()&#123;</span><br><span class="line">    console.log(this.obj)</span><br><span class="line">  &#125;</span><br><span class="line">  return obj</span><br><span class="line">&#125;</span><br><span class="line">let obj1 = createStr(&quot;蓝海&quot;,11)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*构造函数*/</span><br><span class="line">function StuInFo(name,age)&#123;</span><br><span class="line">  this.name = name</span><br><span class="line">  this.age = age</span><br><span class="line">  this.sayHi = function()&#123;</span><br><span class="line">    console.log(this.obj)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">let obj2 = new StuInFo(&quot;蓝海&quot;,11)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>构造函数相对于自定义类(class)<br>1.变量名一般用名词，首字母大写<br>2.构造函数中 不需要我们去创建对象、返回对象<br>3.构造函数一般 被 new 关键词调用</p>
-</blockquote>
-<blockquote>
-<p>new 关键字 做的四件事</p>
+<h4 id="2-2-1-元素节点"><a href="#2-2-1-元素节点" class="headerlink" title="2.2.1 元素节点"></a>2.2.1 元素节点</h4><p><code>元素节点就是标签节点</code></p>
 <ol>
-<li>创建空对象</li>
-<li>将空对象 传递给 构造函数 里面的 this</li>
-<li>调用构造函数</li>
-<li>返回对象</li>
+<li>nodeType: 1</li>
+<li>nodeName: 标签名(大写) </li>
+<li>nodeValue: null</li>
 </ol>
+<h4 id="2-2-2-属性节点"><a href="#2-2-2-属性节点" class="headerlink" title="2.2.2 属性节点"></a>2.2.2 属性节点</h4><p><code>属性包括属性名和属性值</code></p>
+<ol>
+<li>nodeType: 2</li>
+<li>nodeName: 属性名</li>
+<li>nodeValue: 属性值</li>
+</ol>
+<h4 id="2-2-3-文本节点"><a href="#2-2-3-文本节点" class="headerlink" title="2.2.3 文本节点"></a>2.2.3 文本节点</h4><ol>
+<li>nodeType: 3</li>
+<li>nodeName: #text</li>
+<li>nodeValue: 文本内容</li>
+</ol>
+<h4 id="2-2-4-注释节点"><a href="#2-2-4-注释节点" class="headerlink" title="2.2.4 注释节点"></a>2.2.4 注释节点</h4><ol>
+<li>nodeType: 8</li>
+<li>nodeName: #comment</li>
+<li>nodeValue: 注释内容</li>
+</ol>
+<hr>
+<h2 id="三、window对象"><a href="#三、window对象" class="headerlink" title="三、window对象"></a>三、window对象</h2><ul>
+<li>window对象代表浏览器 </li>
+<li>window对象是JavaScript中的顶级对象</li>
+<li>任何<strong>全局变量</strong>和<strong>全局函数</strong>声明后 在预解析的过程中都会自动保存为window对象里面的属性和方法</li>
+<li>window的两个特殊属性名不能再次声明!!<br><code>name: name属性名不管赋值任何值都会转换为字符串 let name = {}; -&gt; [object Object]</code><br><code>top</code></li>
+<li>window的两个方法<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.open(href); /*打开一个网页*/</span><br><span class="line">window.close(); /*关闭网页*/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="四、事件"><a href="#四、事件" class="headerlink" title="四、事件"></a>四、事件</h2><h4 id="4-1-什么是事件"><a href="#4-1-什么是事件" class="headerlink" title="4.1 什么是事件?"></a>4.1 什么是事件?</h4><blockquote>
+<p>在计算机中 事件代表捕捉了用户进行了什么操作 再给对应的事件处理</p>
+</blockquote>
+<h4 id="4-2-事件三大部分"><a href="#4-2-事件三大部分" class="headerlink" title="4.2 事件三大部分"></a>4.2 事件三大部分</h4><p><code>事件源 事件类型 事件处理函数</code></p>
+<h5 id="4-2-1-事件源"><a href="#4-2-1-事件源" class="headerlink" title="4.2.1 事件源"></a>4.2.1 事件源</h5><blockquote>
+<p>用户操作的是什么元素 事件中的this就是事件的事件源(谁触发这个事件那this就是谁)</p>
+</blockquote>
+<h5 id="4-2-2-事件类型"><a href="#4-2-2-事件类型" class="headerlink" title="4.2.2 事件类型"></a>4.2.2 事件类型</h5><blockquote>
+<p>用户进行了什么操作</p>
+</blockquote>
+<h6 id="4-2-2-1-on"><a href="#4-2-2-1-on" class="headerlink" title="4.2.2.1 on"></a>4.2.2.1 on</h6><ul>
+<li>onmouseover 鼠标移入</li>
+<li>onmouseout 鼠标移出</li>
+<li>window.onload 当页面加载完成后执行<br><code>入口函数 如果想将js代码写在html之前 就可以用这个事件 将js代码写在事件处理函数中</code></li>
+<li>window.onunload 当页面退出前执行<br><code>可以保存用户信息 =&gt; 用户未保存信息直接退出网页</code></li>
+<li>onfocus 获得焦点<br>文本框光标闪烁</li>
+<li>onblur 失去焦点</li>
+<li>onkeyup 键盘弹起</li>
+<li>onkeydown 键盘按下</li>
+<li>onscroll 滚动<br><code>当滚动页面滚动条时触发</code></li>
+<li>onclick 点击<br><code>onclick 和 onmousedown 区别</code><br><code>onclick 按下弹起才触发</code><br><code>onmousedown 按下就会触发</code></li>
+</ul>
+<p><em>实现拖拽</em><br><em>要考虑元素是否有margin 移动的x和y🉐️减去元素原有的margin</em><br><em>给元素添加鼠标按下事件</em><br><em>在按下事件里面给页面添加鼠标移动事件</em><br><em>给元素注册鼠标弹起事件 =&gt; 清除页面鼠标移动事件</em></p>
 <ul>
-<li>自调用函数<br>声明的时候直接调用执行<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(function(&quot;形参列表&quot;)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;)(&quot;实参列表&quot;)</span><br></pre></td></tr></table></figure>
+<li>onmousedown 鼠标按下</li>
+<li>onmouseup 鼠标弹起</li>
+<li>onmousemove 鼠标移动</li>
+</ul>
+<p><em>H5拖拽</em><br><em>需要为拖拽的元素添加 draggable = “true” 属性</em><br><strong>拖拽元素添加</strong></p>
+<ul>
+<li>ondragstart 拖拽开始</li>
+<li>ondrag 拖拽中</li>
+<li>ondragend 拖拽结束<br><strong>拖拽的目标元素添加</strong></li>
+<li>ondropenter 有元素拖进来触发</li>
+<li>ondropleave 有元素拖拽离开触发</li>
+<li>ondropover 主要是为了配合ondrop使用，一定要在ondropover事件里调用<code>e.preventDefault()</code>才能让ondrop触发</li>
+<li>ondrop 有元素拖到我范围内并松手才触发<h6 id="4-2-2-2-addEventListener"><a href="#4-2-2-2-addEventListener" class="headerlink" title="4.2.2.2 addEventListener()"></a>4.2.2.2 addEventListener()</h6>三参数<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">事件名 不加on</span><br><span class="line">事件处理函数</span><br><span class="line">boolean值 是否事件捕捉</span><br><span class="line">*/</span><br><span class="line">el.addEventListener()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>ie8 不支持 <code>addEventListener</code><br>两参数<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">事件名 加on</span><br><span class="line">事件处理函数</span><br><span class="line">*/</span><br><span class="line">el.attachEvent()</span><br></pre></td></tr></table></figure></p>
+<h6 id="4-2-2-3-on事件和addEventListener-添加事件的区别"><a href="#4-2-2-3-on事件和addEventListener-添加事件的区别" class="headerlink" title="4.2.2.3 on事件和addEventListener 添加事件的区别"></a>4.2.2.3 <code>on事件和addEventListener 添加事件的区别</code></h6><blockquote>
+<p>元素.on事件 = 处理函数<br>(添加事件 如果是同名事件，后面的事件处理函数会覆盖前面的)<br>元素.addEventListener()<br>(添加事件 不会覆盖之前的同名事件)</p>
+</blockquote>
+<h6 id="4-2-2-4-移除事件"><a href="#4-2-2-4-移除事件" class="headerlink" title="4.2.2.4 移除事件"></a>4.2.2.4 移除事件</h6><blockquote>
+<p>用什么方式添加的事件就用什么方式移除事件</p>
+<ul>
+<li>on =&gt; null<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">el.onclick = function()&#123;&#125;;</span><br><span class="line">// 移除</span><br><span class="line">el.onclick = null;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
 <ul>
-<li>函数内存存放<br><code>函数名存放在栈里面</code><br><code>通过内存地址相关联</code><br><code>函数体和形参列表存放在堆里面</code></li>
+<li><p>addEventListener =&gt; removeEventListener<br><code>注意:如果addEventListener添加的事件的事件处理函数是匿名函数不能直接移除事件 只能移除命名事件 (ie8的 attachEvent 一样)</code></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">el.addEventListener(&quot;click&quot;,fn1)</span><br><span class="line">// 移除</span><br><span class="line">el.removeEventListener(&quot;click&quot;,fn1)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>attachEvent =&gt; detachEvent</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">el.attachEvent(&quot;onclick&quot;,f1)</span><br><span class="line">// 移除</span><br><span class="line">el.detachEvent(&quot;onclick&quot;,fn1)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<hr>
-<h5 id="3-Object"><a href="#3-Object" class="headerlink" title="3. Object"></a>3. Object</h5><ul>
-<li>创建对象的方式</li>
-</ul>
-<p><code>new</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let obj = new Object()</span><br><span class="line">||</span><br><span class="line">let obj = new Object(&#123;</span><br><span class="line">  name : &quot;蓝海&quot;,</span><br><span class="line">  age : 11</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p><code>字面量</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123; &#125;</span><br><span class="line">||</span><br><span class="line">let obj = &#123;</span><br><span class="line">  name : &quot;蓝海&quot;,</span><br><span class="line">  age : 11</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>访问对象中的属性<br><code>对象.属性</code><br><code>对象[&quot;属性&quot;]</code> =&gt; 注意 用中括号的方式访问对象中的属性 属性名🉐️加引号<br><code>访问对象中不存在的属性</code> =&gt; undefined</li>
-<li>对象属性操作<br><code>添加属性</code> =&gt; 直接对象 . 属性名 = 属性值<br><code>删除属性</code> =&gt;  delete 对象 . 属性名 || delete 对象 . 方法名</li>
-<li>判断一个对象中是否存在某个属性或某个方法<br><code>&quot;属性&quot; in 对象</code> =&gt; <code>&quot;name&quot; in obj</code></li>
-<li>对象中的 this <blockquote>
-<p>对象中的this就是这个对象 可以通过this.属性名 在对象的方法中访问对象里的其他属性或方法</p>
+<h5 id="4-2-3-事件处理函数"><a href="#4-2-3-事件处理函数" class="headerlink" title="4.2.3 事件处理函数"></a>4.2.3 事件处理函数</h5><blockquote>
+<p>用户操作后要执行的什么代码</p>
+</blockquote>
+<h6 id="4-2-3-1-事件对象-e"><a href="#4-2-3-1-事件对象-e" class="headerlink" title="4.2.3.1 事件对象 e"></a>4.2.3.1 事件对象 e</h6><ul>
+<li>本质也是个对象</li>
+<li>保存了事件触发时的相关信息</li>
+<li>在事件处理函数中的形参里写参数 e<br>ie有兼容问题<br>兼容代码<code>e = e || window.event</code></li>
+<li>三大坐标<blockquote>
+<p>screen<br>e.screenX 和 e.screenY<br>获取的是点击的位置相对于屏幕左上角的坐标</p>
 </blockquote>
 </li>
-<li>对象内存存放<br><code>对象名存放在栈里面</code><br><code>通过内存地址相关联</code><br><code>对象里面的方法和属性存放在堆里面</code></li>
 </ul>
-<hr>
-<h2 id="获取数据类型"><a href="#获取数据类型" class="headerlink" title="获取数据类型"></a>获取数据类型</h2><h4 id="1-typeof"><a href="#1-typeof" class="headerlink" title="1. typeof"></a>1. typeof</h4><p><code>typeof</code>检查简单数据类型[值类型] 返回的是 字符串类型的数据类型<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typeof(123) =&gt; &quot;number&quot;</span><br><span class="line">/*注意点*/</span><br><span class="line">typeof(typeof(123)) =&gt; &quot;string&quot;</span><br><span class="line">typeof(null) =&gt; &quot;object&quot;</span><br><span class="line">typeof(Infinity) =&gt; &quot;number&quot;</span><br><span class="line">typeof(NaN) =&gt; &quot;number&quot;</span><br><span class="line">typeof(new Date()) =&gt; &quot;object&quot; =&gt; /*typeof检查其他new出来的对象 都返回 object*/</span><br><span class="line">/*typeof() 复杂数据类型object、array 和 null 都返回 object</span><br><span class="line">  typeof(function) =&gt; function // 函数除外</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-instanceof"><a href="#2-instanceof" class="headerlink" title="2. instanceof"></a>2. instanceof</h4><p><code>instanceof</code>检查复杂数据类型[引用类型] 返回boolean值<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数据名 instanceof 数据类型 /*[Function||Object||Array]*/</span><br><span class="line">返回 false 或 true</span><br><span class="line">只能检查复杂数据类型 简单数据类型都返回false</span><br></pre></td></tr></table></figure></p>
-<h4 id="typeof-和-instanceof-的区别"><a href="#typeof-和-instanceof-的区别" class="headerlink" title="typeof  和 instanceof 的区别"></a>typeof  和 instanceof 的区别</h4><p><code>typeof</code>用来检测简单数据类型 返回值是一个字符串的数据类型</p>
-<h2 id="instanceof用来检测复杂数据类型-返回的是boolean值-如果用来检测简单数据类型都会返回false"><a href="#instanceof用来检测复杂数据类型-返回的是boolean值-如果用来检测简单数据类型都会返回false" class="headerlink" title="instanceof用来检测复杂数据类型 返回的是boolean值 如果用来检测简单数据类型都会返回false"></a><code>instanceof</code>用来检测复杂数据类型 返回的是boolean值 如果用来检测简单数据类型都会返回false</h2><h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><hr>
-<h4 id="1-转换为字符串"><a href="#1-转换为字符串" class="headerlink" title="1. 转换为字符串"></a>1. 转换为字符串</h4><p><code>str.tostring()</code> <em>默认模式</em>把变量转换为字符串 || <em>基模式</em><br><code>String(str)</code> 把特殊值转换为字符串 String(undefined) =&gt; “undefined”<br><code>加号拼接字符串</code></p>
-<h4 id="2-转换为数组"><a href="#2-转换为数组" class="headerlink" title="2. 转换为数组"></a>2. 转换为数组</h4><p><code>parseFloat(str)</code> 把字符串转换为浮点数(小数)<br><code>parseInt(str)</code> 把字符串转换为整数</p>
-<p>{<code>Number(str)</code> 任何数据转换为整数</p>
 <blockquote>
-<p>如果字符串截去开头和结尾的空白字符后，<br>不是纯数字字符串，那么最终返回NaN。<br>如果字符串中只包含了数字，(包括前面带正号和负号)，<br>则将其转换为十进制数值，即”1”-&gt;1，”011“-&gt;11<br>如果字符串是空的””则返回0<br>如果字符串包含除了上面的格式之外的字符，则将其转换为NaN<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">boolean  true转换为1 false转换为0</span><br><span class="line">null 返回 0</span><br><span class="line">undefined 返回 NaN</span><br></pre></td></tr></table></figure></p>
+<p>page<br>e.pageX,e.pageY<br>获得的是点击的位置相对于页面（文档）左上角的坐标<br>有兼容性的问题,IE8不支持，自己计算<br><code>pageX = e.clientX + 页面往左滚出去的距离 (scrollLeft)</code><br><code>pageY = e.clientY + 页面往上滚出去的距离 (scrollTop)</code></p>
 </blockquote>
-<p>}</p>
-<h4 id="3-转换为布尔值"><a href="#3-转换为布尔值" class="headerlink" title="3. 转换为布尔值"></a>3. 转换为布尔值</h4><p><code>Boolean()</code> </p>
 <blockquote>
-<p>将布尔字符串转成布尔值<br>除了 0、false 、undefiend、NaN、null 转换为false  其他都为true</p>
+<p>offset<br>e.offsetX,e.offsetY<br>获得是是点击的位置相当于事件源的左上角的位置<br>ie属性 有bug<br><code>offsetX = e.clientX - 盒子到可视区域的left (el.getBoundingClientRect.left)</code><br><code>offsetY = e.clientY - 盒子到可视区域的top (el.getBoundingClientRect.top)</code></p>
 </blockquote>
-<h4 id="4-转义符"><a href="#4-转义符" class="headerlink" title="4. 转义符"></a>4. 转义符</h4><p><code>console.log(&quot;转义符的应用\&quot;嗯&quot;) -&gt;[转义符的应用“嗯]</code><br><em>常用</em></p>
+<h6 id="4-2-3-2-this、e-target、e-currentTarget区别"><a href="#4-2-3-2-this、e-target、e-currentTarget区别" class="headerlink" title="4.2.3.2 this、e.target、e.currentTarget区别"></a>4.2.3.2 this、e.target、e.currentTarget区别</h6><blockquote>
+<p>this 和 e.currentTarget 是一樣的<br>当前调用的是谁的事件 那么this就是谁<br>e.currentTarget ie8 不支持 =&gt; 直接用this</p>
+</blockquote>
+<blockquote>
+<p>e.target 获取事件源(目标阶段) 正在触发事件的那个元素<br>ie8不支持 =&gt; e.target<br>兼容代码<br><code>var target = e.target || e.srcElement</code></p>
+</blockquote>
+<h4 id="4-3-事件的三大阶段"><a href="#4-3-事件的三大阶段" class="headerlink" title="4.3 事件的三大阶段"></a>4.3 事件的三大阶段</h4><h5 id="4-3-1-如何获取事件正在执行的阶段"><a href="#4-3-1-如何获取事件正在执行的阶段" class="headerlink" title="4.3.1 如何获取事件正在执行的阶段"></a>4.3.1 如何获取事件正在执行的阶段</h5><blockquote>
+<p>在事件里可以通过 e.eventPhase 来捕获当前是哪个阶段<br>捕获 =&gt; 1<br>目标 =&gt; 2<br>冒泡 =&gt; 3</p>
+</blockquote>
+<h5 id="4-3-2-三大阶段"><a href="#4-3-2-三大阶段" class="headerlink" title="4.3.2 三大阶段"></a>4.3.2 三大阶段</h5><p><code>捕获 目标 冒泡</code></p>
+<h6 id="4-3-2-1-捕获阶段"><a href="#4-3-2-1-捕获阶段" class="headerlink" title="4.3.2.1 捕获阶段"></a>4.3.2.1 捕获阶段</h6><blockquote>
+<p>一种现象 与冒泡阶段相反 从window开始 依次一级一级往下调用子元素的同名事件，直到找到真正触发事件的事件源<br>事件捕获默认看不见 想要看到捕获阶段则需要通过 addEventListener来绑定事件，并且第三个参数传true</p>
+</blockquote>
+<h6 id="4-3-2-2-目标阶段"><a href="#4-3-2-2-目标阶段" class="headerlink" title="4.3.2.2 目标阶段"></a>4.3.2.2 目标阶段</h6><blockquote>
+<p>找到真正触发事件的那个元素 -&gt; 事件源</p>
+</blockquote>
+<h6 id="4-3-2-3-冒泡阶段"><a href="#4-3-2-3-冒泡阶段" class="headerlink" title="4.3.2.3 冒泡阶段"></a>4.3.2.3 冒泡阶段</h6><blockquote>
+<p>一种现象 当元素事件触发后 会从事件源开始依次一次一次往上调用父元素的同名事件，直到window<br>事件冒泡默认存在</p>
+</blockquote>
+<p><code>好处</code>：给父元素添加事件相当于给子元素添加了事件 -&gt; 事件委托 -&gt; e.target<br><code>带来的影响(坏处)</code>：如果子元素和父元素有同名事件 并且业务逻辑相反 则会冲突影响</p>
+<h5 id="4-3-3-阶段顺序"><a href="#4-3-3-阶段顺序" class="headerlink" title="4.3.3 阶段顺序"></a>4.3.3 阶段顺序</h5><p><code>设置捕获</code></p>
+<blockquote>
+<p>先捕获 从window开始 依次一级一级调用子元素的同名事件<br>-&gt; 找到目标(真正触发事件的元素)<br>-&gt; 从目标元素开始 依次一级一级调用父元素的同名事件 直到window</p>
+</blockquote>
+<p><code>未设置捕获</code></p>
+<blockquote>
+<p>找到目标(真正触发事件的元素)<br>-&gt; 从目标元素开始 依次一级一级调用父元素的同名事件 直到window</p>
+</blockquote>
+<h5 id="4-3-4-阻止事件派发"><a href="#4-3-4-阻止事件派发" class="headerlink" title="4.3.4 阻止事件派发"></a>4.3.4 阻止事件派发</h5><p><em>阻止事件冒泡和阻止事件捕获</em><br><code>e.stopPropagation()</code></p>
+<h2 id="ie8魔鬼不支持-ie8只有事件冒泡，没有事件捕获-gt-e-cancelBubble-true"><a href="#ie8魔鬼不支持-ie8只有事件冒泡，没有事件捕获-gt-e-cancelBubble-true" class="headerlink" title="ie8魔鬼不支持(ie8只有事件冒泡，没有事件捕获) =&gt; e.cancelBubble = true"></a>ie8魔鬼不支持(ie8只有事件冒泡，没有事件捕获) =&gt; <code>e.cancelBubble = true</code></h2><h2 id="五、本地存储"><a href="#五、本地存储" class="headerlink" title="五、本地存储"></a>五、本地存储</h2><p>只能存储字符串<br>查看本地存储 <code>浏览器F12-&gt;Application-&gt;Local || Session Storage-&gt;fille://</code></p>
+<h3 id="5-1-localStorage-本地存储"><a href="#5-1-localStorage-本地存储" class="headerlink" title="5.1 localStorage 本地存储"></a>5.1 localStorage 本地存储</h3><blockquote>
+<p>可以把数据存储到本地(浏览器) 只要用户不删除 则会一直保存 每个域名都是独立的保存数据 不同域名不能互相访问 长久保存数据可以存储到 localStorage</p>
 <ul>
-<li>\n 换行符</li>
-<li>\” 双引号</li>
-<li>\’ 单引号</li>
-<li>\ \ 斜杠\</li>
+<li>保存数据 <code>localStorage.setItem(key,value)</code></li>
+<li>获取数据 <code>localStorage.getItem(key)</code> =&gt; 如果没有这个数据 则返回 <code>null</code></li>
+<li>删除一个数据 <code>localStorage.removeItem(key)</code></li>
+<li>清空所有数据 <code>localStorage.clear()</code></li>
+</ul>
+</blockquote>
+<h3 id="5-2-sessionStorage-会话存储"><a href="#5-2-sessionStorage-会话存储" class="headerlink" title="5.2 sessionStorage 会话存储"></a>5.2 sessionStorage 会话存储</h3><blockquote>
+<p>短暂存储数据 可以多页面传值 相当于localStorage会更安全 浏览器关闭后就不会保存了</p>
+<ul>
+<li>保存数据 <code>sessionStorage.setItem(key,value)</code></li>
+<li>获取数据 <code>sessionStorage.getItem(key)</code> =&gt; 如果没有这个数据 则返回 <code>null</code></li>
+<li>删除一个数据 <code>sessionStorage.removeItem(key)</code></li>
+</ul>
+</blockquote>
+<ul>
+<li>清空所有数据 <code>sessionStorage.clear()</code></li>
 </ul>
 <hr>
-<h2 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h2><p><a href="https://www.jianshu.com/p/861983d569f3" target="_blank" rel="noopener">戳一下👇</a> 之前总结的常用内置对象博客</p>
+<h2 id="六、定时器和延时器"><a href="#六、定时器和延时器" class="headerlink" title="六、定时器和延时器"></a>六、定时器和延时器</h2><p><em>给元素添加动画定时器 可以将定时器id直接给元素 <code>元素.timeId</code></em></p>
+<h3 id="6-1-定时器"><a href="#6-1-定时器" class="headerlink" title="6.1 定时器"></a>6.1 定时器</h3><blockquote>
+<p>每隔一段时间执行一段代码<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">参数一: 要执行的代码 可以写字符串 在字符串里面写js代码 或者写函数</span><br><span class="line">参数二: 间隔事件 单位是毫秒 1000毫秒 = 1秒</span><br><span class="line">*/</span><br><span class="line">window.setInterval()</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="6-2-延时器"><a href="#6-2-延时器" class="headerlink" title="6.2 延时器"></a>6.2 延时器</h3><blockquote>
+<p>一段时间后执行一段代码<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">参数一: 要执行的代码 可以写字符串 在字符串里面写js代码 或者写函数</span><br><span class="line">参数二: 延迟事件 单位是毫秒 1000毫秒 = 1秒</span><br><span class="line">*/</span><br><span class="line">window.setTimeout()</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="6-3-清除定时器和延时器"><a href="#6-3-清除定时器和延时器" class="headerlink" title="6.3 清除定时器和延时器"></a>6.3 清除定时器和延时器</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clearInterval(定时器id)</span><br><span class="line">clearTimeout(延时器id)</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><p><em>一些很简单条件判断这里就不说了哈</em> 😶</p>
-<h4 id="1-三元运算符"><a href="#1-三元运算符" class="headerlink" title="1. 三元运算符"></a>1. 三元运算符</h4><p><code>条件 ? true : false</code></p>
-<h4 id="2-switch-case"><a href="#2-switch-case" class="headerlink" title="2. switch-case"></a>2. switch-case</h4><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*相对于 if (a === 1) 用来做全等判断*/</span><br><span class="line">break /*每个case里面的代码断都要写 break 否则会穿透*/</span><br><span class="line">/*合理使用switch穿透 &lt;当多个case要执行的代码需求一样的时候&gt;*/</span><br><span class="line">default /*如果case都不匹配的情况下 会执行 default 里面的代码*/</span><br></pre></td></tr></table></figure>
-<h4 id="3-amp-amp"><a href="#3-amp-amp" class="headerlink" title="3. &amp;&amp; || !"></a>3. &amp;&amp; || !</h4><p><code>&amp;&amp;</code> 与 一假则假<br><code>||</code> 或 一真则真</p>
-<h2 id="非-取反"><a href="#非-取反" class="headerlink" title="! 非 取反"></a><code>!</code> 非 取反</h2><h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><hr>
-<h4 id="1-for"><a href="#1-for" class="headerlink" title="1. for"></a>1. for</h4><p><em>for 循环体上面的 i 变量的作用域是全局作用域 如果在函数中使用就是局部作用域 一般建议使用let 关键词来声明 i</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for (let i = 1;i &lt; 10; i++)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;</span><br><span class="line">/*拆解为*/</span><br><span class="line">let i = 1;</span><br><span class="line">for(;i&lt;10;)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">  i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-do-while"><a href="#2-do-while" class="headerlink" title="2. do while"></a>2. do while</h4><p><code>先执行do里面的代码块 再条件判断</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">do&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;while(boolean)</span><br></pre></td></tr></table></figure></p>
-<h4 id="3-while"><a href="#3-while" class="headerlink" title="3. while"></a>3. while</h4><p><code>先条件判断 再执行代码块</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while(boolean)&#123;</span><br><span class="line">  /*代码块*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="do-while-与-while-的区别"><a href="#do-while-与-while-的区别" class="headerlink" title="do-while 与 while 的区别"></a>do-while 与 while 的区别</h5><blockquote>
-<p>do-while 不管条件是否成立 都会执行一次do里面的代码块 然后再进行条件判断<br>while 先进行条件判断 再执行代码块</p>
+<h2 id="七、阻止a标签默认跳转三种方式"><a href="#七、阻止a标签默认跳转三种方式" class="headerlink" title="七、阻止a标签默认跳转三种方式"></a>七、阻止a标签默认跳转三种方式</h2><h3 id="7-1-href"><a href="#7-1-href" class="headerlink" title="7.1 href"></a>7.1 href</h3><p><code>将a标签的href的路径改为 javascript:void(0) || javascript:void(null) || 简写 javascript:</code></p>
+<h3 id="7-2-return"><a href="#7-2-return" class="headerlink" title="7.2 return"></a>7.2 return</h3><p><code>给a标签添加点击事件 在事件处理函数的最后 return false</code></p>
+<h3 id="7-3-事件对象-e"><a href="#7-3-事件对象-e" class="headerlink" title="7.3 事件对象 e"></a>7.3 事件对象 e</h3><p><code>阻止事件默认行为 e.preventDefault()</code></p>
+<blockquote>
+<p>return和事件对象e阻止跳转的区别<br>return后面的代码不执行</p>
 </blockquote>
-<h4 id="3-for-in"><a href="#3-for-in" class="headerlink" title="3. for in"></a>3. for in</h4><p><code>遍历对象</code><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(let &quot;属性名&quot; in &quot;对象&quot;)&#123;</span><br><span class="line">  /*访问对象中的属性或方法*/ /*这里的属性名已经是string类型 所以无需再加引号*/</span><br><span class="line">  obj[name] =&gt; /*对象[属性名]*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="break-和-continue-的区别"><a href="#break-和-continue-的区别" class="headerlink" title="break 和 continue 的区别"></a>break 和 continue 的区别</h5><blockquote>
-<p>break 跳出整个循环 后面的循环不再执行</p>
+<h2 id="e-preventDefault-不会影响后面代码执行"><a href="#e-preventDefault-不会影响后面代码执行" class="headerlink" title="e.preventDefault()不会影响后面代码执行"></a>e.preventDefault()不会影响后面代码执行</h2><h2 id="八、排他思想"><a href="#八、排他思想" class="headerlink" title="八、排他思想"></a>八、排他思想</h2><blockquote>
+<p>先把大家恢复成默认，再让自己特殊 <code>tab切换</code></p>
 </blockquote>
-<h2 id="continue-跳出本次循环-继续执行后面的循环"><a href="#continue-跳出本次循环-继续执行后面的循环" class="headerlink" title="continue 跳出本次循环 继续执行后面的循环"></a>continue 跳出本次循环 继续执行后面的循环</h2><p><img src="https://upload-images.jianshu.io/upload_images/12946880-a93529cf1a80804e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="xmind知识导图"><br><em>部分很简单的知识点未写入博客</em></p>
+<hr>
+<h2 id="九、offset家族"><a href="#九、offset家族" class="headerlink" title="九、offset家族"></a>九、offset家族</h2><p><em>只能获取行内样式</em></p>
+<blockquote>
+<p>只能取值 (number) 不能赋值<br>offsetWidth 和 offsetHeight 获取包括padding和border和width||height </p>
+</blockquote>
+<h3 id="9-1-offsetWidth"><a href="#9-1-offsetWidth" class="headerlink" title="9.1 offsetWidth"></a>9.1 offsetWidth</h3><p><code>获取盒子的最终宽度</code></p>
+<h3 id="9-2-offsetHeight"><a href="#9-2-offsetHeight" class="headerlink" title="9.2 offsetHeight"></a>9.2 offsetHeight</h3><p><code>获取盒子的最终高度</code></p>
+<h3 id="9-3-offsetTop"><a href="#9-3-offsetTop" class="headerlink" title="9.3 offsetTop"></a>9.3 offsetTop</h3><p><code>获取自身上外边框到定位父级上内边框的距离</code></p>
+<h3 id="9-4-offsetLeft"><a href="#9-4-offsetLeft" class="headerlink" title="9.4 offsetLeft"></a>9.4 offsetLeft</h3><p><code>获取自身左外边框到定位父级左内边框的距离</code></p>
+<h2 id><a href="#" class="headerlink" title></a><img src="https://upload-images.jianshu.io/upload_images/12946880-a420cc3504d29078.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></h2><h2 id="十、scroll家族"><a href="#十、scroll家族" class="headerlink" title="十、scroll家族"></a>十、scroll家族</h2><blockquote>
+<p>scrollWidth 和 scrollHeight 获取的包括了隐藏的部分 只能获取(number)不能修改<br>scrollLeft 和 scrollTop  可以获取也可以修改 想要滚动条滚动到最右变 直接赋值为 scrollWidth即可 </p>
+</blockquote>
+<h3 id="10-1-scrollWidth"><a href="#10-1-scrollWidth" class="headerlink" title="10.1 scrollWidth"></a>10.1 scrollWidth</h3><p><code>获取盒子内容的总宽度</code></p>
+<h3 id="10-2-scrollHeight"><a href="#10-2-scrollHeight" class="headerlink" title="10.2 scrollHeight"></a>10.2 scrollHeight</h3><p><code>获取盒子内容的总高度</code></p>
+<h3 id="10-3-scrollTop"><a href="#10-3-scrollTop" class="headerlink" title="10.3 scrollTop"></a>10.3 scrollTop</h3><p><code>获取内容上边滚出去的距离</code></p>
+<h3 id="10-4-scrollLeft"><a href="#10-4-scrollLeft" class="headerlink" title="10.4 scrollLeft"></a>10.4 scrollLeft</h3><p><code>获取内容左边滚出去的距离</code></p>
+<p><em>scrollTop和scrollLeft有兼容问题</em><br><em>兼容代码</em><br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var scrollTop = window.pageYOffset </span><br><span class="line">|| document.documentElement.scrollTop </span><br><span class="line">|| document.body.scrollTop </span><br><span class="line">|| 0;</span><br></pre></td></tr></table></figure></p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var scrollLeft = window.pageXOffset </span><br><span class="line">|| document.documentElement.scrollLeft </span><br><span class="line">|| document.body.scrollLeft </span><br><span class="line">|| 0;</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/12946880-a20c414ee0057481.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<hr>
+<h2 id="十一、client家族"><a href="#十一、client家族" class="headerlink" title="十一、client家族"></a>十一、client家族</h2><p><code>如果元素有滚动条 那么这个元素的可视宽度就是 整个盒子的宽度 - 滚动条的宽度</code></p>
+<h3 id="11-1-clientWidth"><a href="#11-1-clientWidth" class="headerlink" title="11.1 clientWidth"></a>11.1 clientWidth</h3><p><code>获取可视区域的宽</code></p>
+<h3 id="11-2-clientHeight"><a href="#11-2-clientHeight" class="headerlink" title="11.2 clientHeight"></a>11.2 clientHeight</h3><p><code>获取可视区域的高</code></p>
+<h3 id="11-3-clientTop"><a href="#11-3-clientTop" class="headerlink" title="11.3 clientTop"></a>11.3 clientTop</h3><p><code>获取左边框的宽度</code></p>
+<h3 id="11-4-clientLeft"><a href="#11-4-clientLeft" class="headerlink" title="11.4 clientLeft"></a>11.4 clientLeft</h3><p><code>获取上边看的宽度</code></p>
+<hr>
+<h2 id="十二、操作元素的方式"><a href="#十二、操作元素的方式" class="headerlink" title="十二、操作元素的方式"></a>十二、操作元素的方式</h2><h3 id="12-1-通过id获取元素"><a href="#12-1-通过id获取元素" class="headerlink" title="12.1 通过id获取元素"></a>12.1 通过id获取元素</h3><p><em>如果没有这个元素 则返回null 有则返回一个对象</em></p>
+<blockquote>
+<p>获取 id 只能通过document来获取</p>
+</blockquote>
+<p><code>document.getElementById(&quot;id&quot;)</code></p>
+<h3 id="12-2-样式名获取元素"><a href="#12-2-样式名获取元素" class="headerlink" title="12.2 样式名获取元素"></a>12.2 样式名获取元素</h3><p><em>如果没有这个元素 则返回一个空集合[伪数组]</em><br><code>document.getElementsByClassName(&#39;class&#39;)</code></p>
+<h4 id="12-2-1-什么是伪数组"><a href="#12-2-1-什么是伪数组" class="headerlink" title="12.2.1 什么是伪数组?"></a>12.2.1 什么是伪数组?</h4><ul>
+<li>有下标索引、有元素、有长度 但是没有数组中的方法<h3 id="12-3-通过标签名来获取元素"><a href="#12-3-通过标签名来获取元素" class="headerlink" title="12.3 通过标签名来获取元素"></a>12.3 通过标签名来获取元素</h3><em>ie8魔鬼有兼容问题</em><br><code>document.getElementsByTagName(&quot;div&quot;)</code><h3 id="12-4-通过name属性来获取元素-表单元素"><a href="#12-4-通过name属性来获取元素-表单元素" class="headerlink" title="12.4 通过name属性来获取元素(表单元素)"></a>12.4 通过name属性来获取元素(表单元素)</h3><code>document.getElementsByName(&quot;name&quot;)</code><h3 id="12-5-通过css选择器来获取元素-h5新增"><a href="#12-5-通过css选择器来获取元素-h5新增" class="headerlink" title="12.5 通过css选择器来获取元素 (h5新增)"></a>12.5 通过css选择器来获取元素 (h5新增)</h3></li>
+<li>获取的是一个对象 如果匹配到多个元素则返回第一个元素<br><code>document.querySelector(selectors)</code></li>
+<li>获取的是一个伪数组<br><code>document.querySelectorAll(selectors)</code><h3 id="12-6-获取文档"><a href="#12-6-获取文档" class="headerlink" title="12.6 获取文档"></a>12.6 获取文档</h3><code>document</code><h3 id="12-7-获取html"><a href="#12-7-获取html" class="headerlink" title="12.7 获取html"></a>12.7 获取html</h3><code>document.documentElement</code><h3 id="12-8-获取head"><a href="#12-8-获取head" class="headerlink" title="12.8 获取head"></a>12.8 获取head</h3><code>document.head</code><h3 id="12-9-获取body"><a href="#12-9-获取body" class="headerlink" title="12.9 获取body"></a>12.9 获取body</h3><code>document.body</code><h3 id="12-10-获取子节点和子元素"><a href="#12-10-获取子节点和子元素" class="headerlink" title="12.10 获取子节点和子元素"></a>12.10 获取子节点和子元素</h3></li>
+<li>子节点<br><code>el.childNodes</code></li>
+<li>子元素<br><code>el.childNodes</code><h3 id="12-11-获取父节点和父元素"><a href="#12-11-获取父节点和父元素" class="headerlink" title="12.11 获取父节点和父元素"></a>12.11 获取父节点和父元素</h3><em>区别</em><blockquote>
+<p>el.parentNode可以获取到document<br>el.parentElement不能获取到document<br>因为document不是一个元素</p>
+</blockquote>
+</li>
+<li>父节点<br><code>el.parentNode</code></li>
+<li>父元素<br><code>el.parentNode</code><h3 id="12-12-获取上一个兄弟节点和上一个兄弟元素"><a href="#12-12-获取上一个兄弟节点和上一个兄弟元素" class="headerlink" title="12.12 获取上一个兄弟节点和上一个兄弟元素"></a>12.12 获取上一个兄弟节点和上一个兄弟元素</h3></li>
+<li>找到上一个兄弟节点(文本、注释、标签)，所有浏览器都支持<br><code>el.previousSibling</code></li>
+<li>找到上一个兄弟元素(只会找到元素)，IE9以下都不支持<br><code>el.previousElementSibling</code><h3 id="12-13-获取下一个兄弟节点和下一个兄弟元素"><a href="#12-13-获取下一个兄弟节点和下一个兄弟元素" class="headerlink" title="12.13 获取下一个兄弟节点和下一个兄弟元素"></a>12.13 获取下一个兄弟节点和下一个兄弟元素</h3></li>
+<li>找到下一个兄弟节点(文本、注释、标签)，所有浏览器都支持<br><code>el.nextSibling</code></li>
+<li>找到下一个兄弟元素(只会找到元素)，IE9以下都不支持<br><code>el.nextElementSibling</code><h3 id="12-14-添加子元素"><a href="#12-14-添加子元素" class="headerlink" title="12.14 添加子元素"></a>12.14 添加子元素</h3><code>父元素.appendChild(&quot;子元素&quot;)</code><h3 id="12-15-删除子元素"><a href="#12-15-删除子元素" class="headerlink" title="12.15 删除子元素"></a>12.15 删除子元素</h3><code>父元素.removeChild(&quot;子元素&quot;)</code><h3 id="12-16-在某个子元素前面插入元素"><a href="#12-16-在某个子元素前面插入元素" class="headerlink" title="12.16 在某个子元素前面插入元素"></a>12.16 在某个子元素前面插入元素</h3><code>父元素.insertBefore(插入的新元素,要在哪个元素前面插入)</code><h3 id="12-17-替换子元素"><a href="#12-17-替换子元素" class="headerlink" title="12.17 替换子元素"></a>12.17 替换子元素</h3><code>父元素.replaceChild(新的元素,被替换的元素)</code></li>
+</ul>
+<hr>
+<h2 id="十三、操作属性的另二种方式"><a href="#十三、操作属性的另二种方式" class="headerlink" title="十三、操作属性的另二种方式"></a>十三、操作属性的另二种方式</h2><h3 id="13-1-js-操作属性"><a href="#13-1-js-操作属性" class="headerlink" title="13.1 js 操作属性"></a>13.1 js 操作属性</h3><p><em>既可以操作自带属性，也可以操作自定义属性</em></p>
+<ul>
+<li>获取属性<br><code>el.getAttribute(&quot;属性名&quot;)</code></li>
+<li>修改属性<br><code>el.setAttribute(&quot;属性名&quot;,&quot;属性值&quot;)</code></li>
+<li>删除属性<br><code>el.removeAttribute(&quot;属性名&quot;)</code></li>
+</ul>
+<h3 id="13-2-h5-操作属性"><a href="#13-2-h5-操作属性" class="headerlink" title="13.2 h5 操作属性"></a>13.2 h5 操作属性</h3><blockquote>
+<p>在自定义属性前面加 data-<br>如果自定义属性前面添加了 data-<br>那么这些自定义属性都会保存到el.dataset ‘对象’ 里面<br>想要取得属性直接遍历对象即可<br>取值时 data-会被去掉 并且如果后面还有-<br>会把后面的-也去掉 并把-后面的首字母大写(驼峰命名法)</p>
+<ul>
+<li>获得属性<br><code>el.dataset[&quot;shengao&quot;]</code><br><code>e.dataset.shengao</code></li>
+<li>修改属性<br><code>el.dataset[&quot;shengao&quot;] = &quot;123cm&quot;</code></li>
+<li>删除属性</li>
+</ul>
+</blockquote>
+<h2 id="delete-el-dataset-quot-shengao-quot"><a href="#delete-el-dataset-quot-shengao-quot" class="headerlink" title="delete el.dataset[&quot;shengao&quot;]"></a><code>delete el.dataset[&quot;shengao&quot;]</code></h2><h2 id="十四、创建元素的三种方式"><a href="#十四、创建元素的三种方式" class="headerlink" title="十四、创建元素的三种方式"></a>十四、创建元素的三种方式</h2><ul>
+<li>document.write()<blockquote>
+<p>只能在body添加元素，并且会覆盖之前页面中的元素</p>
+</blockquote>
+</li>
+<li>document.createElement()<blockquote>
+<p>创建一个标签存在内存里面<br>再通过 父元素.appendChild(“创建出来的元素”) 渲染到页面<br>appendChild细节<br>给父元素追加一个元素，添加在最后，如果此元素已经存在，则被移动到最后</p>
+</blockquote>
+</li>
+<li>el.innerHtml()<blockquote>
+<p>为某元素添加内容，会覆盖原来的内容<br>+= 就只会追加不会覆盖<br>每次innerHtml赋值(+=)都是重新渲染，<br>所以有可能会让之前的元素丢失，<br>还会让之前元素的事件丢失(事件委托可解决)<br>渲染耗性能，大量资源浪费<br><code>先拼接字符串 再循环完了后一次性追加到页面中</code></p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="十五、修改元素的属性"><a href="#十五、修改元素的属性" class="headerlink" title="十五、修改元素的属性"></a>十五、修改元素的属性</h2><h3 id="15-1-操作元素样式中的属性"><a href="#15-1-操作元素样式中的属性" class="headerlink" title="15.1 操作元素样式中的属性"></a>15.1 操作元素样式中的属性</h3><ul>
+<li>获取<br><code>元素.style.样式名</code></li>
+<li>修改<br><code>元素.style.样式名 = 样式值</code><br><em>注意</em><blockquote>
+<p>样式名 如果在css 有 “-“ 的 应使用 驼峰命名法<br><code>background-color =&gt; backgroundColor</code></p>
+</blockquote>
+<h3 id="15-2-操作图片的路径"><a href="#15-2-操作图片的路径" class="headerlink" title="15.2 操作图片的路径"></a>15.2 操作图片的路径</h3></li>
+<li>获取<br><code>元素.scr</code></li>
+<li>修改<br><code>元素.scr = &quot;路径&quot;</code><h3 id="15-3-操作单标签按钮的文字"><a href="#15-3-操作单标签按钮的文字" class="headerlink" title="15.3 操作单标签按钮的文字"></a>15.3 操作单标签按钮的文字</h3></li>
+<li>获取<br><code>元素.value</code></li>
+<li>修改<br><code>元素.value = &quot;值&quot;</code><h3 id="15-4-操作元素的类名"><a href="#15-4-操作元素的类名" class="headerlink" title="15.4 操作元素的类名"></a>15.4 操作元素的类名</h3><h4 id="15-4-1-JavaScript"><a href="#15-4-1-JavaScript" class="headerlink" title="15.4.1 JavaScript"></a>15.4.1 JavaScript</h4></li>
+<li>获取<br><code>元素.className</code></li>
+<li>添加<br><code>元素.className += &quot; class&quot;</code><br><em>注意 用+= 得加空格</em><h4 id="15-4-2-HTML5"><a href="#15-4-2-HTML5" class="headerlink" title="15.4.2 HTML5"></a>15.4.2 HTML5</h4><blockquote>
+<p>el.classList 返回的是一个伪数组 保存的是元素上的所有类名</p>
+</blockquote>
+</li>
+<li>添加一个类<br><code>el.classList.add(&quot;class&quot;)</code></li>
+<li>删除一个类<br><code>el.classList.remove(&quot;class&quot;)</code></li>
+<li>修改一个类<br><code>el.classList.replace(&quot;被替换的类&quot;,&quot;要替换的新类&quot;)</code></li>
+<li>切换一个类<br><code>el.classList.toggle(&quot;class&quot;)</code><br><em>没有就添加这个类 有就删除这个类</em></li>
+<li>判断一个类是否存在<br><code>el.classList.contains(&quot;class&quot;)</code><br><em>存在返回true 不存在返回false</em><h3 id="15-5-操作元素显示or隐藏"><a href="#15-5-操作元素显示or隐藏" class="headerlink" title="15.5 操作元素显示or隐藏"></a>15.5 操作元素显示or隐藏</h3></li>
+<li>显示<br><code>元素.style.displaye = &quot;block&quot;</code></li>
+<li>隐藏<br><code>元素.style.displaye = &quot;none&quot;</code><br><em>如果想要通过一个按钮切换显示隐藏可以声明一个flag 记录显示和隐藏的状态</em><blockquote>
+<p>let flag = this.value == “隐藏” ? true : false<br>divBox.style.display = flag ? “none” : “block”<br>this.value = flag ? “显示” : “隐藏” // 这里用来下一次<br>点击再次toggle 所以需要与设置的flag相反设定对应的值</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="15-6-表单元素的禁用和启动"><a href="#15-6-表单元素的禁用和启动" class="headerlink" title="15.6 表单元素的禁用和启动"></a>15.6 表单元素的禁用和启动</h3><ul>
+<li>el.style.disabled = true<blockquote>
+<p>加上代表禁用 不加上代表启动<br>js里面设置它为 true 代表禁用、false 代表启用</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="15-7-操作双标签的文字"><a href="#15-7-操作双标签的文字" class="headerlink" title="15.7 操作双标签的文字"></a>15.7 操作双标签的文字</h3><ul>
+<li>获取<br><code>元素.innerText</code></li>
+<li>修改<br><code>元素.innerText = &quot;值&quot;</code></li>
+</ul>
+<hr>
+<h2 id="十六、innerHTML、innerText、textContent的区别"><a href="#十六、innerHTML、innerText、textContent的区别" class="headerlink" title="十六、innerHTML、innerText、textContent的区别"></a>十六、innerHTML、innerText、textContent的区别</h2><blockquote>
+<p>innerHTML没有兼容问题 既可以拿到文本也可以渲染标签</p>
+</blockquote>
+<blockquote>
+<p>innerText和textContent都是设置标签里面的文本内容<br>将数据当成字符串输出到页面 不会渲染<br>innerText在老版火狐里面不支持</p>
+</blockquote>
+<h2 id="textContent在ie9以下都不支持"><a href="#textContent在ie9以下都不支持" class="headerlink" title="textContent在ie9以下都不支持"></a>textContent在ie9以下都不支持</h2><h2 id="十七、表单元素属性"><a href="#十七、表单元素属性" class="headerlink" title="十七、表单元素属性"></a>十七、表单元素属性</h2><ul>
+<li>value<br><code>可以获取大部分表单元素的内容(option除外)</code></li>
+<li>type<br><code>可以获取表单元素的类型</code></li>
+<li>disabled<br><code>禁用属性</code></li>
+<li>checked<br><code>复选框选中</code></li>
+<li>selected<br><code>下拉框选中</code></li>
+</ul>
+<hr>
+<h2 id="十八、获取元素的最终样式"><a href="#十八、获取元素的最终样式" class="headerlink" title="十八、获取元素的最终样式"></a>十八、获取元素的最终样式</h2><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.getComputedStyle(element)[&quot;width&quot;]</span><br><span class="line">window.getComputedStyle(element).width</span><br></pre></td></tr></table></figure>
+<p>返回的string属性值 “100px”<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/*ie8魔鬼专用*/</span><br><span class="line">element.currentStyle[&apos;width&apos;]</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="十九、获取元素到可视区域的距离"><a href="#十九、获取元素到可视区域的距离" class="headerlink" title="十九、获取元素到可视区域的距离"></a>十九、获取元素到可视区域的距离</h2><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.getBoundingClientRect()</span><br><span class="line">element.getBoundingClientRect().left</span><br><span class="line">element.getBoundingClientRect().top</span><br></pre></td></tr></table></figure>
+<p><em>获取鼠标位置相对于自身的x和y</em><br>(offsetX和offsetY有bug)<br><code>e.clientX - 盒子到可视区域的left</code><br><code>e.clientY - 盒子到可视区域的top</code></p>
+<hr>
+<h2 id="XMind思维导图"><a href="#XMind思维导图" class="headerlink" title="XMind思维导图"></a>XMind思维导图</h2><p><img src="https://upload-images.jianshu.io/upload_images/12946880-a59e622e50b2a619.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="webAPI.png"></p>
 
       
     </main>
