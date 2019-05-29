@@ -1,4 +1,4 @@
-let mobile_url = "index1.html";
+let mobile_url = "./m/index.html";
 var isMobile = false;
 // 检测userAgent
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

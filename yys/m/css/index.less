@@ -1,0 +1,444 @@
+body {
+    font-size: 50px;
+}
+
+p,
+a,
+li {
+    font-size: .24rem;
+}
+
+input {
+    border: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.m_wrap {
+    width: 100%;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.m_tit {
+    height: .47rem;
+    text-align: center;
+    display: block;
+}
+
+.m_swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.m_main {
+    width: 100%;
+    min-height: 12rem;
+    background-color: #f2f2f2;
+    font-family: "Microsoft YaHei";
+    font-size: .24rem;
+    padding-top: 1.02rem;
+    overflow: hidden;
+    margin: 0 auto;
+
+    .m_bar {
+        width: 100%;
+        height: 1.02rem;
+        background: url(https://yys.res.netease.com/m/gw/20180918135651/img/top_bg_936a739.jpg) no-repeat;
+        background-size: 100% 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+
+        .m_top_icon {
+            width: .8rem;
+            height: .8rem;
+            border: 2px #fff solid;
+            border-radius: .18rem;
+            box-sizing: border-box;
+            margin: .11rem .16rem .11rem .3rem;
+            float: left;
+        }
+
+        .m_signs {
+            font-size: .3rem;
+            color: #fff;
+            font-weight: 700;
+            line-height: .47rem;
+            margin-top: .11rem;
+            float: left;
+
+            p {
+                font-size: .24rem;
+                font-weight: 400;
+                color: #fff;
+                line-height: .33rem;
+            }
+        }
+
+        .m_down {
+            width: 1.41rem;
+            height: .6rem;
+            background: url(https://yys.res.netease.com/m/gw/20180918135651/img/down_6a819e3.jpg) no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: .21rem;
+            right: .9rem;
+        }
+
+        .m_searchBtn {
+            width: .6rem;
+            height: .6rem;
+            background: url(https://yys.res.netease.com/m/gw/20180918135651/img/icon/i_search_f5510ff.png) no-repeat center center;
+            background-size: .43rem .45rem;
+            position: absolute;
+            top: .21rem;
+            right: .12rem;
+        }
+
+        .m_searchInput {
+            width: 100%;
+            height: 1.02rem;
+            background: url(https://yys.res.netease.com/m/gw/20180918135651/img/top_bg_936a739.jpg) no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+
+            .m_sInput {
+                width: 5.3rem;
+                height: .38rem;
+                border-radius: .05rem;
+                background: #6b0404;
+                padding: .1rem .15rem .1rem .85rem;
+                position: absolute;
+                top: .22rem;
+                left: .2rem;
+
+                .m_searchBtn2 {
+                    width: .38rem;
+                    height: .39rem;
+                    background: url(https://yys.res.netease.com/m/gw/20180918135651/img/icon/i_search2_66b4167.png) no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    top: .1rem;
+                    left: .15rem;
+
+                    &::after {
+                        content: '';
+                        width: .03rem;
+                        height: .38rem;
+                        background: #fff;
+                        position: absolute;
+                        top: 0;
+                        right: -.14rem;
+                    }
+                }
+
+                input {
+                    width: 5.3rem;
+                    height: .38rem;
+                    color: #fff;
+                    font-size: .24rem;
+                    background: #6b0404;
+                    line-height: .38rem;
+                    position: absolute;
+                }
+            }
+
+            .m_cancel {
+                width: .92rem;
+                height: .57rem;
+                font-size: .32rem;
+                font-weight: 700;
+                font-family: "\5B8B\4F53", "宋体";
+                color: #fff;
+                text-align: center;
+                line-height: .57rem;
+                position: absolute;
+                top: .22rem;
+                right: .08rem;
+            }
+        }
+    }
+
+    // 固定头部end
+
+    .m_top_wrap {
+        height: 5rem;
+        overflow: initial;
+        width: 100%;
+        background: #fff;
+        position: relative;
+
+        .m_swiper-container {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+
+            .m_swiper-wrapper {
+                transform: translate3d(0, 0, 0);
+                position: relative;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                display: flex;
+                transition-property: transform;
+                box-sizing: content-box;
+
+                .m_bn_bd {
+                    width: 7.5rem;
+                    height: 5rem;
+                    float: left;
+                    flex-shrink: 0;
+                    position: relative;
+                }
+            }
+        }
+
+        .m_banner {
+            width: 7.5rem;
+            height: 5rem;
+            margin: 0 auto;
+        }
+    }
+
+    .m_downGame {
+        width: 2.55rem;
+        height: .85rem;
+        background: url(https://yys.res.netease.com/m/gw/20180918135651/img/down2_b40166c.jpg) no-repeat;
+        background-size: 100% 100%;
+        margin: 0 auto;
+        position: relative;
+        top: -.5rem;
+        display: block;
+        z-index: 2;
+    }
+
+    // banner end
+
+    .m_newWrap {
+        height: 13.27rem;
+        padding-top: 1rem;
+
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    .m_newsBox {
+        width: 7.5rem;
+        height: 12.44rem;
+        margin: .37rem auto 0;
+        position: relative;
+        overflow: hidden;
+
+        .m_swiper-wrapper {
+            transform: translate3d(0, 0, 0);
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            transition-property: transform;
+            box-sizing: content-box;
+
+            .m_news_list {
+                //width: 7.1rem;
+                height: 10.81rem;
+                margin-bottom: .29rem;
+                float: left;
+
+                li {
+                    width: 3.45rem;
+                    height: 3.47rem;
+                    border: 2px #ccc solid;
+                    box-sizing: border-box;
+                    margin: 0 0 .2rem .2rem;
+                    float: left;
+
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        position: relative;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 2.5rem;
+                            display: block;
+                            margin-bottom: .17rem;
+                        }
+
+                        i {
+                            width: .4rem;
+                            height: .65rem;
+                            font-size: .24rem;
+                            font-style: normal;
+                            color: #fff;
+                            background: #c2a060;
+                            font-weight: 700;
+                            text-align: center;
+                            line-height: .24rem;
+                            padding: .08rem 0;
+                            box-sizing: border-box;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            display: block;
+                        }
+
+                        p {
+                            font-weight: 700;
+                            width: 100%;
+                            font-size: .24rem;
+                            color: #000;
+                            line-height: .32rem;
+                            padding: 0 .1rem 0 .17rem;
+                            box-sizing: border-box;
+                            display: block;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            margin: 0 auto;
+                        }
+
+                        span {
+                            width: 2.97rem;
+                            font-size: .28rem;
+                            font-weight: 700;
+                            color: #000;
+                            line-height: .34rem;
+                            margin: .24rem auto .2rem;
+                            white-space: normal;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            text-overflow: ellipsis;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 3;
+                            word-break: break-all;
+                            box-sizing: inherit;
+                        }
+                    }
+                }
+
+                .m_recommend a i {
+                    background: #d44e4d;
+                }
+            }
+        }
+
+        .m_swiper-slide {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .m_imgNone {
+            float: left;
+
+            a {
+                p {
+                    width: 3.06rem !important;
+                    font-size: .22rem !important;
+                    color: #666 !important;
+                    line-height: .32rem !important;
+                    margin: 0 auto !important;
+                    white-space: normal !important;
+                    overflow: hidden !important;
+                    display: -webkit-box !important;
+                    text-overflow: ellipsis !important;
+                    -webkit-box-orient: vertical !important;
+                    -webkit-line-clamp: 3 !important;
+                    word-break: break-all !important;
+                    box-sizing: inherit !important;
+                }
+
+                em {
+                    width: 1.22rem;
+                    height: .4rem;
+                    background: url(https://yys.res.netease.com/m/gw/20180918135651/img/icon/i_arrow_76d1670.png) no-repeat left center;
+                    background-size: 100% .13rem;
+                    position: absolute;
+                    bottom: .19rem;
+                    right: .32rem;
+                    display: block;
+                }
+            }
+
+        }
+
+
+        .m_newswrap {
+            height: 10.81rem;
+        }
+    }
+
+    .m_prev_news {
+        opacity: 0;
+        pointer-events: none;
+        width: .91rem;
+        right: 3.1rem;
+        height: .45rem;
+        font-size: .24rem;
+        color: #333;
+        text-align: center;
+        line-height: .45rem;
+        position: absolute;
+        bottom: .88rem;
+    }
+
+    .m_next_news {
+        width: .91rem;
+        right: 2.1rem;
+        height: .45rem;
+        font-size: .24rem;
+        color: #333;
+        text-align: center;
+        line-height: .45rem;
+        position: absolute;
+        bottom: .88rem;
+    }
+
+    .m_line_fg {
+        width: 1px;
+        height: .18rem;
+        background: #333;
+        position: absolute;
+        bottom: 1.02rem;
+        right: 1.58rem;
+    }
+
+    .m_more_news {
+        width: .6rem;
+        padding-left: .24rem;
+        right: .16rem;
+        background: url(https://yys.res.netease.com/m/gw/20180918135651/img/icon/i_more_73bb3e2.png) no-repeat left center;
+        background-size: .24rem .24rem;
+        height: .45rem;
+        font-size: .24rem;
+        color: #333;
+        text-align: center;
+        line-height: .45rem;
+        position: absolute;
+        bottom: .88rem;
+    }
+
+    // news end
+}
