@@ -45,7 +45,7 @@ img {
 .m_main .m_bar {
   width: 100%;
   height: 1.02rem;
-  background: url(https://yys.res.netease.com/m/gw/20180918135651/img/top_bg_936a739.jpg) no-repeat;
+  background: url(../img/m_bar_bg.jpg) no-repeat;
   background-size: 100% 100%;
   position: fixed;
   top: 0;
@@ -78,7 +78,7 @@ img {
 .m_main .m_bar .m_down {
   width: 1.41rem;
   height: .6rem;
-  background: url(https://yys.res.netease.com/m/gw/20180918135651/img/down_6a819e3.jpg) no-repeat;
+  background: url(../img/m_down.jpg) no-repeat;
   background-size: 100% 100%;
   position: absolute;
   top: .21rem;
@@ -87,7 +87,7 @@ img {
 .m_main .m_bar .m_searchBtn {
   width: .6rem;
   height: .6rem;
-  background: url(https://yys.res.netease.com/m/gw/20180918135651/img/icon/i_search_f5510ff.png) no-repeat center center;
+  background: url(../img/m_search_logo.png) no-repeat center center;
   background-size: .43rem .45rem;
   position: absolute;
   top: .21rem;
@@ -96,7 +96,7 @@ img {
 .m_main .m_bar .m_searchInput {
   width: 100%;
   height: 1.02rem;
-  background: url(https://yys.res.netease.com/m/gw/20180918135651/img/top_bg_936a739.jpg) no-repeat;
+  background: url(../img/m_bar_bg.jpg) no-repeat;
   background-size: 100% 100%;
   position: absolute;
   top: 0;
@@ -116,7 +116,7 @@ img {
 .m_main .m_bar .m_searchInput .m_sInput .m_searchBtn2 {
   width: .38rem;
   height: .39rem;
-  background: url(https://yys.res.netease.com/m/gw/20180918135651/img/icon/i_search2_66b4167.png) no-repeat;
+  background: url(../img/m_search_2.png) no-repeat;
   background-size: 100% 100%;
   position: absolute;
   top: .1rem;
@@ -192,7 +192,7 @@ img {
 .m_main .m_downGame {
   width: 2.55rem;
   height: .85rem;
-  background: url(https://yys.res.netease.com/m/gw/20180918135651/img/down2_b40166c.jpg) no-repeat;
+  background: url(../img/m_down_big.jpg) no-repeat;
   background-size: 100% 100%;
   margin: 0 auto;
   position: relative;
@@ -328,7 +328,7 @@ img {
 .m_main .m_newsBox .m_imgNone a em {
   width: 1.22rem;
   height: .4rem;
-  background: url(https://yys.res.netease.com/m/gw/20180918135651/img/icon/i_arrow_76d1670.png) no-repeat left center;
+  background: url(../img/m_arrow.png) no-repeat left center;
   background-size: 100% .13rem;
   position: absolute;
   bottom: .19rem;
@@ -374,7 +374,7 @@ img {
   width: .6rem;
   padding-left: .24rem;
   right: .16rem;
-  background: url(https://yys.res.netease.com/m/gw/20180918135651/img/icon/i_more_73bb3e2.png) no-repeat left center;
+  background: url(../img/m_more.png) no-repeat left center;
   background-size: .24rem .24rem;
   height: .45rem;
   font-size: .24rem;
