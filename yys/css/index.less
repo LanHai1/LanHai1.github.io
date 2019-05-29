@@ -1,0 +1,738 @@
+// 二维码动画
+@keyframes mainbarcode {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(0, 100px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+// 新闻资讯动画
+@keyframes snake {
+
+    0%,
+    100%,
+    20%,
+    50%,
+    80% {
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        transform: translate3d(0, 0, 0)
+    }
+
+    40%,
+    43% {
+        transition-timing-function: cubic-bezier(0.755, .5, .855, .06);
+        transform: translate3d(-10px, 0, 0)
+    }
+
+    70% {
+        transition-timing-function: cubic-bezier(0.755, .05, .855, .06);
+        transform: translate3d(-5px, 0, 0)
+    }
+
+    90% {
+        transform: translate3d(-3px, 0, 0)
+    }
+}
+
+// 京都商业动画
+@keyframes jdMore {
+    0% {
+        opacity: 0.003;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.003;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+// 隐藏页面滚动条
+body{-ms-overflow-style:none;}
+body::-webkit-scrollBar{display:none;}
+body::-ms-scrollBar{display:none;}
+body:-ms-scrollBar{display:none;}
+body::-o-scrollBar{display:none;}
+body::scrollBar{display:none;}
+body:scrollBar{display:none;}
+
+.yys_lh_nav {
+    width: 100%;
+    height: 60px;
+    background: url(../img/yys_lh_nav.jpg);
+    position: fixed;
+    z-index: 999;
+
+    .yys_lh_nav_con {
+        height: 100%;
+        position: relative;
+
+        ul {
+            width: 100%;
+
+            .active {
+                height: 65px;
+                background: url(../img/yys_lh_nav_bg.jpg);
+                left: -1px;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                }
+
+                a {
+                    color: #000 !important;
+                }
+            }
+
+            li {
+                width: 10%;
+                height: 60px;
+                text-align: center;
+                line-height: 60px;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 1px;
+                    height: 14px;
+                    background-color: #fff;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: inline-block;
+                    color: #fff;
+                }
+            }
+        }
+
+        .yys_lh_search {
+            position: absolute;
+            display: inline-block;
+            width: 18px;
+            height: 19px;
+            background: url(../img/yys_lh_search.png);
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all ease .3s;
+
+            &:hover {
+                transform: rotateY(180deg) translateY(-10px);
+            }
+        }
+    }
+}
+
+// 导航完成
+
+.yys_lh_toList {
+    position: absolute;
+    left: 120px;
+    top: 70px;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 16px;
+    color: #c2a060;
+
+    &:hover i {
+        transform: translateX(-10px)
+    }
+
+    i {
+        width: 8px;
+        height: 13px;
+        background: url(../img/yys_lh_back.png) no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+        transition: all ease .3s;
+    }
+}
+
+
+
+.yys_lh_banner-wrap {
+    width: 100%;
+    height: 784px;
+    padding-top: 59px;
+    // max-width: 1920px;
+    min-width: 1180px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: url(../img/yys_lh_main_bg.jpg) no-repeat center center;
+
+
+    .yys_lh_banner_main {
+        height: 100%;
+        position: relative;
+
+        .yys_lh_banner_a {
+            position: absolute;
+            width: 47px;
+            height: 98px;
+            left: 35px;
+            top: 28px;
+            z-index: 10;
+
+
+            .logo_span {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: url(../img/yys_lh_yys.webp) 0 0 no-repeat;
+                background-size: auto 100%;
+                transition: all .3s linear;
+            }
+        }
+
+        .yys_lh_guishou_left {
+            width: 229px;
+            height: 290px;
+            background: url(../img/yys_lh_guishou_left.png) no-repeat center;
+            background-size: 100%;
+            position: absolute;
+            left: 50%;
+            bottom: 52px;
+            margin-left: -753px;
+            z-index: 11;
+
+        }
+
+        .yys_lh_guishou_right {
+            width: 222px;
+            height: 303px;
+            background: url(../img/yys_lh_guishou_right.png) no-repeat center;
+            background-size: 100%;
+            position: absolute;
+            left: 50%;
+            bottom: 52px;
+            margin-left: 525px;
+            z-index: 11;
+        }
+
+        .yys_lh_head_news {
+            width: 100%;
+            height: 287px;
+            position: absolute;
+            bottom: 0;
+            overflow: hidden;
+            left: 0;
+            z-index: 10;
+            background: url(../img/yys_lh_bot_head_bg.png) center bottom repeat-x;
+
+            .yys_lh_download_wrap {
+                width: 145px;
+                height: 240px;
+                padding-top: 47px;
+                float: left;
+                position: relative;
+                background-repeat: no-repeat;
+                background: url(../img/yys_lh_jlt.png);
+                background-position: 0px 0px;
+                z-index: 12px;
+
+                .yys_lh_NIE_qrcode {
+                    width: 107px;
+                    height: 107px;
+                    margin: 0 auto;
+                }
+
+                .yys_lh_code_line {
+                    position: absolute;
+                    left: 12px;
+                    top: 45px;
+                    z-index: 13;
+                    animation: mainbarcode 4s linear infinite;
+                }
+
+                .yys_lh_button_desktop {
+                    width: 107px;
+                    height: 107px;
+                    display: block;
+                    margin: 138px -16px;
+                    background: url(../img/yys_lh_zmb.jpg) no-repeat;
+                    transition: all .3s ease;
+                }
+
+            }
+
+            // 新闻资讯完成
+        }
+    }
+
+}
+
+.yys_lh_guihuo_left {
+    width: 622px;
+    height: 642px;
+    background: url(../img/yys_left_guihuo.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    left: 50%;
+    top: 313px;
+    margin-left: -952px;
+}
+
+.yys_lh_guihuo_right {
+    width: 604px;
+    height: 665px;
+    background: url(../img/yys_lh_guihuo_right.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    left: 50%;
+    top: 310px;
+    margin-left: 350px;
+}
+
+// 首屏轮播完成
+
+.yys_lh_section {
+    margin: 43px auto 0;
+
+    .yys_lh_world {
+        height: 495px;
+        position: relative;
+
+        .yys_lh_worle_title {
+            background: url(../img/yys_lh_jlt.png);
+            background-position: -980px -297px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 54px;
+            height: 145px;
+            background-repeat: no-repeat;
+        }
+
+        .yys_lh_world_tab {
+            width: 292px;
+            height: 36px;
+            border: 2px solid #c2a060;
+            z-index: 10;
+            position: relative;
+            margin-left: 120px;
+
+            ul {
+                width: 288px;
+                height: 32px;
+                border: 2px solid #fff;
+
+                .yys_lh_on {
+                    background: #c2a060;
+                    color: #fff;
+                }
+
+                li {
+                    float: left;
+                    width: 96px;
+                    height: 32px;
+                    background: #fff;
+                    position: relative;
+                    color: #000;
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 32px;
+                    cursor: pointer;
+
+                    &::after {
+                        content: '';
+                        width: 1px;
+                        height: 18px;
+                        background: #c2a060;
+                        position: absolute;
+                        top: 7px;
+                        right: 0px;
+                        z-index: 10;
+                    }
+
+                    &:last-child::after {
+                        width: 0;
+                        height: 0;
+                    }
+
+                    &:hover {
+                        background: #c2a060;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        // 式神tab完成
+
+        .yys_lh_world_search {
+            width: 182px;
+            height: 23px;
+            line-height: 23px;
+            top: 16px;
+            right: 0;
+            border-bottom: 1px solid #c2a060;
+            position: absolute;
+            z-index: 20;
+
+            .yys_lh_world_keyword {
+                width: 160px;
+                height: 23px;
+                line-height: 23px;
+                border: 0;
+                float: left;
+                display: block;
+                font-size: 12px;
+            }
+
+            .yys_lh_world_search_btn {
+                width: 18px;
+                height: 19px;
+                background: url(../img/yys_lh_search.png) no-repeat;
+                display: block;
+                float: left;
+
+                transition: all ease .3s;
+
+                &:hover {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+
+        // 式神搜索完成
+
+        .yys_lh_bigImg_wrap {
+            width: 1180px;
+            height: 320px;
+            background: url(../img/yys_lh_shishen_bg.jpg) center 0 no-repeat;
+            position: relative;
+            margin-top: 128px;
+            margin-bottom: 70px;
+
+            .yys_lh_bigImg_btn_left,
+            .yys_lh_bigImg_btn_right {
+                width: 78px;
+                height: 318px;
+                border: 1px solid #ecdbbd;
+                background: url(../img/yys_lh_shishen_btn.png) center bottom no-repeat;
+                position: absolute;
+                top: 0;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                transition: all .3s ease;
+                z-index: 10;
+
+                &:hover,
+                &:hover p,
+                &:hover .yys_lh_jt {
+                    border-color: #c2a060;
+                    color: #c2a060;
+                }
+
+                &:hover .yys_lh_line,
+                &:hover .yys_lh_jt {
+                    background-color: #c2a060;
+                }
+            }
+
+            .yys_lh_bigImg_btn_left {
+                left: 0;
+            }
+
+            .yys_lh_line {
+                width: 1px;
+                height: 16px;
+                margin: 15px auto 10px;
+                display: block;
+                background: #ecdbbd;
+            }
+
+            p {
+                width: 18px;
+                margin: 0 auto;
+                color: #ecdbbd;
+                font-size: 18px;
+            }
+
+            .yys_lh_jt {
+                border: 1px solid #ecdbbd;
+                display: block;
+                width: 58px;
+                height: 58px;
+                position: absolute;
+                top: 130px;
+                left: 50px;
+                background: #fff;
+                transition: all .3s ease;
+
+                i {
+                    background: url(../img/yys_lh_arrow.png) no-repeat;
+                    width: 37px;
+                    height: 9px;
+                    display: block;
+                    margin: 25px auto 0;
+                    transition: all .3s ease;
+                }
+            }
+
+            .yys_lh_bigImg_btn_right {
+                right: 0;
+
+                i {
+                    transform: rotate(180deg);
+                }
+            }
+
+            .yys_lh_bigImg_list {
+                width: 1180px;
+                height: 320px;
+
+                .yys_lh_bigImg_item {
+                    position: absolute;
+                    width: 1180px;
+                    top: -128px;
+                    bottom: 0px;
+                    display: none;
+
+                    &:first-child {
+                        display: block;
+                    }
+
+                    .yys_lh_item_role,
+                    .yys_lh_item_name {
+                        position: absolute;
+                    }
+
+                    .big_container {
+                        img {
+                            z-index: 9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 平安世界结束
+
+    .yys_lh_game {
+        margin-top: 70px;
+        height: 510px;
+        background: url(../img/yys_lh_stategy_bg.jpg) 0 174px no-repeat;
+
+        .yys_lh_part_tit {
+            background: url(../img/yys_lh_jlt.png);
+            background-position: -852px -297px;
+            width: 55px;
+            height: 145px;
+            float: left;
+            background-repeat: no-repeat;
+        }
+
+        .yys_lh_game_box {
+            margin-left: 45px;
+            float: left;
+            height: 209px;
+            position: relative;
+            top: -145px;
+            right: -55px;
+
+            ul {
+                li {
+                    width: 340px;
+                    height: 209px;
+                    margin-left: 20px;
+                    float: left;
+
+                    &:hover .yys_lh_geme_li,
+                    &:hover .yys_lh_geme_span {
+                        transform: translateY(-20px);
+                    }
+
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+
+                        .yys_lh_geme_li,
+                        .yys_lh_geme_span {
+                            left: 18px;
+                            top: 0;
+                            position: absolute;
+                            display: block;
+                            padding: 0 10px;
+                            width: 20px;
+                            height: 90px;
+                            background: url(../img/yys_lh_stategy_tit_bg.png) no-repeat;
+                            color: #000;
+                            text-align: center;
+                            word-break: break-all;
+                            box-align: center;
+                            box-pack: center;
+                            transition: all .4s ease;
+                            display: block;
+                            font-size: 14px;
+                            line-height: 18px;
+
+                            em {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+
+                        .yys_lh_geme_li {
+                            left: 68px;
+                            top: 22px;
+
+                        }
+                    }
+                }
+            }
+
+            .yys_lh_game_tab {
+                margin-top: 32px;
+                height: 44px;
+                position: relative;
+
+                .yys_lh_mx>li {
+                    float: left;
+                    width: 154px;
+                    height: 44px;
+                    text-align: center;
+                    line-height: 44px;
+                    color: #fff;
+                    font-size: 18px;
+                    position: relative;
+
+                    a {
+                        display: block;
+                        color: #fff;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                    }
+
+                    i {
+                        display: none;
+                    }
+                }
+
+                .on {
+                    line-height: 40px;
+                    background: #fff;
+
+                    a {
+                        color: #74bd95 !important;
+                    }
+
+                    i {
+                        display: block !important;
+                        background: url("../img/yys_lh_jlt.png");
+                        background-position: -725px -492px;
+                        width: 71px;
+                        height: 4px;
+                        margin: 0 auto;
+                        margin-top: -3px;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+
+
+        }
+
+        .yys_lh_game_bottom {
+            width: 1058px;
+            height: 124px;
+            border: 2px solid #81c0a1;
+            border-top-color: rgb(129, 192, 161);
+            border-top-style: solid;
+            border-top-width: 2px;
+            border-top: 0;
+            padding: 30px 0 0 118px;
+            position: relative;
+            left: -100px;
+
+            .yys_lh_geme_sta_con {
+                li {
+                    width: 320px;
+                    height: 40px;
+                    margin-bottom: 20px;
+                    float: left;
+                    margin-right: 30px;
+                    margin-left: 0;
+                    overflow: hidden;
+
+                    &:hover .yys_lh_geme_s_line i {
+                        width: 4px;
+                        background-color: #93c4b0;
+                    }
+
+                    &:hover .yys_lh_geme_s_con p {
+                        color: #93c4b0;
+                    }
+
+                    .yys_lh_geme_s_line {
+                        width: 5px;
+                        height: 40px;
+                        float: left;
+                        margin-right: 10px;
+                        display: inline-block;
+
+                        i {
+                            width: 2px;
+                            height: 40px;
+                            background: #ccc;
+                            display: block;
+                            transition: width ease .3s;
+                        }
+                    }
+
+                    .yys_lh_geme_s_con {
+
+                        display: inline-block;
+                        width: 300px;
+                        float: left;
+
+                        p {
+                            color: #000;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
+
+                        span {
+                            color: #666;
+                            font-size: 12px;
+                            line-height: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
