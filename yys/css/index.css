@@ -158,6 +158,7 @@ body:scrollBar {
   height: 784px;
   padding-top: 59px;
   min-width: 1180px;
+  margin: 0 auto;
   overflow: hidden;
   box-sizing: border-box;
   background: url(../img/yys_lh_main_bg.jpg) no-repeat center center;
