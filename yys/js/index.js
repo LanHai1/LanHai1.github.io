@@ -420,3 +420,34 @@ document.addEventListener('mousemove', function(e) {
         moveElem.style.left = moveX + 'px';
     }
 });
+
+// 小人物移动
+let renBox = $(".yys_lh_ewms");
+console.log(renBox)
+
+renBox.mousemove(function(e) {
+    let x = e.pageX;
+    if (x > 130 && x < 605) {
+        $(".yys_lh_role-wrap").css("background-position", "0px 0px");
+    } else if (x > 605 && x < 690) {
+        $(".yys_lh_role-wrap").css("background-position", "-203px 0px");
+    } else if (x > 690 && x < 740) {
+        $(".yys_lh_role-wrap").css("background-position", "-406px 0px");
+    } else if (x > 740 && x < 795) {
+        $(".yys_lh_role-wrap").css("background-position", "-609px 0px");
+    } else if (x > 795 && x < 1309) {
+        $(".yys_lh_role-wrap").css("background-position", "-812px 0px");
+
+    }
+});
+
+let renWord_child = $(".yys_lh_word-wrap").children();
+let renWord_child_rendom = renWord_child.length;
+
+renBox.click(function() {
+    let rendom = parseInt(Math.random() * renWord_child_rendom)
+    renWord_child.eq(rendom).css("opacity", 1).siblings("div").css("opacity", 0);
+    setTimeout(function() {
+        renWord_child.eq(rendom).css("opacity", 0)
+    }, 2000)
+})

@@ -84,6 +84,56 @@
     filter: alpha(opacity=0);
   }
 }
+@keyframes yidong {
+  0% {
+    -webkit-transform: translate(-200px, 0);
+    -moz-transform: translate(-200px, 0);
+    -ms-transform: translate(-200px, 0);
+    transform: translate(-200px, 0);
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  100% {
+    -webkit-transform: translate(1920px, 0);
+    -moz-transform: translate(1920px, 0);
+    -ms-transform: translate(1920px, 0);
+    transform: translate(1920px, 0);
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+@keyframes run01 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -308px 0;
+  }
+}
+@keyframes run02 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -334px 0;
+  }
+}
+@keyframes run03 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -322px 0;
+  }
+}
+@keyframes run04 {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -342px 0;
+  }
+}
 body {
   overflow-x: hidden;
 }
