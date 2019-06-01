@@ -423,8 +423,6 @@ document.addEventListener('mousemove', function(e) {
 
 // 小人物移动
 let renBox = $(".yys_lh_ewms");
-console.log(renBox)
-
 renBox.mousemove(function(e) {
     let x = e.pageX;
     if (x > 130 && x < 605) {
