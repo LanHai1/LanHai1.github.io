@@ -44,7 +44,7 @@ var LazyLoads = /** @class */ (function () {
     }
     return LazyLoads;
 }());
-// 实例化对象，参数则是需要使用懒加载的图片类名
+// 实例化对象，参数则是需要使用懒加载的图片
 var start = new LazyLoads('img');
 // 初始化
 start.init();
