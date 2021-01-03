@@ -1,0 +1,14 @@
+#app .timeline img {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+#app .timeline .figureName {
+  text-align: center;
+}
+#app .timelineFirst img {
+  opacity: 0;
+}
+#app .timelineFigure img {
+  cursor: pointer;
+}
