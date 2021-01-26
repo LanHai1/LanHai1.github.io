@@ -12,3 +12,22 @@
 #app .timelineFigure img {
   cursor: pointer;
 }
+#app .addPlus {
+  text-align: center;
+}
+#app .addPlus i {
+  font-size: 24px;
+  cursor: pointer;
+  vertical-align: -webkit-baseline-middle;
+}
+#app .timelineTable .tableThTr th:first-child p > img {
+  opacity: 0;
+}
+#app .timelineTable .tableTh p img {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+#app .timelineTable .tableTh .figureName {
+  text-align: center;
+}
